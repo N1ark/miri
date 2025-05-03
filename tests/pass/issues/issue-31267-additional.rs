@@ -12,6 +12,7 @@ impl Biz {
     const BAZ: Foo = Foo([BAZ; 1]);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let _foo = Biz::BAZ;
 }

@@ -2,6 +2,7 @@
 #![feature(explicit_tail_calls)]
 #![allow(incomplete_features)]
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let f = unsafe { std::mem::transmute::<extern "C" fn(), fn()>(f) };
     become f();

@@ -13,6 +13,7 @@ impl T1 for i32 {
     fn method1(self: Box<Self>) {}
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let r = Box::new(0) as Box<dyn T1>;
     let r2: Box<dyn T2> = unsafe { std::mem::transmute(r) };

@@ -1,6 +1,7 @@
 //@compile-flags: -Zmiri-permissive-provenance
 #![feature(ptr_internals)]
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     into_raw();
     into_unique();

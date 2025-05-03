@@ -2,6 +2,7 @@
 //
 // Check that if we pass NULL attribute, then reentrant locking is UB.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut mutex: libc::pthread_mutex_t = std::mem::zeroed();

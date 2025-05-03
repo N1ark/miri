@@ -8,6 +8,7 @@
 // This is just intended as a regression test to make sure we don't reintroduce this problem.
 
 #[cfg(target_pointer_width = "32")]
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     use std::mem::transmute;
 
@@ -20,4 +21,5 @@ fn main() {
 }
 
 #[cfg(not(target_pointer_width = "32"))]
+#[cfg_attr(kani, kani::proof)]
 fn main() {}

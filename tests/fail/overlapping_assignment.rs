@@ -16,6 +16,7 @@ pub fn self_copy(ptr1: *mut [i32; 4], ptr2: *mut [i32; 4]) {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let mut x = [0; 4];
     let ptr = std::ptr::addr_of_mut!(x);

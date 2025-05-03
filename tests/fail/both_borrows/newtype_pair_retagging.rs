@@ -10,6 +10,7 @@ fn dealloc_while_running(_n: Newtype<'_>, dealloc: impl FnOnce()) {
 }
 
 // Make sure that we protect references inside structs that are passed as ScalarPair.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let ptr = Box::into_raw(Box::new(0i32));
     #[rustfmt::skip] // I like my newlines

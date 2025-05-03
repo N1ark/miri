@@ -15,6 +15,7 @@ use std::arch::x86::*;
 use std::arch::x86_64::*;
 use std::mem::transmute;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Mostly copied from library/stdarch/crates/core_arch/src/x86/vpclmulqdq.rs
 

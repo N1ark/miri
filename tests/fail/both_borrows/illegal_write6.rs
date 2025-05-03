@@ -1,6 +1,7 @@
 //@revisions: stack tree
 //@[tree]compile-flags: -Zmiri-tree-borrows
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = &mut 0u32;
     let p = x as *mut u32;

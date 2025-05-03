@@ -214,6 +214,7 @@ fn failing_rmw_is_read() {
     });
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     test_fence_sync();
     test_multiple_reads();

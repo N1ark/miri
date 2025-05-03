@@ -12,6 +12,7 @@
 // doing region-folding, when really all clients of the region-folding
 // case only want to see *free* lifetime variables, not bound ones.
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     fn explicit() {
         fn test<F>(_x: Option<Box<F>>)

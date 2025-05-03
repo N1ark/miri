@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let v = [0i8; 4];
     let x = &v as *const i8;

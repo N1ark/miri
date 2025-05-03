@@ -1,6 +1,7 @@
 #[no_mangle]
 fn foo() {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     extern "Rust" {
         fn foo(_: i32);

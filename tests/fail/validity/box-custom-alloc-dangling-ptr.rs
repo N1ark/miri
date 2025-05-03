@@ -24,6 +24,7 @@ struct MyBox<T> {
     alloc: MyAlloc,
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let b = MyBox { ptr: NonNull::<i32>::dangling(), alloc: MyAlloc(0, 0) };
     let _b: Box<i32, MyAlloc> = unsafe {

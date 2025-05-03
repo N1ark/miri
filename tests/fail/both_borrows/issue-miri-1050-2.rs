@@ -3,6 +3,7 @@
 //@error-in-other-file: is a dangling pointer
 use std::ptr::NonNull;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let ptr = NonNull::<i32>::dangling();

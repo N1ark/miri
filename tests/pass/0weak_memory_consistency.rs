@@ -240,6 +240,7 @@ fn test_sync_through_rmw_and_fences() {
     assert_ne!((a, b), (0, 0));
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     for _ in 0..50 {
         test_single_thread();

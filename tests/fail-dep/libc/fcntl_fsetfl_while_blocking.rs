@@ -4,6 +4,7 @@
 use std::thread;
 
 /// If an O_NONBLOCK flag is set while the fd is blocking, that fd will not be woken up.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut fds = [-1, -1];
     let res = unsafe { libc::pipe(fds.as_mut_ptr()) };

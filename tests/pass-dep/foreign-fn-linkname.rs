@@ -14,6 +14,7 @@ fn strlen(str: String) -> usize {
     unsafe { mlibc::my_strlen(s.as_ptr()) as usize }
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let len = strlen("Rust".to_string());
     assert_eq!(len, 4);

@@ -22,6 +22,7 @@ extern "rust-call" fn good_unwind_rust_call(_: ()) -> ! {
     panic!();
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() -> ! {
     extern "C-unwind" {
         fn good_unwind_c();

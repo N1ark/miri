@@ -14,6 +14,7 @@ struct PartialDrop {
 }
 
 //@error-in-other-file: /required 2 byte alignment/
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         // Create an unaligned pointer

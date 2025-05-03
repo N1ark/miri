@@ -5,6 +5,7 @@ use std::intrinsics::mir::*;
 
 // Make sure calls with the return place "on the heap" work.
 #[custom_mir(dialect = "runtime", phase = "optimized")]
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     mir! {
         {

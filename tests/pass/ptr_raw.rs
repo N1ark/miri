@@ -58,6 +58,7 @@ fn deref_too_big_slice() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     basic_raw();
     assign_overlapping();

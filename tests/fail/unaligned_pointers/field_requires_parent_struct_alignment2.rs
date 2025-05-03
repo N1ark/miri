@@ -18,6 +18,7 @@ unsafe fn foo(x: *const Aligned) -> u8 {
     unsafe { (*x).packed.x } //~ERROR: based on pointer with alignment 1, but alignment 16 is required
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mem = [Aligned::default(); 16];

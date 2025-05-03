@@ -9,6 +9,7 @@ use std::arch::x86_64::*;
 use std::f32::NAN;
 use std::mem::transmute;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert!(is_x86_feature_detected!("sse"));
 

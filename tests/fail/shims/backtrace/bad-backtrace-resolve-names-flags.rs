@@ -4,6 +4,7 @@ extern "Rust" {
     fn miri_resolve_frame_names(ptr: *mut (), flags: u64, name_buf: *mut u8, filename_buf: *mut u8);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut buf = vec![std::ptr::null_mut(); miri_backtrace_size(0)];

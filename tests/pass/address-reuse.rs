@@ -1,6 +1,7 @@
 //! Check that we do sometimes reuse addresses.
 use std::collections::HashSet;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let count = 100;
     let mut addrs = HashSet::<usize>::new();

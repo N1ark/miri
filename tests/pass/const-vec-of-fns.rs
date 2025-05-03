@@ -8,6 +8,7 @@
 fn f() {}
 static mut CLOSURES: &'static mut [fn()] = &mut [f as fn(), f as fn()];
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     unsafe {
         for closure in &mut *CLOSURES {

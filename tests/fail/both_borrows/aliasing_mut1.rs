@@ -8,6 +8,7 @@ pub fn safe(x: &mut i32, y: &mut i32) {
     *y = 2;
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 0;
     let xraw: *mut i32 = unsafe { mem::transmute(&mut x) };

@@ -87,6 +87,7 @@ fn run_fut<T>(fut: impl Future<Output = T>) -> T {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = 5;
     assert_eq!(run_fut(foo(&x, 7)), 31);

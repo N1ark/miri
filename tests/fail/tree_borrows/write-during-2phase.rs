@@ -14,6 +14,7 @@ impl Foo {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let mut f = Foo(0);
     let alias = &mut f.0 as *mut u64;

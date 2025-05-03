@@ -16,6 +16,7 @@ impl Drop for Bar {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let b: [Box<dyn Foo>; 4] = [Box::new(Bar), Box::new(Bar), Box::new(Bar), Box::new(Bar)];
     assert_eq!(unsafe { DROP_COUNT }, 0);

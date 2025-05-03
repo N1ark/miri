@@ -2,6 +2,7 @@
 use std::thread;
 use std::time::{Duration, Instant};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let start = Instant::now();
 

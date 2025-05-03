@@ -1,6 +1,7 @@
 #![feature(portable_simd)]
 use std::simd;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     fn f(_: simd::u32x8) {}
 

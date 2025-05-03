@@ -1,5 +1,6 @@
 use core::ptr;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let base = ptr::without_provenance::<()>(10);

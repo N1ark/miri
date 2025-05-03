@@ -74,6 +74,7 @@ fn buf_smoke(mut p: PathBuf) {
     for _c in p.components() {}
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     buf_smoke(PathBuf::new());
     buf_smoke(utils::tmp());

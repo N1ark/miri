@@ -3,6 +3,7 @@
 
 // Test various stacked-borrows-specific things
 // (i.e., these do not work the same under TB).
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     mut_raw_mut2();
     // direct_mut_to_const_raw();

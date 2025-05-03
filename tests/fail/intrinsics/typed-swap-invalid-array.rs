@@ -14,6 +14,7 @@ fn invalid_array() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     invalid_array();
 }

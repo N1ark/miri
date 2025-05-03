@@ -2,6 +2,7 @@
 //@[tree]compile-flags: -Zmiri-tree-borrows
 //@compile-flags: -Zmiri-disable-alignment-check -Cdebug-assertions=no
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = [0u8; 20];
     let x_ptr: *mut u8 = x.as_mut_ptr();

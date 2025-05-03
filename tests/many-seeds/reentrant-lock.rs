@@ -8,6 +8,7 @@ use std::thread;
 
 static LOCK: ReentrantLock<Cell<i32>> = ReentrantLock::new(Cell::new(0));
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     for _ in 0..20 {
         thread::spawn(move || {

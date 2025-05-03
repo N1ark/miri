@@ -9,6 +9,7 @@ fn mutate(x: &UnsafePinned<i32>) {
     unsafe { ptr.write(42) };
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = UnsafePinned::new(0);
     mutate(&x);

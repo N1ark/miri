@@ -17,6 +17,7 @@ use std::thread;
 // 4. Thread 1 reads.
 // 5. Thread 2's `read` can never complete -> deadlocked.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut fds = [-1, -1];
     let res = unsafe { libc::socketpair(libc::AF_UNIX, libc::SOCK_STREAM, 0, fds.as_mut_ptr()) };

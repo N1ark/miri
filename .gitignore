@@ -12,7 +12,6 @@ flamegraph*.svg
 rustc-ice*.txt
 tests/native-lib/libtestlib.so
 .auto-*
-
 /genmc/
 *.crate
 *.llbc.json

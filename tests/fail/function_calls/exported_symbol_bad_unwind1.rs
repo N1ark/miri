@@ -3,6 +3,7 @@ extern "C-unwind" fn unwind() {
     panic!();
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     extern "C" {
         fn unwind();

@@ -1,5 +1,6 @@
 static ARRAY: [u8; 2] = [0, 1];
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let ptr_to_first = &ARRAY[0] as *const u8;
     // Illegally use this to access the 2nd element.

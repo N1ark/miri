@@ -10,6 +10,7 @@ use tokio::io::{self, AsyncReadExt, AsyncWriteExt};
 mod utils;
 
 #[tokio::main]
+#[cfg_attr(kani, kani::proof)]
 async fn main() {
     test_create_and_write().await.unwrap();
     test_create_and_read().await.unwrap();

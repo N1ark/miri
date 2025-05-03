@@ -91,6 +91,7 @@ impl<T, const N: usize> SmallVec<T, N> {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut v = SmallVec::<i32, 4>::new();
     let ptr = v.as_mut_ptr();

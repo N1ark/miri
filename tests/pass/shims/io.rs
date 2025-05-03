@@ -1,5 +1,6 @@
 use std::io::{self, IsTerminal, Write};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     io::stdout().write_all(b"stdout\n").unwrap();
     io::stderr().write_all(b"stderr\n").unwrap();

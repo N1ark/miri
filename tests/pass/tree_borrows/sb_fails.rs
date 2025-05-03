@@ -9,6 +9,7 @@
 mod fnentry_invalidation {
     // Copied directly from fail/stacked_borrows/fnentry_invalidation.rs
     // Version that fails TB: fail/tree_borrows/fnentry_invalidation.rs
+#[cfg_attr(kani, kani::proof)]
     pub fn main() {
         let mut x = 0i32;
         let z = &mut x as *mut i32;
@@ -34,6 +35,7 @@ mod pass_invalid_mut {
     // Version that fails TB: fail/tree_borrows/pass_invalid_mut.rs
     fn foo(_: &mut i32) {}
 
+#[cfg_attr(kani, kani::proof)]
     pub fn main() {
         let x = &mut 42;
         let xraw = x as *mut _;
@@ -55,6 +57,7 @@ mod return_invalid_mut {
         // But in TB ret is Reserved and thus still writeable.
     }
 
+#[cfg_attr(kani, kani::proof)]
     pub fn main() {
         foo(&mut (1, 2));
     }
@@ -66,6 +69,7 @@ mod static_memory_modification {
     static X: usize = 5;
 
     #[allow(mutable_transmutes)]
+#[cfg_attr(kani, kani::proof)]
     pub fn main() {
         let x = unsafe {
             std::mem::transmute::<&usize, &mut usize>(&X) // In SB this mutable reborrow fails.
@@ -87,6 +91,7 @@ fn interior_mut_reborrow() {
     assert_eq!(unsafe { ptr.read() }, 13); // then read through previous ptr
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     fnentry_invalidation::main();
     pass_invalid_mut::main();

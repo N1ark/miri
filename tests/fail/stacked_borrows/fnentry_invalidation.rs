@@ -2,6 +2,7 @@
 // definition, as the location of invalidation due to FnEntry retag. Technically the FnEntry retag
 // occurs inside the function, but what the user wants to know is which call produced the
 // invalidation.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 0i32;
     let z = &mut x as *mut i32;

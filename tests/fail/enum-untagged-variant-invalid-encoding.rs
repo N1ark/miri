@@ -13,6 +13,7 @@ enum Foo {
     Var3,
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         assert!(Foo::Var2(false) == mem::transmute(0u8));

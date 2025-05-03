@@ -6,6 +6,7 @@
 use std::alloc::{Layout, alloc, dealloc};
 use std::slice::from_raw_parts;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let layout = Layout::from_size_align(32, 8).unwrap();
     unsafe {

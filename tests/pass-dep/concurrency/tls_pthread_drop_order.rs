@@ -59,6 +59,7 @@ unsafe extern "C" fn dtor(ptr: *mut u64) {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         create(None); // check that the no-dtor case works

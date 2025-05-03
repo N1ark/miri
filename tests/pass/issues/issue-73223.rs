@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut state = State { prev: None, next: Some(8) };
     let path = "/nested/some/more";

@@ -8,6 +8,7 @@ mod utils;
 // To check that a reborrow is counted as a Read access, we use a reborrow
 // with no additional Read to Freeze an Active pointer.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let parent = &mut 0u8;

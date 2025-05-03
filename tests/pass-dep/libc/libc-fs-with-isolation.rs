@@ -5,6 +5,7 @@
 use std::fs;
 use std::io::{Error, ErrorKind};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // test `fcntl(F_DUPFD): should work even with isolation.`
     unsafe {

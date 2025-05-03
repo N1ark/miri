@@ -292,6 +292,7 @@ fn test_aligned_alloc() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_malloc();
     test_calloc();

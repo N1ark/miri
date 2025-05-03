@@ -9,6 +9,7 @@ use std::sync::atomic::{AtomicI64, Ordering};
 #[repr(align(8))]
 struct AlignedI64(#[allow(dead_code)] i64);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     static X: AlignedI64 = AlignedI64(0);
     let x = &X as *const AlignedI64 as *const AtomicI64;

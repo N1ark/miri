@@ -15,6 +15,7 @@ fn test_all_refs<'a, T: 'a>(dummy: &mut T, iter: impl Iterator<Item = &'a mut T>
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut dst = VecDeque::new();
     dst.push_front(Box::new(1));

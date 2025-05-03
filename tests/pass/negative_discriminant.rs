@@ -3,6 +3,7 @@ enum AB {
     B = 1,
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     match AB::A {
         AB::A => (),

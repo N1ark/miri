@@ -10,6 +10,7 @@ fn foo(nope: &mut i32) {
     *nope = 31; //~ ERROR: /write access through .* is forbidden/
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = &mut 42;
     let xraw = x as *mut _;

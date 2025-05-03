@@ -3,6 +3,7 @@
 
 use std::sync::atomic::*;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Atomic loads from read-only memory are fine if they are relaxed and small.
     static X: i32 = 0;

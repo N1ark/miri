@@ -13,6 +13,7 @@ pub enum Handler {
     Custom(*mut Box<dyn Fn()>),
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     #[allow(unused_must_use)]
     {

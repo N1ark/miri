@@ -6,6 +6,7 @@ struct MySlice {
     tail: [u8],
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let ptr = Box::into_raw(Box::new(0u8));

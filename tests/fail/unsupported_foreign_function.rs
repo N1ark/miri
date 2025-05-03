@@ -1,5 +1,6 @@
 //@normalize-stderr-test: "OS `.*`" -> "$$OS"
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     extern "Rust" {
         fn foo();

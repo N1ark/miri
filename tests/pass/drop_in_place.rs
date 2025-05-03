@@ -4,6 +4,7 @@
 
 use std::ptr;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut not_a_bool = 13u8;
     unsafe { ptr::drop_in_place(&mut not_a_bool as *mut u8 as *mut bool) };

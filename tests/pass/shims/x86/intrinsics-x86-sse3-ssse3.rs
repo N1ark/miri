@@ -9,6 +9,7 @@ use std::arch::x86::*;
 #[cfg(target_arch = "x86_64")]
 use std::arch::x86_64::*;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // SSSE3 implicitly enables SSE3, still check it to be sure
     assert!(is_x86_feature_detected!("sse3"));

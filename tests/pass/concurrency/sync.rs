@@ -251,6 +251,7 @@ fn park_unpark() {
     t2.join().unwrap();
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     check_mutex();
     check_rwlock_write();

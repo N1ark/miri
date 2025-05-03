@@ -10,6 +10,7 @@ fn helper(val: Box<Cell<u8>>, ptr: *const Cell<u8>) -> u8 {
     val.get()
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let val: Box<Cell<u8>> = Box::new(Cell::new(25));
     let ptr: *const Cell<u8> = &*val;

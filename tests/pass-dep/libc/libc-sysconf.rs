@@ -14,6 +14,7 @@ fn test_sysconfbasic() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_sysconfbasic();
 }

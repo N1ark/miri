@@ -169,6 +169,7 @@ fn padding_clear_corner_case() {
     let _val2 = val; // trigger typed copy
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test(MyEnum::MyEmptyVariant);
     test(MyEnum::MyNewtypeVariant(42));

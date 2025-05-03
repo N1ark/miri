@@ -5,6 +5,7 @@ fn inner(x: &mut i32, f: fn(&mut i32)) {
     f(x)
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     inner(Box::leak(Box::new(0)), |x| {
         let raw = x as *mut _;

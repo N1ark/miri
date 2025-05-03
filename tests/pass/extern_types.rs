@@ -8,6 +8,7 @@ extern "C" {
     type Foo;
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x: &Foo = unsafe { &*(ptr::without_provenance::<()>(16) as *const Foo) };
     let _y: &Foo = &*x;

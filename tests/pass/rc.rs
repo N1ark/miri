@@ -140,6 +140,7 @@ fn rc_uninit_slice() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     rc_fat_ptr_eq();
     rc_refcell();

@@ -3,6 +3,7 @@
 
 //@error-in-other-file: /deallocating .*, which is stack variable memory, using Rust heap deallocation operation/
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = 42;
     let bad_box = unsafe { std::mem::transmute::<&i32, Box<i32>>(&x) };

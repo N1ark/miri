@@ -48,6 +48,7 @@ unsafe impl GlobalAlloc for ZeroizeAlloc {
 #[global_allocator]
 static GLOBAL: ZeroizeAlloc = ZeroizeAlloc;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let layout = Layout::new::<[u8; 16]>();
     let ptr = unsafe { std::alloc::alloc_zeroed(layout) };

@@ -13,6 +13,7 @@ impl Drop for Bar {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let b = [Bar(0), Bar(1), Bar(2), Bar(3)];
     assert_eq!(unsafe { DROP_COUNT }, 0);

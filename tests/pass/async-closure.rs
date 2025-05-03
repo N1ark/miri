@@ -38,6 +38,7 @@ async fn call_normal_mut<F: Future<Output = ()>>(f: &mut impl FnMut(i32) -> F) {
     f(1).await;
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     block_on(async {
         let b = 2i32;

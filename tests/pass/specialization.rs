@@ -21,6 +21,7 @@ fn specialization() -> (bool, bool) {
     (i32::is_unit(), <()>::is_unit())
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(specialization(), (false, true));
 }

@@ -5,6 +5,7 @@
 
 /// Test that destroying a pthread_condattr twice fails, even without a check for number validity
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         use core::mem::MaybeUninit;

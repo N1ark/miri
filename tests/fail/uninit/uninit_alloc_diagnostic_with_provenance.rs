@@ -16,6 +16,7 @@ fn byte_with_provenance<T>(val: u8, prov: *const T) -> MaybeUninit<u8> {
     bytes[lsb]
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let layout = Layout::from_size_align(16, 8).unwrap();
     unsafe {

@@ -4,6 +4,7 @@
 //@ignore-target: windows # No mmap on Windows
 //@normalize-stderr-test: "size [0-9]+ and alignment" -> "size SIZE and alignment"
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let ptr = libc::mmap(

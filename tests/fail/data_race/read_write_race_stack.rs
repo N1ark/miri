@@ -12,6 +12,7 @@ struct EvilSend<T>(pub T);
 unsafe impl<T> Send for EvilSend<T> {}
 unsafe impl<T> Sync for EvilSend<T> {}
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     // Shared atomic pointer
     let pointer = AtomicPtr::new(null_mut::<usize>());

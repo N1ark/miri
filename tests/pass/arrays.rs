@@ -77,6 +77,7 @@ fn huge_zst() {
     let _copy = std::mem::MaybeUninit::new(val);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(empty_array(), []);
     assert_eq!(index_unsafe(), 20);

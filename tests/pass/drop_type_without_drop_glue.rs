@@ -15,6 +15,7 @@ fn drop_in_place_with_terminator(ptr: *mut i32) {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     drop_in_place_with_terminator(std::ptr::without_provenance_mut(0));
     drop_in_place_with_terminator(std::ptr::without_provenance_mut(1));

@@ -5,4 +5,5 @@
 struct Foo;
 //~^ ERROR: struct `Foo` is never constructed
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {}

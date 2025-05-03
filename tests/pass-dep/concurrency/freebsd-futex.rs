@@ -251,6 +251,7 @@ fn wait_absolute_timeout() {
     assert!((200..1000).contains(&start.elapsed().as_millis()));
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     wait_wake();
     wake_dangling();

@@ -24,6 +24,7 @@ fn test_sleep_until() {
     assert!((after - before).as_millis() >= 100);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Check `SystemTime`.
     let now1 = SystemTime::now();

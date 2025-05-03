@@ -11,6 +11,7 @@ fn via_ref(x: *const (i32, i32)) -> *const i32 {
     unsafe { &(*x).0 as *const i32 } //~ERROR: dangling pointer
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let ptr = ptr::without_provenance(0x10);
     direct_raw(ptr); // this is fine

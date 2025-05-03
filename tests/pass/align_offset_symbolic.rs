@@ -122,6 +122,7 @@ fn vtable() {
     let _place = unsafe { &*vtable_aligned };
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_align_to();
     test_from_utf8();

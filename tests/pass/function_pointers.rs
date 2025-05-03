@@ -68,6 +68,7 @@ fn indirect_once3<F: FnOnce(i32, i32) -> i32>(f: F) -> i32 {
     f(10, 3)
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(call_fn_ptr(), 42);
     assert_eq!(indirect(f), 42);

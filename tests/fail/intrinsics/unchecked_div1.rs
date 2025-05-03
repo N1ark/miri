@@ -1,4 +1,5 @@
 #![feature(core_intrinsics)]
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // MIN/-1 cannot be represented
     unsafe {

@@ -2,6 +2,7 @@
 // the niche handling code.
 //@compile-flags: -Zmiri-disable-stacked-borrows -Zmiri-disable-validation
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = 42;
     let val: Option<&i32> = unsafe { std::mem::transmute((&x as *const i32).wrapping_offset(2)) };

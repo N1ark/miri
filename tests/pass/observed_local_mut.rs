@@ -12,6 +12,7 @@
 // only surface the bug described by the above commit if `Cell<i32>` on the stack got represented
 // as a primitive `PrimVal::I32` which is not yet the case.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 0;
     let y: *const i32 = &x;

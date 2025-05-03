@@ -4,6 +4,7 @@
 use std::ptr;
 use std::simd::prelude::*;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Pointer casts
     let _val: Simd<*const u8, 4> = Simd::<*const i32, 4>::splat(ptr::null()).cast();

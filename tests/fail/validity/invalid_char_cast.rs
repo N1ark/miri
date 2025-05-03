@@ -15,6 +15,7 @@ fn cast(ptr: *const char) -> u32 {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let v = u32::MAX;
     cast(&v as *const u32 as *const char);

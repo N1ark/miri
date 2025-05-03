@@ -3,6 +3,7 @@
 
 use std::sync::atomic::{AtomicI32, Ordering};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     static X: i32 = 0;
     let x = &X as *const i32 as *const AtomicI32;

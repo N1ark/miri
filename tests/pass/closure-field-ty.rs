@@ -1,4 +1,5 @@
 // miri issue #304
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut y = 0;
     {

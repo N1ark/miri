@@ -7,6 +7,7 @@
 use core::cell::UnsafeCell;
 use core::mem;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         ref_to_cell();

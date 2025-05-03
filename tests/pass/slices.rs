@@ -264,6 +264,7 @@ fn large_raw_slice() {
     assert_eq!(size, unsafe { std::mem::size_of_val_raw(s) });
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     slice_of_zst();
     test_iter_ref_consistency();

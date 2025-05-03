@@ -6,6 +6,7 @@ mod utils;
 
 use std::cell::UnsafeCell;
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let cell = UnsafeCell::new(42);
     let box1 = Box::new(cell);
