@@ -5,6 +5,7 @@
 //@error-in-other-file: aborted execution
 
 #[allow(deprecated, invalid_value)]
+#[kani::proof]
 fn main() {
     let _ = unsafe { std::mem::zeroed::<fn()>() };
 }

@@ -8,6 +8,7 @@ use std::cell::UnsafeCell;
 
 // UnsafeCells use the `Cell` state, so it is possible to use them with
 // few restrictions when only among themselves.
+#[kani::proof]
 fn main() {
     unsafe {
         let data = &mut UnsafeCell::new(0u8);

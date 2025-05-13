@@ -1,5 +1,6 @@
 //@compile-flags: -Zmiri-strict-provenance
 
+#[kani::proof]
 fn main() {
     let x = 22;
     let ptr = &x as *const _ as *const u8;

@@ -44,6 +44,7 @@ fn thread2() -> bool {
     false
 }
 
+#[kani::proof]
 fn main() {
     let mut success = false;
     while !success {

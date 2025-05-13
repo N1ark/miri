@@ -74,6 +74,7 @@ fn test() {
     }
 }
 
+#[kani::proof]
 fn main() {
     ref_raw_int_raw();
     example(false);

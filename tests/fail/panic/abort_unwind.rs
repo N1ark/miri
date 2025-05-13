@@ -6,6 +6,7 @@
 
 #![feature(abort_unwind)]
 
+#[kani::proof]
 fn main() {
     std::panic::abort_unwind(|| panic!("PANIC!!!"));
 }

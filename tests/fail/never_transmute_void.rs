@@ -15,6 +15,7 @@ mod m {
     }
 }
 
+#[kani::proof]
 fn main() {
     let v = unsafe { std::mem::transmute::<(), m::Void>(()) };
     m::f(v);

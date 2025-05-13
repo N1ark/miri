@@ -6,6 +6,7 @@
 #[derive(Debug)]
 struct MuchAlign;
 
+#[kani::proof]
 fn main() {
     // Try many times as this might work by chance.
     for _ in 0..20 {

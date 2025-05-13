@@ -5,6 +5,7 @@ fn unit_var() {
     x
 }
 
+#[kani::proof]
 fn main() {
     empty();
     unit_var();

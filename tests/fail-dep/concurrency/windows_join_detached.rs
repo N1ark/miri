@@ -8,6 +8,7 @@ use std::thread;
 
 use windows_sys::Win32::Foundation::{CloseHandle, HANDLE};
 
+#[kani::proof]
 fn main() {
     let thread = thread::spawn(|| ());
 

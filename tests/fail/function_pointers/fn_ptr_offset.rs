@@ -5,6 +5,7 @@ use std::mem;
 
 fn f() {}
 
+#[kani::proof]
 fn main() {
     let x: fn() = f;
     let y: *mut u8 = unsafe { mem::transmute(x) };

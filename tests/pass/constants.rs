@@ -4,6 +4,7 @@ fn foo() -> usize {
     A
 }
 
+#[kani::proof]
 fn main() {
     assert_eq!(foo(), A);
 }

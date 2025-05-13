@@ -15,6 +15,7 @@ use windows_sys::Win32::System::Threading::{INFINITE, WaitForSingleObject};
 // but miri does not implement `DuplicateHandle` yet.
 const MAIN_THREAD: HANDLE = (2i32 << 29) as HANDLE;
 
+#[kani::proof]
 fn main() {
     thread::spawn(|| {
         unsafe {

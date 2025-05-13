@@ -63,6 +63,7 @@ unsafe fn check() {
     assert_eq!(w.b, 0xDE00_0000);
 }
 
+#[kani::proof]
 fn main() {
     unsafe {
         check();

@@ -19,6 +19,7 @@ use std::mem::{size_of, transmute};
 const IDENTITY_BYTE: i32 = 0;
 const CONSTANT_BYTE: i32 = 0x63;
 
+#[kani::proof]
 fn main() {
     // Mostly copied from library/stdarch/crates/core_arch/src/x86/gfni.rs
 

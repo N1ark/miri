@@ -286,6 +286,7 @@ fn concurrent_wait_wake() {
     assert!(woken > 0 && woken < rounds);
 }
 
+#[kani::proof]
 fn main() {
     wake_nobody();
     wake_dangling();

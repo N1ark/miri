@@ -15,6 +15,7 @@ fn test_sleep() {
     assert!((after - before).as_millis() >= 100);
 }
 
+#[kani::proof]
 fn main() {
     // Check `SystemTime`.
     let now1 = SystemTime::now();

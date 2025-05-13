@@ -49,6 +49,7 @@ where
     p
 }
 
+#[kani::proof]
 fn main() {
     let a = [0, 1, 2];
     let square_local: fn(u32) -> u32 = square;

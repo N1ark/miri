@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     fn f(_: *const u8) {}
 

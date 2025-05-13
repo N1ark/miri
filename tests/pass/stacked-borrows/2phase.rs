@@ -97,6 +97,7 @@ fn aliasing_violation() {
     assert_eq!(res, 42);
 }
 
+#[kani::proof]
 fn main() {
     two_phase1();
     two_phase2();

@@ -1,5 +1,6 @@
 #![allow(invalid_value)]
 
+#[kani::proof]
 fn main() {
     trait T {}
     #[derive(Debug)]

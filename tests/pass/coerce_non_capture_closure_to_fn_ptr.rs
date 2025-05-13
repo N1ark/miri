@@ -15,6 +15,7 @@ fn force_mut1<T, R, F: FnMut(T) -> R>(f: F) -> F {
     f
 }
 
+#[kani::proof]
 fn main() {
     FOO();
     BAR(44, 45);

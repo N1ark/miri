@@ -4,6 +4,7 @@
 #![feature(never_type)]
 #![allow(unreachable_code)]
 
+#[kani::proof]
 fn main() {
     let y = &5;
     let x: ! = unsafe { *(y as *const _ as *const !) };

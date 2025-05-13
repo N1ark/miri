@@ -6,6 +6,7 @@
 
 use std::mem::MaybeUninit;
 
+#[kani::proof]
 fn main() {
     let uninit: MaybeUninit<i32> = MaybeUninit::uninit();
     let bad_ref: &i32 = unsafe { uninit.assume_init_ref() };

@@ -6,6 +6,7 @@ fn foo(x: &mut (i32, i32)) -> &mut i32 {
     ret //~ ERROR: /retag .* tag does not exist in the borrow stack/
 }
 
+#[kani::proof]
 fn main() {
     foo(&mut (1, 2));
 }

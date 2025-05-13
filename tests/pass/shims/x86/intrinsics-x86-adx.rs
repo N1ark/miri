@@ -17,6 +17,7 @@ mod x86 {
         (c_out, sum)
     }
 
+#[kani::proof]
     pub fn main() {
         assert_eq!(adc(0, 1, 1), (0, 2));
         assert_eq!(adc(1, 1, 1), (0, 3));
@@ -41,6 +42,7 @@ mod x86_64 {
         (c_out, sum)
     }
 
+#[kani::proof]
     pub fn main() {
         assert_eq!(adc(0, 1, 1), (0, 2));
         assert_eq!(adc(1, 1, 1), (0, 3));
@@ -53,6 +55,7 @@ mod x86_64 {
     }
 }
 
+#[kani::proof]
 fn main() {
     assert!(is_x86_feature_detected!("adx"));
 

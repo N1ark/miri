@@ -5,6 +5,7 @@
 use std::cell::Cell;
 use std::mem;
 
+#[kani::proof]
 fn main() {
     unsafe {
         let x = &mut Cell::new(0);

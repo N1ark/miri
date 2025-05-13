@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     let x = "hello";
     match x {

@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     unsafe {
         let p1 = libc::malloc(20);

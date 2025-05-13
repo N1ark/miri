@@ -3,6 +3,7 @@ extern "C-unwind" fn unwind() {
     panic!();
 }
 
+#[kani::proof]
 fn main() {
     extern "C" {
         fn unwind();

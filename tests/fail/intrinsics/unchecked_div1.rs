@@ -1,4 +1,5 @@
 #![feature(core_intrinsics)]
+#[kani::proof]
 fn main() {
     // MIN/-1 cannot be represented
     unsafe {

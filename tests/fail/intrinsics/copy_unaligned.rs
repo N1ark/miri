@@ -4,6 +4,7 @@
 #[rustc_intrinsic]
 unsafe fn copy_nonoverlapping<T>(src: *const T, dst: *mut T, count: usize);
 
+#[kani::proof]
 fn main() {
     let mut data = [0u16; 8];
     let ptr = (&mut data[0] as *mut u16 as *mut u8).wrapping_add(1) as *mut u16;

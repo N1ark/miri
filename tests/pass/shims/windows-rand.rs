@@ -34,6 +34,7 @@ extern "system" {
     fn ProcessPrng(pbdata: *mut u8, cbdata: usize) -> BOOL;
 }
 
+#[kani::proof]
 fn main() {
     let mut key = [0u8; 24];
     let len: u32 = size_of_val(&key).try_into().unwrap();

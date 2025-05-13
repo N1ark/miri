@@ -7,6 +7,7 @@ extern "C-unwind" fn unwind() {
     panic!();
 }
 
+#[kani::proof]
 fn main() {
     let unwind: extern "C-unwind" fn() = unwind;
     let unwind: extern "C" fn() = unsafe { std::mem::transmute(unwind) };

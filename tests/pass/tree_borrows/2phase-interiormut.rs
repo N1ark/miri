@@ -11,6 +11,7 @@ trait Thing: Sized {
 }
 impl<T> Thing for Cell<T> {}
 
+#[kani::proof]
 fn main() {
     let mut x = Cell::new(1);
     let l = &x;

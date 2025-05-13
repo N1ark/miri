@@ -7,6 +7,7 @@
 
 use std::thread;
 
+#[kani::proof]
 fn main() {
     test_read_write();
     test_race();

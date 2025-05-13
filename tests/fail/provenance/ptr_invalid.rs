@@ -1,4 +1,5 @@
 // Ensure that a `ptr::without_provenance` ptr is truly invalid.
+#[kani::proof]
 fn main() {
     let x = 42;
     let xptr = &x as *const i32;

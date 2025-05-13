@@ -12,6 +12,7 @@ fn no_codegen<T>() {
         let _ = PrintName::<T>::VOID; //~NOTE: constant
     }
 }
+#[kani::proof]
 fn main() {
     no_codegen::<i32>();
 }

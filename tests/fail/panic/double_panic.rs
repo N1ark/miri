@@ -10,6 +10,7 @@ impl Drop for Foo {
         panic!("second");
     }
 }
+#[kani::proof]
 fn main() {
     let _foo = Foo;
     panic!("first");

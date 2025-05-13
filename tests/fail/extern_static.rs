@@ -4,6 +4,7 @@ extern "C" {
     static mut FOO: i32;
 }
 
+#[kani::proof]
 fn main() {
     let _val = std::ptr::addr_of!(FOO); //~ ERROR: is not supported by Miri
 }

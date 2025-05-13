@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     #[derive(PartialEq, Eq, Debug)]
     struct A(i32);

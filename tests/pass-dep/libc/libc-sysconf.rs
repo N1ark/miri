@@ -14,6 +14,7 @@ fn test_sysconfbasic() {
     }
 }
 
+#[kani::proof]
 fn main() {
     test_sysconfbasic();
 }

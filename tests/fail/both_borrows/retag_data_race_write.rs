@@ -21,6 +21,7 @@ fn thread_2(p: SendPtr) {
     }
 }
 
+#[kani::proof]
 fn main() {
     let mut x = 0;
     let p = std::ptr::addr_of_mut!(x);

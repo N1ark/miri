@@ -2,6 +2,7 @@
 use std::ptr;
 
 // Test various stacked-borrows-related things.
+#[kani::proof]
 fn main() {
     read_does_not_invalidate1();
     read_does_not_invalidate2();

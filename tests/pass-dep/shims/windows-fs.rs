@@ -22,6 +22,7 @@ use windows_sys::Win32::Storage::FileSystem::{
     GetFileInformationByHandle, OPEN_ALWAYS, OPEN_EXISTING,
 };
 
+#[kani::proof]
 fn main() {
     unsafe {
         test_create_dir_file();

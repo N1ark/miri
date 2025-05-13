@@ -3,6 +3,7 @@ use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering::*;
 
 // Ensure that compare_exchange_weak never fails.
+#[kani::proof]
 fn main() {
     let atomic = AtomicBool::new(false);
     let tries = 100;

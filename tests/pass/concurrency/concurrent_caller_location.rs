@@ -9,6 +9,7 @@ fn initialize_inner() -> &'static Location<'static> {
     Location::caller()
 }
 
+#[kani::proof]
 fn main() {
     let j1 = spawn(initialize);
     let j2 = spawn(initialize);

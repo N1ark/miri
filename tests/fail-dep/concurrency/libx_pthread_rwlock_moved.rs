@@ -1,5 +1,6 @@
 //@ignore-target: windows # No pthreads on Windows
 
+#[kani::proof]
 fn main() {
     unsafe {
         let mut rw = libc::PTHREAD_RWLOCK_INITIALIZER;

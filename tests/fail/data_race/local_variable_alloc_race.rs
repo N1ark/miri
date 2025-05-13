@@ -34,6 +34,7 @@ fn finish(t: JoinHandle<()>, val_ptr: *mut u8) {
 }
 
 #[custom_mir(dialect = "runtime", phase = "optimized")]
+#[kani::proof]
 fn main() {
     mir! {
         let t;

@@ -1,4 +1,5 @@
 // This code is editable and runnable!
+#[kani::proof]
 fn main() {
     // A simple integer calculator:
     // `+` or `-` means add or subtract by 1

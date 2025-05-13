@@ -45,6 +45,7 @@ macro_rules! assert_approx_eq {
     };
 }
 
+#[kani::proof]
 fn main() {
     basic();
     casts();

@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     let x = Box::new(());
     let y = Box::new(());

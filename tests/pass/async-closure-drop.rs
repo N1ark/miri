@@ -29,6 +29,7 @@ impl Drop for DropMe {
     }
 }
 
+#[kani::proof]
 pub fn main() {
     block_on(async {
         let b = DropMe("hello");

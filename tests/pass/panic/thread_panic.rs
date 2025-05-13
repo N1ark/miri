@@ -19,6 +19,7 @@ fn panic_named() {
         .unwrap_err();
 }
 
+#[kani::proof]
 fn main() {
     panic();
     panic_named();

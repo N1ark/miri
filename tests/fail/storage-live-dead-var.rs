@@ -2,6 +2,7 @@
 use std::intrinsics::mir::*;
 
 #[custom_mir(dialect = "runtime")]
+#[kani::proof]
 fn main() {
     mir! {
         let val: i32;

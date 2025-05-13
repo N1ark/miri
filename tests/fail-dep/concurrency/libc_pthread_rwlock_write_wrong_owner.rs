@@ -13,6 +13,7 @@ fn new_lock() -> Arc<RwLock> {
     Arc::new(RwLock(UnsafeCell::new(libc::PTHREAD_RWLOCK_INITIALIZER)))
 }
 
+#[kani::proof]
 fn main() {
     unsafe {
         let lock = new_lock();

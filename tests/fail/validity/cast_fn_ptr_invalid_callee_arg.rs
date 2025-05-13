@@ -1,5 +1,6 @@
 //@compile-flags: -Zmiri-permissive-provenance
 
+#[kani::proof]
 fn main() {
     // Cast a function pointer such that on a call, the argument gets transmuted
     // from raw ptr to reference. This is ABI-compatible, so it's not the call that

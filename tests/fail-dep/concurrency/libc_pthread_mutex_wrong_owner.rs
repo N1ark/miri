@@ -13,6 +13,7 @@ fn new_lock() -> Arc<Mutex> {
     Arc::new(Mutex(UnsafeCell::new(libc::PTHREAD_MUTEX_INITIALIZER)))
 }
 
+#[kani::proof]
 fn main() {
     unsafe {
         let lock = new_lock();

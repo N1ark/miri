@@ -23,6 +23,7 @@ impl Future for ThingAdder<'_> {
     }
 }
 
+#[kani::proof]
 fn main() {
     let mut thing = "hello".to_owned();
     // This future has (at least) two fields, a String (`thing`) and a ThingAdder pointing to that string.

@@ -3,6 +3,7 @@ use std::mem;
 // If this is `None`, the metadata becomes padding.
 type T = Option<&'static str>;
 
+#[kani::proof]
 fn main() {
     unsafe {
         let mut p: mem::MaybeUninit<T> = mem::MaybeUninit::zeroed();

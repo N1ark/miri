@@ -3,6 +3,7 @@
 
 //@error-in-other-file: /retag .* for Unique permission .* only grants SharedReadOnly permission/
 
+#[kani::proof]
 fn main() {
     unsafe {
         let x = 0u8;

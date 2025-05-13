@@ -1,6 +1,7 @@
 //@compile-flags: -Zmiri-deterministic-concurrency
 use std::{env, thread};
 
+#[kani::proof]
 fn main() {
     // Test that miri environment is isolated when communication is disabled.
     // (`MIRI_ENV_VAR_TEST` is set by the test harness.)

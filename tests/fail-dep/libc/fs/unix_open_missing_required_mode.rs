@@ -1,6 +1,7 @@
 //@ignore-target: windows # No libc IO on Windows
 //@compile-flags: -Zmiri-disable-isolation
 
+#[kani::proof]
 fn main() {
     test_file_open_missing_needed_mode();
 }

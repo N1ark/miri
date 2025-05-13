@@ -18,6 +18,7 @@ fn transmute_strip_provenance() {
     assert_eq!(i, addr);
 }
 
+#[kani::proof]
 fn main() {
     ptr_partial_read();
     transmute_strip_provenance();

@@ -12,6 +12,7 @@ fn bar() {}
 #[repr(align(4))]
 fn baz() {}
 
+#[kani::proof]
 fn main() {
     assert!((foo as usize).is_multiple_of(256));
     assert!((bar as usize).is_multiple_of(16));

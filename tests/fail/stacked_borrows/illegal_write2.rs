@@ -1,5 +1,6 @@
 #![allow(dropping_references)]
 
+#[kani::proof]
 fn main() {
     let target = &mut 42;
     let target2 = target as *mut _;

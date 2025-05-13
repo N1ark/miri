@@ -56,6 +56,7 @@ fn basic() {
     assert_eq!(match_int_range(), 4);
 }
 
+#[kani::proof]
 pub fn main() {
     basic();
 

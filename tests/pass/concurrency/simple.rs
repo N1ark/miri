@@ -62,6 +62,7 @@ fn shared_readonly() {
     h.join().unwrap();
 }
 
+#[kani::proof]
 fn main() {
     create_and_detach();
     create_and_join();

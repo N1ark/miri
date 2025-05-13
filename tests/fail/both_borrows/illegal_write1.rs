@@ -3,6 +3,7 @@
 
 #![allow(invalid_reference_casting)]
 
+#[kani::proof]
 fn main() {
     let target = Box::new(42); // has an implicit raw
     let xref = &*target;

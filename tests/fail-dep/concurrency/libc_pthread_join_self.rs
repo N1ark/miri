@@ -6,6 +6,7 @@
 
 use std::{ptr, thread};
 
+#[kani::proof]
 fn main() {
     let handle = thread::spawn(|| {
         unsafe {

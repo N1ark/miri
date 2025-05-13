@@ -7,6 +7,7 @@ extern "C" fn panic_abort() {
     panic!()
 }
 
+#[kani::proof]
 fn main() {
     panic_abort();
 }

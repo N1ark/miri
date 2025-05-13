@@ -29,6 +29,7 @@ struct MyBox<T> {
     alloc: MaybeUninit<MyAlloc>,
 }
 
+#[kani::proof]
 fn main() {
     let b = MyBox { ptr: NonNull::from(&42), alloc: MaybeUninit::uninit() };
     let _b: Box<i32, MyAlloc> = unsafe {

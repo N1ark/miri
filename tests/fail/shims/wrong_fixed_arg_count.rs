@@ -7,6 +7,7 @@ extern "C" {
     fn open(path: *const c_char, ...) -> c_int;
 }
 
+#[kani::proof]
 fn main() {
     let c_path = CString::new(OsStr::new("./text").as_bytes()).expect("CString::new failed");
     let _fd = unsafe {

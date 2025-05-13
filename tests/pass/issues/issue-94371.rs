@@ -8,6 +8,7 @@ fn test() -> (Demo, Demo) {
     (x, y)
 }
 
+#[kani::proof]
 fn main() {
     drop(test());
 }

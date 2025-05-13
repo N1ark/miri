@@ -11,6 +11,7 @@ struct S(
 );
 type A = [i32; 4];
 
+#[kani::proof]
 fn main() {
     fn f(_: S) {}
 

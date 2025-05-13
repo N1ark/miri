@@ -2,6 +2,7 @@
 
 use std::convert::TryInto;
 
+#[kani::proof]
 fn main() {
     test_epoll_socketpair();
     test_epoll_socketpair_both_sides();

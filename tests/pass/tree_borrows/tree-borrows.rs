@@ -5,6 +5,7 @@
 
 use std::{mem, ptr};
 
+#[kani::proof]
 fn main() {
     aliasing_read_only_mutable_refs();
     string_as_mut_ptr();

@@ -8,6 +8,7 @@ use std::ptr;
 struct S(u8, u16);
 
 #[custom_mir(dialect = "runtime", phase = "optimized")]
+#[kani::proof]
 fn main() {
     mir! {
         let s: S;

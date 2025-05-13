@@ -1,6 +1,7 @@
 // This should fail even without validation
 //@compile-flags: -Zmiri-disable-validation -Cdebug-assertions=no
 
+#[kani::proof]
 fn main() {
     // Try many times as this might work by chance.
     for i in 0..20 {

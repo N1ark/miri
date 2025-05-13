@@ -1,5 +1,6 @@
 use std::cell::Cell;
 
+#[kani::proof]
 fn main() {
     unsafe {
         let root0 = Cell::new(42);

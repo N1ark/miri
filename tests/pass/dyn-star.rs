@@ -6,6 +6,7 @@
 
 use std::fmt::{Debug, Display};
 
+#[kani::proof]
 fn main() {
     make_dyn_star();
     method();

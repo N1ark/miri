@@ -11,6 +11,7 @@ impl Drop for Bomb {
 }
 
 #[allow(unreachable_code, unused_variables)]
+#[kani::proof]
 fn main() {
     let bomb = Bomb;
     handle_alloc_error(Layout::for_value(&0));

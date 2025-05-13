@@ -20,6 +20,7 @@ fn double() {
     panic!("once");
 }
 
+#[kani::proof]
 fn main() {
     assert!(catch_unwind(|| double()).is_err());
 }

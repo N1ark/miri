@@ -60,6 +60,7 @@ fn send_on_sync() {
     t.join().unwrap();
 }
 
+#[kani::proof]
 fn main() {
     simple_send();
     multiple_send();

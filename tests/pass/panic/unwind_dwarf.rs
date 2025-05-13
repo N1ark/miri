@@ -88,6 +88,7 @@ pub fn catch_unwind<R, F: FnOnce() -> R>(f: F) -> Result<R, Box<dyn Any + Send>>
     }
 }
 
+#[kani::proof]
 fn main() {
     assert_eq!(
         catch_unwind(|| panic(Box::new(42))).unwrap_err().downcast::<i32>().unwrap(),

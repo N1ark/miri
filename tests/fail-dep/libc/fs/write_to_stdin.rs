@@ -1,5 +1,6 @@
 //@ignore-target: windows # No libc IO on Windows
 
+#[kani::proof]
 fn main() -> std::io::Result<()> {
     let bytes = b"hello";
     unsafe {

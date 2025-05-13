@@ -7,6 +7,7 @@ use std::backtrace::Backtrace;
 #[global_allocator]
 static GLOBAL_ALLOCATOR: System = System;
 
+#[kani::proof]
 fn main() {
     eprint!("{}", Backtrace::capture());
 }

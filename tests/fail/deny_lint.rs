@@ -5,4 +5,5 @@
 struct Foo;
 //~^ ERROR: struct `Foo` is never constructed
 
+#[kani::proof]
 fn main() {}

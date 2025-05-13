@@ -15,6 +15,7 @@ use std::path::Path;
 #[path = "../../utils/mod.rs"]
 mod utils;
 
+#[kani::proof]
 fn main() {
     test_path_conversion();
     test_file_create_new();

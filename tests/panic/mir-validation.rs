@@ -12,6 +12,7 @@
 use core::intrinsics::mir::*;
 
 #[custom_mir(dialect = "runtime", phase = "optimized")]
+#[kani::proof]
 pub fn main() {
     mir! {
         let x: i32;

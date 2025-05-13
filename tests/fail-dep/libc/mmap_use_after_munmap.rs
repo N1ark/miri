@@ -3,6 +3,7 @@
 
 #![feature(rustc_private)]
 
+#[kani::proof]
 fn main() {
     unsafe {
         let ptr = libc::mmap(

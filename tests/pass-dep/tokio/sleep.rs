@@ -3,6 +3,7 @@
 use tokio::time::{Duration, Instant, sleep};
 
 #[tokio::main]
+#[kani::proof]
 async fn main() {
     let start = Instant::now();
     sleep(Duration::from_millis(100)).await;

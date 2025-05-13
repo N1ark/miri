@@ -1,6 +1,7 @@
 #[no_mangle]
 static FOO: () = ();
 
+#[kani::proof]
 fn main() {
     extern "C" {
         fn FOO();

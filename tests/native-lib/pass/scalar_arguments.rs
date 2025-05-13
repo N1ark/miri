@@ -24,6 +24,7 @@ extern "C" {
     fn printer();
 }
 
+#[kani::proof]
 fn main() {
     unsafe {
         // test function that adds 2 to a provided int

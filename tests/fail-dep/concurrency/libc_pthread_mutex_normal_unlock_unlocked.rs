@@ -1,5 +1,6 @@
 //@ignore-target: windows # No pthreads on Windows
 
+#[kani::proof]
 fn main() {
     unsafe {
         let mut mutexattr: libc::pthread_mutexattr_t = std::mem::zeroed();

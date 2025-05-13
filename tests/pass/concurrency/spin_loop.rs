@@ -36,6 +36,7 @@ fn two_player_ping_pong() {
     progress.join().unwrap();
 }
 
+#[kani::proof]
 fn main() {
     spin();
     two_player_ping_pong();

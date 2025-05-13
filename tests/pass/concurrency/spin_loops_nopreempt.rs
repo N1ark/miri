@@ -77,6 +77,7 @@ fn launcher() {
     }
 }
 
+#[kani::proof]
 fn main() {
     two_player_ping_pong();
     launcher();

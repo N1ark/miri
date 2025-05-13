@@ -339,6 +339,7 @@ fn test_sc_relaxed() {
     assert!(!bad);
 }
 
+#[kani::proof]
 pub fn main() {
     for _ in 0..50 {
         test_sc_store_buffering();

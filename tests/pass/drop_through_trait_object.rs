@@ -14,6 +14,7 @@ impl Drop for Bar {
 
 impl Foo for Bar {}
 
+#[kani::proof]
 fn main() {
     let b: Box<dyn Foo> = Box::new(Bar);
     assert!(unsafe { !DROP_CALLED });

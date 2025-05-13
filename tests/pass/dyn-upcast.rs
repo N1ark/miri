@@ -1,5 +1,6 @@
 use std::fmt;
 
+#[kani::proof]
 fn main() {
     basic();
     diamond();

@@ -9,6 +9,7 @@ fn foo(x: &mut i32) -> i32 {
     *x // must return 5
 }
 
+#[kani::proof]
 fn main() {
     println!("{}", foo(&mut 0));
 }

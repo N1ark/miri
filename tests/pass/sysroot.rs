@@ -6,4 +6,5 @@ extern crate proc_macro;
 extern crate std;
 extern crate test;
 
+#[kani::proof]
 fn main() {}

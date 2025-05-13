@@ -13,6 +13,7 @@ mod utils;
 // there is no *explicit* `Unique` being used here, but there is one
 // hidden a few layers inside `Vec` that should be reflected in the tree structure.
 
+#[kani::proof]
 fn main() {
     unsafe {
         let base = vec![0u8, 1];

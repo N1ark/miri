@@ -117,6 +117,7 @@ fn box_to_global() {
     }
 }
 
+#[kani::proof]
 fn main() {
     check_alloc(System);
     check_alloc(Global);

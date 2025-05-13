@@ -1,5 +1,6 @@
 //@compile-flags: -Zmiri-strict-provenance
 
+#[kani::proof]
 fn main() {
     unsafe {
         let a = [1, 2, 3];

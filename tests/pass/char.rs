@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     let c = 'x';
     assert_eq!(c, 'x');

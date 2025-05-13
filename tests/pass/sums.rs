@@ -49,6 +49,7 @@ fn two_nones() -> (Option<i16>, Option<i16>) {
     (None, None)
 }
 
+#[kani::proof]
 fn main() {
     assert_eq!(two_nones(), (None, None));
     assert_eq!(match_opt_some(), 13);

@@ -7,6 +7,7 @@ struct Foo<T: ?Sized> {
     c: T,
 }
 
+#[kani::proof]
 fn main() {
     let foo: &Foo<i32> = &Foo { a: 1, b: false, c: 2i32 };
     let foo_unsized: &Foo<dyn Send> = foo;

@@ -1,5 +1,6 @@
 use std::io::{self, IsTerminal};
 
+#[kani::proof]
 fn main() {
     // We can't really assume that this is truly a terminal, and anyway on Windows Miri will always
     // return `false` here, but we can check that the call succeeds.

@@ -2,6 +2,7 @@
 
 use std::cell::UnsafeCell;
 
+#[kani::proof]
 fn main() {
     let lock = UnsafeCell::new(libc::OS_UNFAIR_LOCK_INIT);
 

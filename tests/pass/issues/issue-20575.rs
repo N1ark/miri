@@ -1,5 +1,6 @@
 // Test that overloaded calls work with zero arity closures
 
+#[kani::proof]
 fn main() {
     let functions: [Box<dyn Fn() -> Option<()>>; 1] = [Box::new(|| None)];
 

@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     let mut v: Vec<u16> = vec![1, 2];
     // This read is also misaligned. We make sure that the OOB message has priority.

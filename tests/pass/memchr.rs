@@ -69,6 +69,7 @@ fn each_alignment_reversed() {
     }
 }
 
+#[kani::proof]
 fn main() {
     matches_one();
     matches_begin();

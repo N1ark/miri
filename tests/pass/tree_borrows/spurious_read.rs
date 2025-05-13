@@ -16,6 +16,7 @@ use std::thread;
 struct SendPtr(*mut u8);
 unsafe impl Send for SendPtr {}
 
+#[kani::proof]
 fn main() {
     retagx_retagy_spuriousx_retx_rety_writey();
 }

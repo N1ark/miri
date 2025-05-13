@@ -29,6 +29,7 @@ where
     }
 }
 
+#[kani::proof]
 fn main() {
     fuzzing_block_on(async {
         LastFuture { last: &0u32 }.await;

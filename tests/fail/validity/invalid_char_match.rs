@@ -20,6 +20,7 @@ fn switch_int(ptr: *const char) {
     }
 }
 
+#[kani::proof]
 pub fn main() {
     let v = u32::MAX;
     switch_int(&v as *const u32 as *const char);

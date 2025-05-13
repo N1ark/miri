@@ -6,6 +6,7 @@ union U {
     field: (u8, u16),
 }
 
+#[kani::proof]
 fn main() {
     unsafe {
         let p: U = mem::transmute(0u32); // The copy when `U` is returned from `transmute` should destroy padding.

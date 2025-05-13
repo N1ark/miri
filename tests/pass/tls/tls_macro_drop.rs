@@ -275,6 +275,7 @@ fn dtors_in_dtors_in_dtors() {
     signal.wait();
 }
 
+#[kani::proof]
 fn main() {
     check_destructors();
     check_blocking();

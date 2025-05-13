@@ -2,6 +2,7 @@
 //@compile-flags: -Zmiri-disable-isolation
 use std::{env, mem, ptr};
 
+#[kani::proof]
 fn main() {
     test_clocks();
     test_posix_gettimeofday();

@@ -6,6 +6,7 @@
 //@normalize-stderr-test: "\n +at [^\n]+" -> ""
 //@error-in-other-file: aborted execution
 
+#[kani::proof]
 fn main() {
     let mut data = 0usize;
     let ptr = std::ptr::addr_of_mut!(data);

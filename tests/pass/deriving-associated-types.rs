@@ -108,6 +108,7 @@ where
     },
 }
 
+#[kani::proof]
 fn main() {
     let e: Enum<i32, i32, i32> =
         Enum::Seq(0, None, 0, PrivateStruct(0), 0, 0, None, 0, None, 0, 0, None, 0, None, 0);

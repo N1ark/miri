@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     extern "C" {
         fn abort(_: i32) -> !;

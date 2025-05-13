@@ -7,6 +7,7 @@ struct Thing<'a> {
     sli: &'a mut [i32],
 }
 
+#[kani::proof]
 fn main() {
     let mut t = Thing { sli: &mut [0, 1, 2] };
     let ptr = t.sli.as_ptr();

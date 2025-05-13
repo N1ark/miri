@@ -49,6 +49,7 @@ fn check_trait_obj(val: &Foo<dyn Get>) {
     }
 }
 
+#[kani::proof]
 fn main() {
     let foo: &Foo<[u8]> = &Foo { a: 32, inner: [1, 2, 3] };
     check_val(foo);

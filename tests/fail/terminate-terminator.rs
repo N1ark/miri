@@ -23,6 +23,7 @@ extern "C" fn panic_abort() {
     has_cleanup();
 }
 
+#[kani::proof]
 fn main() {
     panic_abort();
 }

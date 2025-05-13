@@ -6,6 +6,7 @@
 use std::cell::RefCell;
 use std::mem;
 
+#[kani::proof]
 fn main() {
     unsafe {
         let x = &mut RefCell::new(0);

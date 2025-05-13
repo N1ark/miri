@@ -1,5 +1,6 @@
 use std::mem;
 
+#[kani::proof]
 fn main() {
     unsafe {
         let ptr = Box::into_raw(Box::new(0u8));

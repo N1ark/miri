@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     fn f(_: (i32, i32)) {}
 

@@ -3,6 +3,7 @@
 #[no_mangle]
 fn foo() {}
 
+#[kani::proof]
 fn main() {
     #[cfg(any(cache, fn_ptr))]
     extern "Rust" {

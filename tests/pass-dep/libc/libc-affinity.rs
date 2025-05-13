@@ -205,6 +205,7 @@ fn parent_child() {
     assert_eq!(err, 0);
 }
 
+#[kani::proof]
 fn main() {
     null_pointers();
     configure_no_cpus();

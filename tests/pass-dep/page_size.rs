@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     let page_size = page_size::get();
 

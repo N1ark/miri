@@ -8,6 +8,7 @@ fn never_returns() {
     }
 }
 
+#[kani::proof]
 pub fn main() {
     let value = 'outer: loop {
         if 1 == 1 {

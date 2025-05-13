@@ -1,6 +1,7 @@
 #![feature(unsized_locals)]
 #![allow(incomplete_features)]
 
+#[kani::proof]
 fn main() {
     pub trait Foo {
         fn foo(self) -> String;

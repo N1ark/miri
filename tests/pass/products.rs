@@ -26,6 +26,7 @@ fn field_access() -> (i8, i8) {
     (p.x, p.y)
 }
 
+#[kani::proof]
 fn main() {
     assert_eq!(tuple(), (1,));
     assert_eq!(tuple_2(), (1, 2));

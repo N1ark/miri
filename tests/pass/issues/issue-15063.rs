@@ -6,6 +6,7 @@ enum Two {
 impl Drop for Two {
     fn drop(&mut self) {}
 }
+#[kani::proof]
 fn main() {
     let _k = Two::A;
 }

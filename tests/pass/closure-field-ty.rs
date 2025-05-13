@@ -1,4 +1,5 @@
 // miri issue #304
+#[kani::proof]
 fn main() {
     let mut y = 0;
     {

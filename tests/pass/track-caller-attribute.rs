@@ -266,6 +266,7 @@ fn test_coroutine() {
     assert_eq!(non_tracked_loc.column(), 57);
 }
 
+#[kani::proof]
 fn main() {
     test_basic();
     test_fn_ptr();

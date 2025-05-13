@@ -1,5 +1,6 @@
 //@ignore-target: windows # No libc IO on Windows
 
+#[kani::proof]
 fn main() -> std::io::Result<()> {
     let mut bytes = [0u8; 512];
     unsafe {

@@ -12,6 +12,7 @@ fn oof(mut b: Box<u8>) {
     utils::run_provenance_gc();
 }
 
+#[kani::proof]
 fn main() {
     oof(Box::new(0u8));
 }

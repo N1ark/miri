@@ -11,6 +11,7 @@ fn fun2() {
     let _x = unsafe { *PTR }; //~ ERROR: /read access .* tag does not exist in the borrow stack/
 }
 
+#[kani::proof]
 fn main() {
     let mut val = 0;
     let val = &mut val;

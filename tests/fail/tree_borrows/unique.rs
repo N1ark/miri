@@ -9,6 +9,7 @@
 #![feature(ptr_internals)]
 use core::ptr::Unique;
 
+#[kani::proof]
 fn main() {
     let mut data = 0u8;
     let refmut = &mut data;

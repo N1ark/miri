@@ -4,6 +4,7 @@ use std::sync::atomic::*;
 
 static P: AtomicPtr<u8> = AtomicPtr::new(core::ptr::null_mut());
 
+#[kani::proof]
 fn main() {
     // Create the local variable, and initialize it.
     let mut val: u8 = 0;

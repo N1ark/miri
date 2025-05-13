@@ -1,6 +1,7 @@
 #![feature(core_intrinsics)]
 use std::intrinsics;
 
+#[kani::proof]
 fn main() {
     unsafe {
         let _n = intrinsics::unchecked_shl(1i8, -1);

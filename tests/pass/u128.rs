@@ -1,5 +1,6 @@
 use std::hint::black_box as b;
 
+#[kani::proof]
 fn main() {
     let x: u128 = 0xFFFF_FFFF_FFFF_FFFF__FFFF_FFFF_FFFF_FFFF;
     assert_eq!(0, !x);

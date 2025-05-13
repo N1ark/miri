@@ -28,6 +28,7 @@ fn three(a: &mut [(i32, i32)], i: usize, j: usize) -> (&mut i32, &mut i32) {
     (&mut a[i].0, &mut a[j].1)
 }
 
+#[kani::proof]
 fn main() {
     one();
     two();

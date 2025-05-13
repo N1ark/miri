@@ -33,6 +33,7 @@ where
     }
 }
 
+#[kani::proof]
 fn main() {
     let mut coroutine_iterator_2 = {
         let mut coroutine_iterator = Box::new(CoroutineIteratorAdapter(firstn()));

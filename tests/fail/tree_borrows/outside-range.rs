@@ -2,6 +2,7 @@
 
 // Check that in the case of locations outside the range of a pointer,
 // protectors trigger if and only if the location has already been accessed
+#[kani::proof]
 fn main() {
     unsafe {
         let data = &mut [0u8, 1, 2, 3];

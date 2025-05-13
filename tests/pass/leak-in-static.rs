@@ -3,6 +3,7 @@ use std::sync::atomic::{AtomicPtr, Ordering};
 
 static mut LEAKER: Option<Box<Vec<i32>>> = None;
 
+#[kani::proof]
 fn main() {
     // Having memory "leaked" in globals is allowed.
     unsafe {

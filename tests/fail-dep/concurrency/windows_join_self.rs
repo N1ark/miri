@@ -10,6 +10,7 @@ use std::thread;
 use windows_sys::Win32::Foundation::WAIT_OBJECT_0;
 use windows_sys::Win32::System::Threading::{GetCurrentThread, INFINITE, WaitForSingleObject};
 
+#[kani::proof]
 fn main() {
     thread::spawn(|| {
         unsafe {

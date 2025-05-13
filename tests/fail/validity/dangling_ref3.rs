@@ -7,6 +7,7 @@ fn dangling() -> *const u8 {
     &x as *const _
 }
 
+#[kani::proof]
 fn main() {
     let _x: &i32 = unsafe { mem::transmute(dangling()) }; //~ ERROR: dangling reference (use-after-free)
 }

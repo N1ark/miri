@@ -14,6 +14,7 @@ fn invalid_array() {
     }
 }
 
+#[kani::proof]
 fn main() {
     invalid_array();
 }

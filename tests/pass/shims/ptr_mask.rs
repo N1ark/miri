@@ -1,5 +1,6 @@
 #![feature(ptr_mask)]
 
+#[kani::proof]
 fn main() {
     let v: u32 = 0xABCDABCD;
     let ptr: *const u32 = &v;

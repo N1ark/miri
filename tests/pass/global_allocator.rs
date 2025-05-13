@@ -26,6 +26,7 @@ unsafe impl GlobalAlloc for Allocator {
     }
 }
 
+#[kani::proof]
 fn main() {
     // Only okay because we explicitly set a global allocator that uses the system allocator!
     let l = Layout::from_size_align(123, 1).unwrap();

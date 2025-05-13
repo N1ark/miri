@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     let f: fn() -> ! = || std::process::exit(0);
     f();

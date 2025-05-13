@@ -4,6 +4,7 @@
 //@compile-flags: -Zmiri-deterministic-concurrency
 use std::thread;
 
+#[kani::proof]
 fn main() {
     static mut VAL: u8 = 0;
     let mut fds = [-1, -1];

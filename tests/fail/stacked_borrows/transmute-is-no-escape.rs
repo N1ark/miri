@@ -5,6 +5,7 @@
 // `run-pass/stacked-borrows.rs`), and thus increase overall complexity.
 use std::mem;
 
+#[kani::proof]
 fn main() {
     let mut x: [i32; 2] = [42, 43];
     let _raw: *mut i32 = unsafe { mem::transmute(&mut x[0]) };

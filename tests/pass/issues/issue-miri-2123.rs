@@ -10,6 +10,7 @@ fn uwu(thin: *const (), meta: &'static ()) -> *const dyn Foo {
     ptr::from_raw_parts(thin, unsafe { mem::transmute(meta) })
 }
 
+#[kani::proof]
 fn main() {
     unsafe {
         let orig = 1_u32;

@@ -6,6 +6,7 @@ use std::fs::{self, File};
 use std::io::ErrorKind;
 use std::os::unix;
 
+#[kani::proof]
 fn main() {
     // test `open`
     assert_eq!(File::create("foo.txt").unwrap_err().kind(), ErrorKind::PermissionDenied);

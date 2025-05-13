@@ -28,6 +28,7 @@ fn call(f: fn(NonZero<u32>)) {
     }
 }
 
+#[kani::proof]
 fn main() {
     let f: fn(NonZero<u32>) = unsafe { std::mem::transmute(f as fn(u32)) };
     call(f);

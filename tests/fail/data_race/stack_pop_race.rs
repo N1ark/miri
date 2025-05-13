@@ -7,6 +7,7 @@ use std::thread;
 struct MakeSend(*const i32);
 unsafe impl Send for MakeSend {}
 
+#[kani::proof]
 fn main() {
     race(0);
 }

@@ -20,6 +20,7 @@ fn match_bool() -> i16 {
     }
 }
 
+#[kani::proof]
 fn main() {
     assert!(boolean());
     assert_eq!(if_false(), 0);

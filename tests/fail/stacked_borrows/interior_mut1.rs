@@ -1,5 +1,6 @@
 use std::cell::UnsafeCell;
 
+#[kani::proof]
 fn main() {
     unsafe {
         let c = &UnsafeCell::new(UnsafeCell::new(0));

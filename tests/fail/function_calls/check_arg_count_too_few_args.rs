@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     extern "C" {
         fn malloc() -> *mut std::ffi::c_void;

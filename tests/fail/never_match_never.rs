@@ -4,6 +4,7 @@
 #![feature(never_type)]
 #![allow(unreachable_code)]
 
+#[kani::proof]
 fn main() {
     let ptr: *const (i32, !) = &0i32 as *const i32 as *const _;
     unsafe { match (*ptr).1 {} } //~ ERROR: entering unreachable code

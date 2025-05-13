@@ -6,6 +6,7 @@ extern "Rust" {
     fn miri_start_unwind(payload: *mut u8) -> !;
 }
 
+#[kani::proof]
 fn main() {
     unsafe {
         miri_start_unwind(&mut 0); //~ ERROR: unwinding past a stack frame that does not allow unwinding

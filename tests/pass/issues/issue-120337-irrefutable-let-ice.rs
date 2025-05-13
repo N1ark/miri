@@ -11,6 +11,7 @@ pub union U {
     e: E,
 }
 
+#[kani::proof]
 fn main() {
     let E::A(ref _a) = unsafe { &(&U { u: () }).e };
 }

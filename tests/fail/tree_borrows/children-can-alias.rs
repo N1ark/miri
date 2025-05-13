@@ -10,6 +10,7 @@
 
 use core::ptr::{Unique, addr_of_mut};
 
+#[kani::proof]
 fn main() {
     let mut data = 0u8;
     let raw = addr_of_mut!(data);

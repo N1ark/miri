@@ -4,6 +4,7 @@ const FOO: u32 = [X - Y, Y - X][(X < Y) as usize];
 //~^ERROR: evaluation of constant value failed
 
 #[rustfmt::skip] // rustfmt bug: https://github.com/rust-lang/rustfmt/issues/5391
+#[kani::proof]
 fn main() {
     println!("{}", FOO);
 }

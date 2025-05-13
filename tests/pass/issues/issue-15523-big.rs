@@ -22,6 +22,7 @@ enum Ei64 {
     Pos1 = 1,
 }
 
+#[kani::proof]
 fn main() {
     assert!(Eu64::Pos2 > Eu64::Pos1);
     assert!(Eu64::Pos2 < Eu64::PosMax);

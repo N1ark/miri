@@ -13,6 +13,7 @@ use core::ptr::Unique;
 
 // Check general handling of Unique
 
+#[kani::proof]
 fn main() {
     unsafe {
         let base = &mut 5u8;

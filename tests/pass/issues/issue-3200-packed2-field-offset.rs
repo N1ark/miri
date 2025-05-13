@@ -26,6 +26,7 @@ impl PackedSized {
     }
 }
 
+#[kani::proof]
 fn main() {
     unsafe {
         let p = PackedSized { f: 0, d: [1, 2, 3, 4] };

@@ -1,5 +1,6 @@
 //@compile-flags: -Zmiri-permissive-provenance
 
+#[kani::proof]
 fn main() {
     unsafe {
         let root = &mut 42;

@@ -1,5 +1,6 @@
 #![feature(core_intrinsics)]
 
+#[kani::proof]
 fn main() {
     let x = 5;
     unsafe {

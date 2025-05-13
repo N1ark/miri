@@ -1,5 +1,6 @@
 //@ignore-target: windows # Supported only on unixes
 
+#[kani::proof]
 fn main() {
     unsafe {
         let mut buf = vec![0u8; 32];

@@ -89,6 +89,7 @@ fn metadata_vtable() {
     assert_eq!(meta.align_of(), mem::align_of::<T>());
 }
 
+#[kani::proof]
 fn main() {
     assert_eq!(one_line_ref(), 1);
     assert_eq!(basic_ref(), 1);

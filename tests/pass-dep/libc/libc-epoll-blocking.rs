@@ -8,6 +8,7 @@ use std::thread::spawn;
 
 // This is a set of testcases for blocking epoll.
 
+#[kani::proof]
 fn main() {
     test_epoll_block_without_notification();
     test_epoll_block_then_unblock();

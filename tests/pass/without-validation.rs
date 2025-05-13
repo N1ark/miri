@@ -19,6 +19,7 @@ fn refcell_unsize() {
     }
 }
 
+#[kani::proof]
 fn main() {
     refcell_unsize();
 }

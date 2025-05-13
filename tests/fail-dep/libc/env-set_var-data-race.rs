@@ -3,6 +3,7 @@
 
 use std::{env, thread};
 
+#[kani::proof]
 fn main() {
     let t = thread::spawn(|| unsafe {
         // Access the environment in another thread without taking the env lock.

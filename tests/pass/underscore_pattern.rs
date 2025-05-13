@@ -3,6 +3,7 @@
 
 use std::ptr;
 
+#[kani::proof]
 fn main() {
     dangling_match();
     invalid_match();

@@ -81,6 +81,7 @@ fn test2() {
     assert_eq!(42, with_dyn.hello());
 }
 
+#[kani::proof]
 fn main() {
     test1();
     test2();

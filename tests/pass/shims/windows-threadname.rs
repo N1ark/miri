@@ -21,6 +21,7 @@ fn to_u16s<S: AsRef<OsStr>>(s: S) -> Vec<u16> {
     result
 }
 
+#[kani::proof]
 fn main() {
     unsafe {
         let name = c"mythreadname";

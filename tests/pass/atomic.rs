@@ -9,6 +9,7 @@
 use std::sync::atomic::Ordering::*;
 use std::sync::atomic::{AtomicBool, AtomicIsize, AtomicPtr, AtomicU64, compiler_fence, fence};
 
+#[kani::proof]
 fn main() {
     atomic_bool();
     atomic_all_ops();

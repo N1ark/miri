@@ -4,6 +4,7 @@ const UNALIGNED_READ: () = unsafe {
     ptr.read(); //~ERROR: evaluation of constant value failed
 };
 
+#[kani::proof]
 fn main() {
     let _x = UNALIGNED_READ;
 }

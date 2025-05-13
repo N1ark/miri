@@ -8,6 +8,7 @@ pub fn safe(x: &i32, y: &mut i32) {
     *y = 2; //~[tree] ERROR: /write access through .* is forbidden/
 }
 
+#[kani::proof]
 fn main() {
     let mut x = 0;
     let xref = &mut x;

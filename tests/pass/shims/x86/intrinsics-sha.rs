@@ -29,6 +29,7 @@ macro_rules! schedule_rounds4 {
     }};
 }
 
+#[kani::proof]
 fn main() {
     assert!(is_x86_feature_detected!("sha"));
     assert!(is_x86_feature_detected!("sse2"));

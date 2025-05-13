@@ -708,6 +708,7 @@ fn simd_ops_non_pow2() {
     assert_eq!(z.0, [3u32; 3]);
 }
 
+#[kani::proof]
 fn main() {
     simd_mask();
     simd_ops_f32();

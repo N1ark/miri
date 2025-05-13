@@ -1,5 +1,6 @@
 struct Test<T: ?Sized>(T);
 
+#[kani::proof]
 fn main() {
     let x = Test([1, 2, 3]);
     let x: &Test<[i32]> = &x;

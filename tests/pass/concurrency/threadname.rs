@@ -1,5 +1,6 @@
 use std::thread;
 
+#[kani::proof]
 fn main() {
     // When we have not set the name...
     thread::spawn(|| {

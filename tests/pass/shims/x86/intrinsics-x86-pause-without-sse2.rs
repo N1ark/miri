@@ -7,6 +7,7 @@ use std::arch::x86::*;
 #[cfg(target_arch = "x86_64")]
 use std::arch::x86_64::*;
 
+#[kani::proof]
 fn main() {
     assert!(!is_x86_feature_detected!("sse2"));
 

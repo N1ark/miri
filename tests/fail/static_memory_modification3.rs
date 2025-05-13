@@ -4,6 +4,7 @@
 use std::mem::transmute;
 
 #[allow(mutable_transmutes)]
+#[kani::proof]
 fn main() {
     unsafe {
         let bs = b"this is a test";

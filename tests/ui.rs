@@ -310,6 +310,7 @@ fn get_target() -> String {
     env::var("MIRI_TEST_TARGET").ok().unwrap_or_else(get_host)
 }
 
+#[kani::proof]
 fn main() -> Result<()> {
     ui_test::color_eyre::install()?;
 

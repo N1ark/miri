@@ -25,6 +25,7 @@ where
     }
 }
 
+#[kani::proof]
 fn main() {
     thread::spawn(|| {
         register(|| println!("dtor 2"));

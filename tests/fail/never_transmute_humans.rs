@@ -5,6 +5,7 @@
 
 struct Human;
 
+#[kani::proof]
 fn main() {
     let _x: ! = unsafe {
         std::mem::transmute::<Human, !>(Human) //~ ERROR: entering unreachable code

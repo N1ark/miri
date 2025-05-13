@@ -9,6 +9,7 @@ mod utils;
 
 use std::cell::UnsafeCell;
 
+#[kani::proof]
 fn main() {
     unsafe {
         let n = &mut UnsafeCell::new(0u8);

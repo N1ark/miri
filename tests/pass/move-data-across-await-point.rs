@@ -66,6 +66,7 @@ fn run_fut<T>(fut: impl Future<Output = T>) -> T {
     }
 }
 
+#[kani::proof]
 fn main() {
     run_fut(data_moved_async());
     data_moved();

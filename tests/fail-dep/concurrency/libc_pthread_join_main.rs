@@ -4,6 +4,7 @@
 
 use std::{ptr, thread};
 
+#[kani::proof]
 fn main() {
     let thread_id: libc::pthread_t = unsafe { libc::pthread_self() };
     let handle = thread::spawn(move || {

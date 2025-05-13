@@ -20,6 +20,7 @@ impl<V, U> Drop for S<U, V> {
     }
 }
 
+#[kani::proof]
 fn main() {
     S::new(0u8, 1u16);
 }

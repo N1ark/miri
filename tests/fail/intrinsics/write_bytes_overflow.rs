@@ -1,5 +1,6 @@
 use std::mem;
 
+#[kani::proof]
 fn main() {
     let mut y = 0;
     unsafe {

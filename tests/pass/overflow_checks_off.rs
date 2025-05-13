@@ -11,6 +11,7 @@
 // so that we can test runtime overflow checks
 #![allow(arithmetic_overflow)]
 
+#[kani::proof]
 fn main() {
     assert_eq!(-{ -0x80i8 }, -0x80);
 

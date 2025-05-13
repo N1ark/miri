@@ -6,6 +6,7 @@ use std::cell::Cell;
 
 /// Ensure that leaks through `thread_local` statics *not in the main thread*
 /// are detected.
+#[kani::proof]
 pub fn main() {
     #[thread_local]
     static TLS: Cell<Option<&'static i32>> = Cell::new(None);

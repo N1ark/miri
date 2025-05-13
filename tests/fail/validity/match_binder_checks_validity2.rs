@@ -1,3 +1,4 @@
+#[kani::proof]
 fn main() {
     #[derive(Copy, Clone)]
     union Uninit<T: Copy> {

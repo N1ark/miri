@@ -12,6 +12,7 @@ struct S {
     a: Newtype,
 }
 
+#[kani::proof]
 fn main() {
     let buf = [0i32; 4];
 

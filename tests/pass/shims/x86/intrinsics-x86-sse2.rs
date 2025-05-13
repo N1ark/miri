@@ -8,6 +8,7 @@ use std::arch::x86_64::*;
 use std::f64::NAN;
 use std::mem::transmute;
 
+#[kani::proof]
 fn main() {
     assert!(is_x86_feature_detected!("sse2"));
 

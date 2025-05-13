@@ -14,6 +14,7 @@ use std::path::PathBuf;
 #[path = "../../utils/mod.rs"]
 mod utils;
 
+#[kani::proof]
 fn main() {
     test_dup();
     test_dup_stdout_stderr();

@@ -2,6 +2,7 @@
 //@ignore-target: windows wasm
 //@only-on-host
 
+#[kani::proof]
 fn main() {
     test_access_pointer();
     test_access_simple();
