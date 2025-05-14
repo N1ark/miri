@@ -28,7 +28,7 @@ fn main() {
         assert_eq!(size_of_val_raw(0x100 as *const i32), 4);
     }
 
-    assert_eq!(intrinsics::type_name::<Option<i32>>(), "core::option::Option<i32>");
+    assert_eq!(intrinsics::type_name::<Option<i32>>(), "std::option::Option<i32>");
 
     assert_eq!(intrinsics::likely(false), false);
     assert_eq!(intrinsics::unlikely(true), true);

@@ -4,11 +4,11 @@
 
 #![feature(avx512_target_feature, stdarch_x86_avx512)]
 
-use core::mem::transmute;
 #[cfg(target_arch = "x86")]
 use std::arch::x86::*;
 #[cfg(target_arch = "x86_64")]
 use std::arch::x86_64::*;
+use std::mem::transmute;
 
 fn main() {
     assert!(is_x86_feature_detected!("aes"));

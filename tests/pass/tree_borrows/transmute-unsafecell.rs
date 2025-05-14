@@ -4,8 +4,8 @@
 //! All transmutations should work, as long as we don't do any actual accesses
 //! that violate immutability.
 
-use core::cell::UnsafeCell;
-use core::mem;
+use std::cell::UnsafeCell;
+use std::mem;
 
 fn main() {
     unsafe {

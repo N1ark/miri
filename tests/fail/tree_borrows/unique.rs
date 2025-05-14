@@ -7,7 +7,7 @@
 // iff `Unique` was specially reborrowed.
 
 #![feature(ptr_internals)]
-use core::ptr::Unique;
+use std::ptr::Unique;
 
 fn main() {
     let mut data = 0u8;

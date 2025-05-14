@@ -1,6 +1,6 @@
 //@compile-flags: -Zmiri-tree-borrows
 
-use core::ptr::addr_of_mut;
+use std::ptr::addr_of_mut;
 
 // Check that the diagnostics correctly report the exact range at fault
 // and trim irrelevant events.

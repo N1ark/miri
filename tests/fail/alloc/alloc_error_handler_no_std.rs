@@ -8,7 +8,7 @@
 extern crate alloc;
 
 use alloc::alloc::*;
-use core::fmt::Write;
+use std::fmt::Write;
 
 #[path = "../../utils/mod.no_std.rs"]
 mod utils;
@@ -16,10 +16,10 @@ mod utils;
 // The default no_std alloc_error_handler is a panic.
 
 #[panic_handler]
-fn panic_handler(panic_info: &core::panic::PanicInfo) -> ! {
+fn panic_handler(panic_info: &std::panic::PanicInfo) -> ! {
     let _ = writeln!(utils::MiriStderr, "custom panic handler called!");
     let _ = writeln!(utils::MiriStderr, "{panic_info}");
-    core::intrinsics::abort(); //~ERROR: aborted
+    std::intrinsics::abort(); //~ERROR: aborted
 }
 
 // rustc requires us to provide some more things that aren't actually used by this test

@@ -4,7 +4,7 @@
 // this is the opposite situation: the Write is not problematic because
 // the Protector has not yet been added and the Reserved has interior
 // mutability.
-use core::cell::Cell;
+use std::cell::Cell;
 
 trait Thing: Sized {
     fn do_the_thing(&mut self, _s: i32) {}

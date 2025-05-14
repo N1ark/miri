@@ -405,7 +405,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_i32gather_epi32() {
-        let arr: [i32; 128] = core::array::from_fn(|i| i as i32);
+        let arr: [i32; 128] = std::array::from_fn(|i| i as i32);
         // A multiplier of 4 is word-addressing
         let r = _mm_i32gather_epi32::<4>(arr.as_ptr(), _mm_setr_epi32(0, 16, 32, 48));
         assert_eq_m128i(r, _mm_setr_epi32(0, 16, 32, 48));
@@ -414,7 +414,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_mask_i32gather_epi32() {
-        let arr: [i32; 128] = core::array::from_fn(|i| i as i32);
+        let arr: [i32; 128] = std::array::from_fn(|i| i as i32);
         // A multiplier of 4 is word-addressing
         let r = _mm_mask_i32gather_epi32::<4>(
             _mm_set1_epi32(256),
@@ -428,7 +428,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_i32gather_epi32() {
-        let arr: [i32; 128] = core::array::from_fn(|i| i as i32);
+        let arr: [i32; 128] = std::array::from_fn(|i| i as i32);
         // A multiplier of 4 is word-addressing
         let r =
             _mm256_i32gather_epi32::<4>(arr.as_ptr(), _mm256_setr_epi32(0, 16, 32, 48, 1, 2, 3, 4));
@@ -438,7 +438,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_mask_i32gather_epi32() {
-        let arr: [i32; 128] = core::array::from_fn(|i| i as i32);
+        let arr: [i32; 128] = std::array::from_fn(|i| i as i32);
         // A multiplier of 4 is word-addressing
         let r = _mm256_mask_i32gather_epi32::<4>(
             _mm256_set1_epi32(256),
@@ -452,7 +452,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_i32gather_ps() {
-        let arr: [f32; 128] = core::array::from_fn(|i| i as f32);
+        let arr: [f32; 128] = std::array::from_fn(|i| i as f32);
         // A multiplier of 4 is word-addressing for f32s
         let r = _mm_i32gather_ps::<4>(arr.as_ptr(), _mm_setr_epi32(0, 16, 32, 48));
         assert_eq_m128(r, _mm_setr_ps(0.0, 16.0, 32.0, 48.0));
@@ -461,7 +461,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_mask_i32gather_ps() {
-        let arr: [f32; 128] = core::array::from_fn(|i| i as f32);
+        let arr: [f32; 128] = std::array::from_fn(|i| i as f32);
         // A multiplier of 4 is word-addressing for f32s
         let r = _mm_mask_i32gather_ps::<4>(
             _mm_set1_ps(256.0),
@@ -475,7 +475,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_i32gather_ps() {
-        let arr: [f32; 128] = core::array::from_fn(|i| i as f32);
+        let arr: [f32; 128] = std::array::from_fn(|i| i as f32);
         // A multiplier of 4 is word-addressing for f32s
         let r =
             _mm256_i32gather_ps::<4>(arr.as_ptr(), _mm256_setr_epi32(0, 16, 32, 48, 1, 2, 3, 4));
@@ -485,7 +485,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_mask_i32gather_ps() {
-        let arr: [f32; 128] = core::array::from_fn(|i| i as f32);
+        let arr: [f32; 128] = std::array::from_fn(|i| i as f32);
         // A multiplier of 4 is word-addressing for f32s
         let r = _mm256_mask_i32gather_ps::<4>(
             _mm256_set1_ps(256.0),
@@ -499,7 +499,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_i32gather_epi64() {
-        let arr: [i64; 128] = core::array::from_fn(|i| i as i64);
+        let arr: [i64; 128] = std::array::from_fn(|i| i as i64);
         // A multiplier of 8 is word-addressing for i64s
         let r = _mm_i32gather_epi64::<8>(arr.as_ptr(), _mm_setr_epi32(0, 16, 0, 0));
         assert_eq_m128i(r, _mm_setr_epi64x(0, 16));
@@ -508,7 +508,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_mask_i32gather_epi64() {
-        let arr: [i64; 128] = core::array::from_fn(|i| i as i64);
+        let arr: [i64; 128] = std::array::from_fn(|i| i as i64);
         // A multiplier of 8 is word-addressing for i64s
         let r = _mm_mask_i32gather_epi64::<8>(
             _mm_set1_epi64x(256),
@@ -522,7 +522,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_i32gather_epi64() {
-        let arr: [i64; 128] = core::array::from_fn(|i| i as i64);
+        let arr: [i64; 128] = std::array::from_fn(|i| i as i64);
         // A multiplier of 8 is word-addressing for i64s
         let r = _mm256_i32gather_epi64::<8>(arr.as_ptr(), _mm_setr_epi32(0, 16, 32, 48));
         assert_eq_m256i(r, _mm256_setr_epi64x(0, 16, 32, 48));
@@ -531,7 +531,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_mask_i32gather_epi64() {
-        let arr: [i64; 128] = core::array::from_fn(|i| i as i64);
+        let arr: [i64; 128] = std::array::from_fn(|i| i as i64);
         // A multiplier of 8 is word-addressing for i64s
         let r = _mm256_mask_i32gather_epi64::<8>(
             _mm256_set1_epi64x(256),
@@ -545,7 +545,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_i32gather_pd() {
-        let arr: [f64; 128] = core::array::from_fn(|i| i as f64);
+        let arr: [f64; 128] = std::array::from_fn(|i| i as f64);
         // A multiplier of 8 is word-addressing for f64s
         let r = _mm_i32gather_pd::<8>(arr.as_ptr(), _mm_setr_epi32(0, 16, 0, 0));
         assert_eq_m128d(r, _mm_setr_pd(0.0, 16.0));
@@ -554,7 +554,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_mask_i32gather_pd() {
-        let arr: [f64; 128] = core::array::from_fn(|i| i as f64);
+        let arr: [f64; 128] = std::array::from_fn(|i| i as f64);
         // A multiplier of 8 is word-addressing for f64s
         let r = _mm_mask_i32gather_pd::<8>(
             _mm_set1_pd(256.0),
@@ -568,7 +568,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_i32gather_pd() {
-        let arr: [f64; 128] = core::array::from_fn(|i| i as f64);
+        let arr: [f64; 128] = std::array::from_fn(|i| i as f64);
         // A multiplier of 8 is word-addressing for f64s
         let r = _mm256_i32gather_pd::<8>(arr.as_ptr(), _mm_setr_epi32(0, 16, 32, 48));
         assert_eq_m256d(r, _mm256_setr_pd(0.0, 16.0, 32.0, 48.0));
@@ -577,7 +577,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_mask_i32gather_pd() {
-        let arr: [f64; 128] = core::array::from_fn(|i| i as f64);
+        let arr: [f64; 128] = std::array::from_fn(|i| i as f64);
         // A multiplier of 8 is word-addressing for f64s
         let r = _mm256_mask_i32gather_pd::<8>(
             _mm256_set1_pd(256.0),
@@ -591,7 +591,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_i64gather_epi32() {
-        let arr: [i32; 128] = core::array::from_fn(|i| i as i32);
+        let arr: [i32; 128] = std::array::from_fn(|i| i as i32);
         // A multiplier of 4 is word-addressing
         let r = _mm_i64gather_epi32::<4>(arr.as_ptr(), _mm_setr_epi64x(0, 16));
         assert_eq_m128i(r, _mm_setr_epi32(0, 16, 0, 0));
@@ -600,7 +600,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_mask_i64gather_epi32() {
-        let arr: [i32; 128] = core::array::from_fn(|i| i as i32);
+        let arr: [i32; 128] = std::array::from_fn(|i| i as i32);
         // A multiplier of 4 is word-addressing
         let r = _mm_mask_i64gather_epi32::<4>(
             _mm_set1_epi32(256),
@@ -614,7 +614,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_i64gather_epi32() {
-        let arr: [i32; 128] = core::array::from_fn(|i| i as i32);
+        let arr: [i32; 128] = std::array::from_fn(|i| i as i32);
         // A multiplier of 4 is word-addressing
         let r = _mm256_i64gather_epi32::<4>(arr.as_ptr(), _mm256_setr_epi64x(0, 16, 32, 48));
         assert_eq_m128i(r, _mm_setr_epi32(0, 16, 32, 48));
@@ -623,7 +623,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_mask_i64gather_epi32() {
-        let arr: [i32; 128] = core::array::from_fn(|i| i as i32);
+        let arr: [i32; 128] = std::array::from_fn(|i| i as i32);
         // A multiplier of 4 is word-addressing
         let r = _mm256_mask_i64gather_epi32::<4>(
             _mm_set1_epi32(256),
@@ -637,7 +637,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_i64gather_ps() {
-        let arr: [f32; 128] = core::array::from_fn(|i| i as f32);
+        let arr: [f32; 128] = std::array::from_fn(|i| i as f32);
         // A multiplier of 4 is word-addressing for f32s
         let r = _mm_i64gather_ps::<4>(arr.as_ptr(), _mm_setr_epi64x(0, 16));
         assert_eq_m128(r, _mm_setr_ps(0.0, 16.0, 0.0, 0.0));
@@ -646,7 +646,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_mask_i64gather_ps() {
-        let arr: [f32; 128] = core::array::from_fn(|i| i as f32);
+        let arr: [f32; 128] = std::array::from_fn(|i| i as f32);
         // A multiplier of 4 is word-addressing for f32s
         let r = _mm_mask_i64gather_ps::<4>(
             _mm_set1_ps(256.0),
@@ -660,7 +660,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_i64gather_ps() {
-        let arr: [f32; 128] = core::array::from_fn(|i| i as f32);
+        let arr: [f32; 128] = std::array::from_fn(|i| i as f32);
         // A multiplier of 4 is word-addressing for f32s
         let r = _mm256_i64gather_ps::<4>(arr.as_ptr(), _mm256_setr_epi64x(0, 16, 32, 48));
         assert_eq_m128(r, _mm_setr_ps(0.0, 16.0, 32.0, 48.0));
@@ -669,7 +669,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_mask_i64gather_ps() {
-        let arr: [f32; 128] = core::array::from_fn(|i| i as f32);
+        let arr: [f32; 128] = std::array::from_fn(|i| i as f32);
         // A multiplier of 4 is word-addressing for f32s
         let r = _mm256_mask_i64gather_ps::<4>(
             _mm_set1_ps(256.0),
@@ -683,7 +683,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_i64gather_epi64() {
-        let arr: [i64; 128] = core::array::from_fn(|i| i as i64);
+        let arr: [i64; 128] = std::array::from_fn(|i| i as i64);
         // A multiplier of 8 is word-addressing for i64s
         let r = _mm_i64gather_epi64::<8>(arr.as_ptr(), _mm_setr_epi64x(0, 16));
         assert_eq_m128i(r, _mm_setr_epi64x(0, 16));
@@ -692,7 +692,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_mask_i64gather_epi64() {
-        let arr: [i64; 128] = core::array::from_fn(|i| i as i64);
+        let arr: [i64; 128] = std::array::from_fn(|i| i as i64);
         // A multiplier of 8 is word-addressing for i64s
         let r = _mm_mask_i64gather_epi64::<8>(
             _mm_set1_epi64x(256),
@@ -706,7 +706,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_i64gather_epi64() {
-        let arr: [i64; 128] = core::array::from_fn(|i| i as i64);
+        let arr: [i64; 128] = std::array::from_fn(|i| i as i64);
         // A multiplier of 8 is word-addressing for i64s
         let r = _mm256_i64gather_epi64::<8>(arr.as_ptr(), _mm256_setr_epi64x(0, 16, 32, 48));
         assert_eq_m256i(r, _mm256_setr_epi64x(0, 16, 32, 48));
@@ -715,7 +715,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_mask_i64gather_epi64() {
-        let arr: [i64; 128] = core::array::from_fn(|i| i as i64);
+        let arr: [i64; 128] = std::array::from_fn(|i| i as i64);
         // A multiplier of 8 is word-addressing for i64s
         let r = _mm256_mask_i64gather_epi64::<8>(
             _mm256_set1_epi64x(256),
@@ -729,7 +729,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_i64gather_pd() {
-        let arr: [f64; 128] = core::array::from_fn(|i| i as f64);
+        let arr: [f64; 128] = std::array::from_fn(|i| i as f64);
         // A multiplier of 8 is word-addressing for f64s
         let r = _mm_i64gather_pd::<8>(arr.as_ptr(), _mm_setr_epi64x(0, 16));
         assert_eq_m128d(r, _mm_setr_pd(0.0, 16.0));
@@ -738,7 +738,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm_mask_i64gather_pd() {
-        let arr: [f64; 128] = core::array::from_fn(|i| i as f64);
+        let arr: [f64; 128] = std::array::from_fn(|i| i as f64);
         // A multiplier of 8 is word-addressing for f64s
         let r = _mm_mask_i64gather_pd::<8>(
             _mm_set1_pd(256.0),
@@ -752,7 +752,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_i64gather_pd() {
-        let arr: [f64; 128] = core::array::from_fn(|i| i as f64);
+        let arr: [f64; 128] = std::array::from_fn(|i| i as f64);
         // A multiplier of 8 is word-addressing for f64s
         let r = _mm256_i64gather_pd::<8>(arr.as_ptr(), _mm256_setr_epi64x(0, 16, 32, 48));
         assert_eq_m256d(r, _mm256_setr_pd(0.0, 16.0, 32.0, 48.0));
@@ -761,7 +761,7 @@ unsafe fn test_avx2() {
 
     #[target_feature(enable = "avx2")]
     unsafe fn test_mm256_mask_i64gather_pd() {
-        let arr: [f64; 128] = core::array::from_fn(|i| i as f64);
+        let arr: [f64; 128] = std::array::from_fn(|i| i as f64);
         // A multiplier of 8 is word-addressing for f64s
         let r = _mm256_mask_i64gather_pd::<8>(
             _mm256_set1_pd(256.0),

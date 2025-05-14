@@ -9,7 +9,7 @@
 #[macro_use]
 mod utils;
 
-use core::ptr::Unique;
+use std::ptr::Unique;
 
 // Check general handling of Unique
 

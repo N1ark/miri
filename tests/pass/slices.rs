@@ -114,8 +114,9 @@ fn test_iter_ref_consistency() {
     fn test_mut<T: Copy + Debug + PartialEq>(x: T) {
         let v: &mut [T] = &mut [x, x, x];
         let v_ptrs: [*mut T; 3] = match v {
-            [ref v1, ref v2, ref v3] =>
-                [v1 as *const _ as *mut _, v2 as *const _ as *mut _, v3 as *const _ as *mut _],
+            [ref v1, ref v2, ref v3] => {
+                [v1 as *const _ as *mut _, v2 as *const _ as *mut _, v3 as *const _ as *mut _]
+            }
             _ => unreachable!(),
         };
         let len = v.len();
@@ -204,16 +205,16 @@ fn test_for_invalidated_pointers() {
     // An example of where this could go wrong is a prior bug inside `<[T]>::copy_within`:
     //
     //      unsafe {
-    //          core::ptr::copy(self.as_ptr().add(src_start), self.as_mut_ptr().add(dest), count);
+    //          std::ptr::copy(self.as_ptr().add(src_start), self.as_mut_ptr().add(dest), count);
     //      }
     //
-    // The arguments to `core::ptr::copy` are evaluated from left to right. `self.as_ptr()` creates
+    // The arguments to `std::ptr::copy` are evaluated from left to right. `self.as_ptr()` creates
     // an immutable reference (which is tagged as `SharedReadOnly` by Stacked Borrows) to the array
     // and derives a valid `*const` pointer from it. When jumping to the next argument,
     // `self.as_mut_ptr()` creates a mutable reference (tagged as `Unique`) to the array, which
     // invalidates the existing `SharedReadOnly` reference and any pointers derived from it.
-    // The invalidated `*const` pointer (the first argument to `core::ptr::copy`) is then used
-    // after the fact when `core::ptr::copy` is called, which triggers undefined behavior.
+    // The invalidated `*const` pointer (the first argument to `std::ptr::copy`) is then used
+    // after the fact when `std::ptr::copy` is called, which triggers undefined behavior.
 
     unsafe {
         assert_eq!(0, *buffer.as_mut_ptr_range().start);

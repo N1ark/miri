@@ -6,7 +6,7 @@
 fn main() {
     unsafe {
         let x = 0u8;
-        let x = core::ptr::addr_of!(x);
-        core::ptr::drop_in_place(x.cast_mut());
+        let x = std::ptr::addr_of!(x);
+        std::ptr::drop_in_place(x.cast_mut());
     }
 }

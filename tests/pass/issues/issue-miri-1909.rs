@@ -2,8 +2,8 @@
 #![deny(unsafe_op_in_unsafe_fn)]
 //! This does some tricky ptr-int-casting.
 
-use core::alloc::{GlobalAlloc, Layout};
 use std::alloc::System;
+use std::alloc::{GlobalAlloc, Layout};
 
 /// # Safety
 /// `ptr` must be valid for writes of `len` bytes
@@ -14,7 +14,7 @@ unsafe fn volatile_write_zeroize_mem(ptr: *mut u8, len: usize) {
         // SAFETY: `ptr` is valid for writes of `len` bytes, so `ptr_new` is valid for a
         // byte write
         unsafe {
-            core::ptr::write_volatile(ptr_new, 0u8);
+            std::ptr::write_volatile(ptr_new, 0u8);
         }
     }
 }

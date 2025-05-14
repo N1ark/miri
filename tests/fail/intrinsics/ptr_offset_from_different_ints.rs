@@ -1,4 +1,4 @@
-use core::ptr;
+use std::ptr;
 
 fn main() {
     unsafe {

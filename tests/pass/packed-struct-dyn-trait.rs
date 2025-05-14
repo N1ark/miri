@@ -7,14 +7,14 @@ use std::ptr::addr_of;
 // offset before and after unsizing.
 fn main() {
     #[repr(C, packed(2))]
-    struct Packed<T: ?Sized>(u8, core::mem::ManuallyDrop<T>);
+    struct Packed<T: ?Sized>(u8, std::mem::ManuallyDrop<T>);
 
-    let p = Packed(0, core::mem::ManuallyDrop::new(1));
+    let p = Packed(0, std::mem::ManuallyDrop::new(1));
     let p: &Packed<usize> = &p;
-    let sized = (core::mem::size_of_val(p), core::mem::align_of_val(p));
+    let sized = (std::mem::size_of_val(p), std::mem::align_of_val(p));
     let sized_offset = unsafe { addr_of!(p.1).cast::<u8>().offset_from(addr_of!(p.0)) };
     let p: &Packed<dyn Send> = p;
-    let un_sized = (core::mem::size_of_val(p), core::mem::align_of_val(p));
+    let un_sized = (std::mem::size_of_val(p), std::mem::align_of_val(p));
     let un_sized_offset = unsafe { addr_of!(p.1).cast::<u8>().offset_from(addr_of!(p.0)) };
     assert_eq!(sized, un_sized);
     assert_eq!(sized_offset, un_sized_offset);

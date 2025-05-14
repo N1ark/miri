@@ -10,7 +10,7 @@ fn main() {
 #[cfg(init)]
 fn check() {
     unsafe {
-        use core::mem::MaybeUninit;
+        use std::mem::MaybeUninit;
         let mut cond = MaybeUninit::<libc::pthread_cond_t>::uninit();
 
         libc::pthread_cond_init(cond.as_mut_ptr(), std::ptr::null());

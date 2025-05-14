@@ -1,9 +1,9 @@
 #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
 mod x86 {
     #[cfg(target_arch = "x86")]
-    use core::arch::x86 as arch;
+    use std::arch::x86 as arch;
     #[cfg(target_arch = "x86_64")]
-    use core::arch::x86_64 as arch;
+    use std::arch::x86_64 as arch;
 
     fn adc(c_in: u8, a: u32, b: u32) -> (u8, u32) {
         let mut sum = 0;
@@ -48,7 +48,7 @@ mod x86 {
 
 #[cfg(target_arch = "x86_64")]
 mod x86_64 {
-    use core::arch::x86_64 as arch;
+    use std::arch::x86_64 as arch;
 
     fn adc(c_in: u8, a: u64, b: u64) -> (u8, u64) {
         let mut sum = 0;

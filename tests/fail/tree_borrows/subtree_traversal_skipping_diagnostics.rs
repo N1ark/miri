@@ -23,7 +23,7 @@ fn main() {
     let root = 42u8;
     unsafe {
         let intermediary = &root;
-        let data = &mut *(core::ptr::addr_of!(*intermediary) as *mut u8);
-        write_to_mut(data, core::ptr::addr_of!(root));
+        let data = &mut *(std::ptr::addr_of!(*intermediary) as *mut u8);
+        write_to_mut(data, std::ptr::addr_of!(root));
     }
 }

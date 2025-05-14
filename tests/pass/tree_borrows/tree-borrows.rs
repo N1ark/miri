@@ -294,7 +294,7 @@ fn array_casts() {
 fn mut_below_shr() {
     let x = 0;
     let y = &x;
-    let p = unsafe { core::mem::transmute::<&&i32, &&mut i32>(&y) };
+    let p = unsafe { std::mem::transmute::<&&i32, &&mut i32>(&y) };
     let r = &**p;
     let _val = *r;
 }

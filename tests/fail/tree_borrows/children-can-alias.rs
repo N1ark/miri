@@ -8,7 +8,7 @@
 
 #![feature(ptr_internals)]
 
-use core::ptr::{Unique, addr_of_mut};
+use std::ptr::{Unique, addr_of_mut};
 
 fn main() {
     let mut data = 0u8;

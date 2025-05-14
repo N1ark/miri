@@ -4,7 +4,7 @@
 
 fn main() {
     unsafe {
-        use core::mem::MaybeUninit;
+        use std::mem::MaybeUninit;
         let mut attr = MaybeUninit::<libc::pthread_mutexattr_t>::uninit();
 
         libc::pthread_mutexattr_init(attr.as_mut_ptr());

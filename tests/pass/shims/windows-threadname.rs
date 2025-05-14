@@ -1,13 +1,13 @@
 //@only-target: windows # this directly tests windows-only functions
 
-use core::ffi::c_void;
 use std::ffi::OsStr;
+use std::ffi::c_void;
 use std::os::windows::ffi::OsStrExt;
 type HANDLE = *mut c_void;
 type PWSTR = *mut u16;
 type PCWSTR = *const u16;
 type HRESULT = i32;
-type HLOCAL = *mut ::core::ffi::c_void;
+type HLOCAL = *mut ::std::ffi::c_void;
 extern "system" {
     fn GetCurrentThread() -> HANDLE;
     fn GetThreadDescription(hthread: HANDLE, lpthreaddescription: *mut PWSTR) -> HRESULT;
@@ -28,7 +28,7 @@ fn main() {
         let utf16 = to_u16s(name.to_str().unwrap());
         SetThreadDescription(GetCurrentThread(), utf16.as_ptr());
 
-        let mut ptr = core::ptr::null_mut::<u16>();
+        let mut ptr = std::ptr::null_mut::<u16>();
         let result = GetThreadDescription(GetCurrentThread(), &mut ptr);
         assert!(result >= 0);
         let name_gotten = String::from_utf16_lossy({
@@ -36,7 +36,7 @@ fn main() {
             while *ptr.add(len) != 0 {
                 len += 1;
             }
-            core::slice::from_raw_parts(ptr, len)
+            std::slice::from_raw_parts(ptr, len)
         });
         assert_eq!(name_gotten, name.to_str().unwrap());
         let r = LocalFree(ptr.cast());
