@@ -15,7 +15,7 @@
 //@normalize-stderr-test: "thread 'rustc' panicked" -> "thread 'rustc' ($$TID) panicked"
 
 #![feature(custom_mir, core_intrinsics)]
-use core::intrinsics::mir::*;
+use std::intrinsics::mir::*;
 
 #[custom_mir(dialect = "runtime", phase = "optimized")]
 pub fn main() {
@@ -23,7 +23,7 @@ pub fn main() {
         let x: i32;
         let tuple: (*mut i32,);
         {
-            tuple.0 = core::ptr::addr_of_mut!(x);
+            tuple.0 = std::ptr::addr_of_mut!(x);
             // Deref at the wrong place!
             *(tuple.0) = 1;
             Return()

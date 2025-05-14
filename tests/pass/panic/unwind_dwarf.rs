@@ -27,7 +27,7 @@ pub fn panic(data: Box<dyn Any + Send>) -> u32 {
         _uwe: uw::_Unwind_Exception {
             exception_class: miri_exception_class(),
             exception_cleanup: Some(exception_cleanup),
-            private: [core::ptr::null(); uw::unwinder_private_data_size],
+            private: [std::ptr::null(); uw::unwinder_private_data_size],
         },
         cause: data,
     });

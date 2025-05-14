@@ -7,7 +7,7 @@ use std::sync::atomic::Ordering::*;
 use std::sync::atomic::*;
 use std::thread::JoinHandle;
 
-static P: AtomicPtr<u8> = AtomicPtr::new(core::ptr::null_mut());
+static P: AtomicPtr<u8> = AtomicPtr::new(std::ptr::null_mut());
 
 fn spawn_thread() -> JoinHandle<()> {
     std::thread::spawn(|| {

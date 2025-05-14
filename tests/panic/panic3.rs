@@ -1,3 +1,3 @@
 fn main() {
-    core::panic!("panicking from libcore");
+    std::panic!("panicking from libcore");
 }

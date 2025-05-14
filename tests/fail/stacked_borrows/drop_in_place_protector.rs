@@ -15,13 +15,13 @@ impl Drop for HasDrop {
     }
 }
 
-static mut P: *mut u8 = core::ptr::null_mut();
+static mut P: *mut u8 = std::ptr::null_mut();
 
 fn main() {
     unsafe {
         let mut x = (HasDrop, 0u8);
-        let x = core::ptr::addr_of_mut!(x);
+        let x = std::ptr::addr_of_mut!(x);
         P = x.cast();
-        core::ptr::drop_in_place(x);
+        std::ptr::drop_in_place(x);
     }
 }

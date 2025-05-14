@@ -29,12 +29,12 @@ unsafe fn clmulepi64_si128<const IMM8: i32>(
     // SAFETY: There are no safety requirements for calling `_mm_clmulepi64_si128`.
     // It's just unsafe for API consistency with other intrinsics.
     unsafe {
-        let a = core::mem::transmute::<_, __m128i>([a1, a2]);
-        let b = core::mem::transmute::<_, __m128i>([b1, b2]);
+        let a = std::mem::transmute::<_, __m128i>([a1, a2]);
+        let b = std::mem::transmute::<_, __m128i>([b1, b2]);
 
         let out = _mm_clmulepi64_si128::<IMM8>(a, b);
 
-        let [c1, c2] = core::mem::transmute::<_, [u64; 2]>(out);
+        let [c1, c2] = std::mem::transmute::<_, [u64; 2]>(out);
 
         (c1, c2)
     }

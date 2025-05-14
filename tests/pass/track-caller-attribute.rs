@@ -25,7 +25,7 @@ fn nested_tracked() -> Loc {
 
 macro_rules! caller_location_from_macro {
     () => {
-        core::panic::Location::caller()
+        std::panic::Location::caller()
     };
 }
 
@@ -60,7 +60,7 @@ fn test_basic() {
     assert_eq!(inmacro.line(), expected_line);
     assert_eq!(inmacro.column(), 19);
 
-    let intrinsic = core::intrinsics::caller_location();
+    let intrinsic = std::intrinsics::caller_location();
     let expected_line = line!() - 1;
     assert_eq!(intrinsic.file(), file!());
     assert_eq!(intrinsic.line(), expected_line);

@@ -10,11 +10,11 @@
 #![allow(incomplete_features, dead_code)]
 
 // FIXME(zetanumbers): consider AsyncDestruct::async_drop cleanup tests
-use core::future::{AsyncDrop, Future, async_drop_in_place};
-use core::hint::black_box;
-use core::mem::{self, ManuallyDrop};
-use core::pin::{Pin, pin};
-use core::task::{Context, Poll, Waker};
+use std::future::{AsyncDrop, Future, async_drop_in_place};
+use std::hint::black_box;
+use std::mem::{self, ManuallyDrop};
+use std::pin::{Pin, pin};
+use std::task::{Context, Poll, Waker};
 
 async fn test_async_drop<T>(x: T) {
     let mut x = mem::MaybeUninit::new(x);
@@ -26,7 +26,7 @@ fn test_idempotency<T>(mut x: Pin<&mut T>) -> impl Future<Output = ()> + '_
 where
     T: Future<Output = ()>,
 {
-    core::future::poll_fn(move |cx| {
+    std::future::poll_fn(move |cx| {
         assert_eq!(x.as_mut().poll(cx), Poll::Ready(()));
         assert_eq!(x.as_mut().poll(cx), Poll::Ready(()));
         Poll::Ready(())
@@ -77,7 +77,7 @@ fn main() {
             black_box(foo);
             let foo = AsyncInt(19);
             // Await point there, but this is async closure so it's fine
-            black_box(core::future::ready(())).await;
+            black_box(std::future::ready(())).await;
             foo
         })
         .await;

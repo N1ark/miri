@@ -21,7 +21,7 @@ fn null_pointers() {
 fn configure_no_cpus() {
     let cpu_count = std::thread::available_parallelism().unwrap().get();
 
-    let mut cpuset: cpu_set_t = unsafe { core::mem::MaybeUninit::zeroed().assume_init() };
+    let mut cpuset: cpu_set_t = unsafe { std::mem::MaybeUninit::zeroed().assume_init() };
 
     // configuring no CPUs will fail
     let err = unsafe { sched_setaffinity(PID, size_of::<cpu_set_t>(), &cpuset) };
@@ -39,7 +39,7 @@ fn configure_unavailable_cpu() {
     let cpu_count = std::thread::available_parallelism().unwrap().get();
 
     // Safety: valid value for this type
-    let mut cpuset: cpu_set_t = unsafe { core::mem::MaybeUninit::zeroed().assume_init() };
+    let mut cpuset: cpu_set_t = unsafe { std::mem::MaybeUninit::zeroed().assume_init() };
 
     let err = unsafe { sched_getaffinity(PID, size_of::<cpu_set_t>(), &mut cpuset) };
     assert_eq!(err, 0);
@@ -78,7 +78,7 @@ fn large_set() {
 }
 
 fn get_small_cpu_mask() {
-    let mut cpuset: cpu_set_t = unsafe { core::mem::MaybeUninit::zeroed().assume_init() };
+    let mut cpuset: cpu_set_t = unsafe { std::mem::MaybeUninit::zeroed().assume_init() };
 
     // should be 4 on 32-bit systems and 8 otherwise for systems that implement sched_getaffinity
     let step = size_of::<std::ffi::c_ulong>();
@@ -105,7 +105,7 @@ fn get_small_cpu_mask() {
 }
 
 fn set_small_cpu_mask() {
-    let mut cpuset: cpu_set_t = unsafe { core::mem::MaybeUninit::zeroed().assume_init() };
+    let mut cpuset: cpu_set_t = unsafe { std::mem::MaybeUninit::zeroed().assume_init() };
 
     let err = unsafe { sched_getaffinity(PID, size_of::<cpu_set_t>(), &mut cpuset) };
     assert_eq!(err, 0);
@@ -119,7 +119,7 @@ fn set_small_cpu_mask() {
     // on BE systems the CPUs 0..8 are stored in the right-most byte of the first chunk. If that
     // byte is not included, no valid CPUs are configured. We skip those cases.
     let cpu_zero_included_length =
-        if cfg!(target_endian = "little") { 1 } else { core::mem::size_of::<std::ffi::c_ulong>() };
+        if cfg!(target_endian = "little") { 1 } else { std::mem::size_of::<std::ffi::c_ulong>() };
 
     for i in cpu_zero_included_length..24 {
         let err = unsafe { sched_setaffinity(PID, i, &cpuset) };
@@ -132,7 +132,7 @@ fn set_custom_cpu_mask() {
 
     assert!(cpu_count > 1, "this test cannot do anything interesting with just one thread");
 
-    let mut cpuset: cpu_set_t = unsafe { core::mem::MaybeUninit::zeroed().assume_init() };
+    let mut cpuset: cpu_set_t = unsafe { std::mem::MaybeUninit::zeroed().assume_init() };
 
     // at the start, thread 1 should be set
     let err = unsafe { sched_getaffinity(PID, size_of::<cpu_set_t>(), &mut cpuset) };
@@ -167,7 +167,7 @@ fn parent_child() {
     assert!(cpu_count > 1, "this test cannot do anything interesting with just one thread");
 
     // configure the parent thread to only run only on CPU 0
-    let mut parent_cpuset: cpu_set_t = unsafe { core::mem::MaybeUninit::zeroed().assume_init() };
+    let mut parent_cpuset: cpu_set_t = unsafe { std::mem::MaybeUninit::zeroed().assume_init() };
     unsafe { libc::CPU_SET(0, &mut parent_cpuset) };
 
     let err = unsafe { sched_setaffinity(PID, size_of::<cpu_set_t>(), &parent_cpuset) };
@@ -175,7 +175,7 @@ fn parent_child() {
 
     std::thread::scope(|spawner| {
         spawner.spawn(|| {
-            let mut cpuset: cpu_set_t = unsafe { core::mem::MaybeUninit::zeroed().assume_init() };
+            let mut cpuset: cpu_set_t = unsafe { std::mem::MaybeUninit::zeroed().assume_init() };
 
             let err = unsafe { sched_getaffinity(PID, size_of::<cpu_set_t>(), &mut cpuset) };
             assert_eq!(err, 0);

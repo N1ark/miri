@@ -1,6 +1,6 @@
 #![feature(slice_internals)]
 
-use core::slice::memchr::{memchr, memrchr};
+use std::slice::memchr::{memchr, memrchr};
 
 // test fallback implementations on all targets
 fn matches_one() {

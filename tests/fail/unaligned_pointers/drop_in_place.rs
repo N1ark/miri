@@ -18,10 +18,10 @@ fn main() {
     unsafe {
         // Create an unaligned pointer
         let mut x = [0_u16; 2];
-        let p = core::ptr::addr_of_mut!(x).cast::<u8>();
+        let p = std::ptr::addr_of_mut!(x).cast::<u8>();
         let p = p.add(1);
         let p = p.cast::<PartialDrop>();
 
-        core::ptr::drop_in_place(p);
+        std::ptr::drop_in_place(p);
     }
 }

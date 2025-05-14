@@ -8,7 +8,7 @@
 extern crate alloc;
 
 use alloc::alloc::*;
-use core::fmt::Write;
+use std::fmt::Write;
 
 #[path = "../../utils/mod.no_std.rs"]
 mod utils;
@@ -16,7 +16,7 @@ mod utils;
 #[alloc_error_handler]
 fn alloc_error_handler(layout: Layout) -> ! {
     let _ = writeln!(utils::MiriStderr, "custom alloc error handler: {layout:?}");
-    core::intrinsics::abort(); //~ERROR: aborted
+    std::intrinsics::abort(); //~ERROR: aborted
 }
 
 // rustc requires us to provide some more things that aren't actually used by this test
@@ -24,7 +24,7 @@ mod plumbing {
     use super::*;
 
     #[panic_handler]
-    fn panic_handler(_: &core::panic::PanicInfo) -> ! {
+    fn panic_handler(_: &std::panic::PanicInfo) -> ! {
         loop {}
     }
 

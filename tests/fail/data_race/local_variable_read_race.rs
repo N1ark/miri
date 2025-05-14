@@ -2,7 +2,7 @@
 use std::sync::atomic::Ordering::*;
 use std::sync::atomic::*;
 
-static P: AtomicPtr<u8> = AtomicPtr::new(core::ptr::null_mut());
+static P: AtomicPtr<u8> = AtomicPtr::new(std::ptr::null_mut());
 
 fn main() {
     // Create the local variable, and initialize it.

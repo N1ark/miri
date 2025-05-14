@@ -55,8 +55,8 @@ fn main() {
     test(None, |_old_val| std::panic::panic_any(1337));
 
     // Core panics
-    test(None, |_old_val| core::panic!("Hello from core::panic"));
-    test(None, |old_val| core::panic!("Hello from core::panic: {:?}", old_val));
+    test(None, |_old_val| std::panic!("Hello from std::panic"));
+    test(None, |old_val| std::panic!("Hello from std::panic: {:?}", old_val));
 
     // Built-in panics; also make sure the message is right.
     test(Some("index out of bounds: the len is 3 but the index is 4"), |_old_val| {

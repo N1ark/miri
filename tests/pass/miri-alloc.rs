@@ -15,13 +15,13 @@ extern "Rust" {
 fn miri_start(_argc: isize, _argv: *const *const u8) -> isize {
     unsafe {
         let ptr = miri_alloc(123, 1);
-        core::ptr::write_bytes(ptr, 0u8, 123);
+        std::ptr::write_bytes(ptr, 0u8, 123);
         miri_dealloc(ptr, 123, 1);
     }
     0
 }
 
 #[panic_handler]
-fn panic_handler(_: &core::panic::PanicInfo) -> ! {
+fn panic_handler(_: &std::panic::PanicInfo) -> ! {
     loop {}
 }

@@ -3,7 +3,7 @@
 #![no_main]
 #![no_std]
 
-use core::fmt::Write;
+use std::fmt::Write;
 
 #[path = "../utils/mod.no_std.rs"]
 mod utils;
@@ -16,6 +16,6 @@ fn miri_start() -> isize {
 }
 
 #[panic_handler]
-fn panic_handler(_: &core::panic::PanicInfo) -> ! {
+fn panic_handler(_: &std::panic::PanicInfo) -> ! {
     loop {}
 }

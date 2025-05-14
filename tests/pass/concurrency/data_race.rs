@@ -114,7 +114,7 @@ pub fn test_simple_release() {
 }
 
 fn test_local_variable_lazy_write() {
-    static P: AtomicPtr<u8> = AtomicPtr::new(core::ptr::null_mut());
+    static P: AtomicPtr<u8> = AtomicPtr::new(std::ptr::null_mut());
 
     // Create the local variable, and initialize it.
     // This write happens before the thread is spanwed, so there is no data race.
