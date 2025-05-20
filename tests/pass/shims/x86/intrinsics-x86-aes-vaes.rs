@@ -2,7 +2,7 @@
 //@only-target: x86_64 i686
 //@compile-flags: -C target-feature=+aes,+vaes,+avx512f
 
-#![feature(avx512_target_feature, stdarch_x86_avx512)]
+#![feature(stdarch_x86_avx512)]
 
 #[cfg(target_arch = "x86")]
 use std::arch::x86::*;

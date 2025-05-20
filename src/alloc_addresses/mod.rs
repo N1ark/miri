@@ -168,7 +168,7 @@ trait EvalContextExtPriv<'tcx>: crate::MiriInterpCxExt<'tcx> {
                 AllocKind::Dead => unreachable!(),
             };
             // We don't have to expose this pointer yet, we do that in `prepare_for_native_call`.
-            return interp_ok(base_ptr.addr().try_into().unwrap());
+            return interp_ok(base_ptr.addr().to_u64());
         }
         // We are not in native lib mode, so we control the addresses ourselves.
         if let Some((reuse_addr, clock)) = global_state.reuse.take_addr(
@@ -204,6 +204,11 @@ trait EvalContextExtPriv<'tcx>: crate::MiriInterpCxExt<'tcx> {
             // Even if `Size` didn't overflow, we might still have filled up the address space.
             if global_state.next_base_addr > this.target_usize_max() {
                 throw_exhaust!(AddressSpaceFull);
+            }
+            // If we filled up more than half the address space, start aggressively reusing
+            // addresses to avoid running out.
+            if global_state.next_base_addr > u64::try_from(this.target_isize_max()).unwrap() {
+                global_state.reuse.address_space_shortage();
             }
 
             interp_ok(base_addr)
