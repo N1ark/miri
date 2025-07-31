@@ -10,6 +10,7 @@ fn inner(x: *mut i32, _y: &i32) {
     //~[tree]| ERROR: /write access through .* is forbidden/
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 0;
     let xraw = &mut x as *mut _;

@@ -30,6 +30,7 @@ fn drain() {
     assert!(heap.is_empty());
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     zero_sized_push();
     drain();

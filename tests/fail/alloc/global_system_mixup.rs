@@ -12,6 +12,7 @@
 
 use std::alloc::{Allocator, Global, Layout, System};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let l = Layout::from_size_align(1, 1).unwrap();
     let ptr = Global.allocate(l).unwrap().as_non_null_ptr();

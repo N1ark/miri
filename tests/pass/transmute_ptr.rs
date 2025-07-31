@@ -45,6 +45,7 @@ fn ptr_in_two_halves() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     t1();
     t2();

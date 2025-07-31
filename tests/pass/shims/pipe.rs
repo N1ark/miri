@@ -2,6 +2,7 @@
 
 use std::io::{Read, Write, pipe};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let (mut ping_rx, mut ping_tx) = pipe().unwrap();
     ping_tx.write_all(b"hello").unwrap();

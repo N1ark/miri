@@ -1,5 +1,6 @@
 //@compile-flags: -Zmiri-recursive-validation
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = 3u8;
     let xref = &x;

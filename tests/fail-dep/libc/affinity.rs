@@ -1,6 +1,7 @@
 //@only-target: linux # these are Linux-specific APIs
 //@compile-flags: -Zmiri-disable-isolation -Zmiri-num-cpus=4
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     use std::mem::size_of;
 

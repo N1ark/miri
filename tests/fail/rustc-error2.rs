@@ -9,6 +9,7 @@ impl<T> std::ops::Deref for Struct<T> {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let f = Struct(Default::default());
     f(0);

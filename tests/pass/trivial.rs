@@ -5,6 +5,7 @@ fn unit_var() {
     x
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     empty();
     unit_var();

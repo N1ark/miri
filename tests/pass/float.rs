@@ -69,6 +69,7 @@ const SNAN_F32: f32 = f32::from_bits(0x7fa00000);
 /// ```
 const SNAN_F64: f64 = f64::from_bits(0x7ff4000000000000);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     basic();
     casts();

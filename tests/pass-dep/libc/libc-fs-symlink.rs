@@ -10,6 +10,7 @@ use std::os::unix::ffi::OsStrExt;
 #[path = "../../utils/mod.rs"]
 mod utils;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_readlink();
     test_nofollow_symlink();

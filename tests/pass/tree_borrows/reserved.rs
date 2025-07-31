@@ -16,6 +16,7 @@ use std::cell::UnsafeCell;
 // immediate UB, and those that do are in tests/fail/tree-borrows/reserved/
 // and are the combinations [_ + protected + write]
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         cell_protected_read();

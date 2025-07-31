@@ -17,6 +17,7 @@ thread_local! {
     pub static NOISY: NoisyDrop = const { NoisyDrop {} };
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     NOISY.with(|_| ());
 }

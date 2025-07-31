@@ -23,6 +23,7 @@ impl PackedSized {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let p = PackedSized { f: 0, d: [1, 2, 3, 4] };

@@ -1,4 +1,5 @@
 #![allow(unnecessary_transmutes)]
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert!(std::char::from_u32(-1_i32 as u32).is_none());
     let _val = match unsafe { std::mem::transmute::<i32, char>(-1) } {

@@ -7,6 +7,7 @@ fn get_environ() -> *const *const u8 {
     unsafe { environ }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let pointer = get_environ();
     let _x = unsafe { *pointer };

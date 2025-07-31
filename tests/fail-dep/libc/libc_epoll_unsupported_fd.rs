@@ -2,6 +2,7 @@
 
 // This is a test for registering unsupported fd with epoll.
 // Register epoll fd with epoll is allowed in real system, but we do not support this.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Create two epoll instance.
     let epfd0 = unsafe { libc::epoll_create1(0) };

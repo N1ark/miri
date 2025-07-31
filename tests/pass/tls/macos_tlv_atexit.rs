@@ -25,6 +25,7 @@ where
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     thread::spawn(|| {
         register(|| println!("dtor 2"));

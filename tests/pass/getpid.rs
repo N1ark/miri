@@ -5,6 +5,7 @@ fn getpid() -> u32 {
     std::process::id()
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let pid = getpid();
 

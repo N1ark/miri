@@ -15,6 +15,7 @@ fn foo(x: &mut (i32, i32)) -> &mut i32 {
     ret
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let arg = &mut (1, 2);
     let ret = foo(arg);

@@ -5,6 +5,7 @@
 use std::env;
 use std::io::ErrorKind;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Test that current dir operations return a proper error instead
     // of stopping the machine in isolation mode

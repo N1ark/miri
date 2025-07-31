@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // make sure ZST locals cannot be accessed
     let x = &() as *const () as *const i8;

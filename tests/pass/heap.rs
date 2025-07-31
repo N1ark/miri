@@ -21,6 +21,7 @@ fn allocate_reallocate() {
     assert_eq!(s.capacity(), 9);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(*make_box(), (1, 2));
     allocate_reallocate();

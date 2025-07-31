@@ -33,6 +33,7 @@ impl FunnyPointer {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let meta = Meta::new();

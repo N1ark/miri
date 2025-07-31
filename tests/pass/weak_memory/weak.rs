@@ -141,6 +141,7 @@ fn assert_once(f: fn() -> bool) {
     assert!(std::iter::repeat_with(|| f()).take(100).any(|x| x));
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     assert_once(|| relaxed(false));
     assert_once(|| relaxed(true));

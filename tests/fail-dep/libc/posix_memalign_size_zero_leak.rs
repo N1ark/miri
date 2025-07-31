@@ -2,6 +2,7 @@
 
 use std::ptr;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut ptr: *mut libc::c_void = ptr::null_mut();
     let align = 64;

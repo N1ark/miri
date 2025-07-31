@@ -1,6 +1,7 @@
 // Validation makes this fail in the wrong place
 //@compile-flags: -Zmiri-disable-validation
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = Box::new(42);
     unsafe {

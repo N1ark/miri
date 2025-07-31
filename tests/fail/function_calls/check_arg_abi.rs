@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     extern "Rust" {
         fn malloc(size: usize) -> *mut std::ffi::c_void;

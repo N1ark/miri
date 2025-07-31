@@ -115,6 +115,7 @@ fn self_referential_box() {
     drop(my_fut);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     run_fut(do_stuff());
     run_fut(DoStuff::new());

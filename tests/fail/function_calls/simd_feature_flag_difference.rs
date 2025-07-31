@@ -23,6 +23,7 @@ fn assert_eq_m256(a: __m256, b: __m256) {
     unsafe { assert_eq!(transmute::<_, [f32; 8]>(a), transmute::<_, [f32; 8]>(b)) }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let input = unsafe { transmute::<_, __m256>([1.0f32; 8]) };
     let copy = bar(input);

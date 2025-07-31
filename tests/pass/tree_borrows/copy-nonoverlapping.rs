@@ -2,6 +2,7 @@
 
 // copy_nonoverlapping works regardless of the order in which we construct
 // the arguments.
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     test_to_from();
     test_from_to();

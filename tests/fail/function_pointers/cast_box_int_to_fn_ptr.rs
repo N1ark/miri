@@ -1,6 +1,7 @@
 // Validation makes this fail in the wrong place
 //@compile-flags: -Zmiri-disable-validation
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let b = Box::new(42);
     let g = unsafe { std::mem::transmute::<&Box<usize>, &fn(i32)>(&b) };

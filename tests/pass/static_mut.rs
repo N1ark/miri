@@ -12,6 +12,7 @@ struct Foo(*const i32);
 
 unsafe impl Sync for Foo {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         assert_eq!(*BAR.0, 42);

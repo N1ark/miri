@@ -48,6 +48,7 @@ fn call_return_into_passed_reference() {
     assert_eq!(x, 1);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(call(), 2);
     assert_eq!(factorial_recursive(), 3628800);

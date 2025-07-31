@@ -7,6 +7,7 @@ extern "C" {
     fn not_exported();
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         not_exported(); //~ ERROR: unsupported operation: can't call foreign function `not_exported`

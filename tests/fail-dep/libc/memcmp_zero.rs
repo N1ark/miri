@@ -4,6 +4,7 @@
 // It is unclear whether `(int*)42` is "invalid", but there is no actually
 // a `char` living at that address, so arguably it cannot be a valid pointer.
 // Hence this is UB.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let ptr = 42 as *const u8;
     unsafe {

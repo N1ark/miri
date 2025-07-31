@@ -5,6 +5,7 @@ use std::{mem, ptr};
 
 // Test various tree-borrows-specific things
 // (i.e., these do not work the same under SB).
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     aliasing_read_only_mutable_refs();
     string_as_mut_ptr();

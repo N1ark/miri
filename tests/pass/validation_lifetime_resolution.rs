@@ -31,6 +31,7 @@ where
     // type. Currently, this is *not* working correctly; see <https://github.com/rust-lang/miri/issues/298>.
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     foo(3)
 }

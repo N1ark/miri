@@ -4,6 +4,7 @@
 #![feature(core_intrinsics)]
 use std::intrinsics::*;
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     unsafe {
         [assert_eq!(ctpop(0u8), 0), assert_eq!(ctpop(0i8), 0)];

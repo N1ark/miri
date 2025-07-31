@@ -2,6 +2,7 @@
 
 use std::ptr;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Null.
     test_ptr(ptr::null_mut::<()>());

@@ -2,6 +2,7 @@
 
 use std::cell::Cell;
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     thread_local! {
         static TLS: Cell<Option<&'static i32>> = Cell::new(None);

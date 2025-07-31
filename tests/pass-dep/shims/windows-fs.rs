@@ -25,6 +25,7 @@ use windows_sys::Win32::Storage::FileSystem::{
 };
 use windows_sys::Win32::System::IO::IO_STATUS_BLOCK;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         test_create_dir_file();

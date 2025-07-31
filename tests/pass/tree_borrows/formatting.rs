@@ -6,6 +6,7 @@
 mod utils;
 
 // Check the formatting of the trees.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         alignment_check();

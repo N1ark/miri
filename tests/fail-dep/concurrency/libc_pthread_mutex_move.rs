@@ -1,6 +1,7 @@
 //@ignore-target: windows # No pthreads on Windows
 //@revisions: static_initializer init
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     check();
 }

@@ -6,6 +6,7 @@ use std::mem;
 trait Trait<T> {}
 impl<T> Trait<T> for T {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x: &dyn Trait<i32> = &0;
     let _y: *const dyn Trait<u32> = unsafe { mem::transmute(x) }; //~ERROR: wrong trait

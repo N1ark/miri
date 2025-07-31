@@ -2,6 +2,7 @@
 use std::env;
 use std::io::ErrorKind;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Test that `getcwd` is available and an absolute path
     let cwd = env::current_dir().unwrap();

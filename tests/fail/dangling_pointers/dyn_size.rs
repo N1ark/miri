@@ -3,6 +3,7 @@
 
 struct SliceWithHead(#[allow(dead_code)] u8, #[allow(dead_code)] [u8]);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let buf = [0u32; 1];
     // We craft a wide pointer `*const SliceWithHead` such that the unsized tail is only partially allocated.

@@ -3,6 +3,7 @@ use std::mem;
 #[repr(C)]
 struct Pair(u8, u16);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let p: Pair = mem::transmute(0u32); // The copy when `Pair` is returned from `transmute` should destroy padding.

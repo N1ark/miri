@@ -5,6 +5,7 @@ type TwoPtrs = i64;
 #[cfg(target_pointer_width = "64")]
 type TwoPtrs = i128;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     for &my_bool in &[true, false] {
         let mask = -(my_bool as TwoPtrs); // false -> 0, true -> -1 aka !0

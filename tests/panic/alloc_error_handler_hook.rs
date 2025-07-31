@@ -10,6 +10,7 @@ impl Drop for Bomb {
 }
 
 #[allow(unreachable_code, unused_variables)]
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // This is a particularly tricky hook, since it unwinds, which the default one does not.
     set_alloc_error_hook(|_layout| panic!("alloc error hook called"));

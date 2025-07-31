@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let ptr = libc::malloc(0);

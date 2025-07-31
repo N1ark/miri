@@ -19,6 +19,7 @@ mod safe {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut array = [1, 2, 3, 4];
     let (a, b) = safe::split_at_mut(&mut array, 0);

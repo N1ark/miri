@@ -10,6 +10,7 @@ fn check_ref(x: &()) {
     let _ptr = ptr::addr_of!(*x);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     check_ref({
         // Create reference to a function.

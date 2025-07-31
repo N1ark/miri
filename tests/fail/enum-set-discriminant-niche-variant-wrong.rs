@@ -25,6 +25,7 @@ fn set_discriminant(ptr: &mut Option<NonZero<i32>>) {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let mut v = None;
     set_discriminant(&mut v);

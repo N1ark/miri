@@ -39,6 +39,7 @@ fn f(ccx: &Ccx) {
     return g(&fcx);
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let ccx = Ccx { x: 0 };
     f(&ccx);

@@ -22,6 +22,7 @@ impl Drop for Foo {
 
 thread_local!(static FOO: Foo = Foo);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     FOO.with(|_| {});
 }

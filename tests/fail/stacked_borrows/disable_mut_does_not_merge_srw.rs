@@ -1,6 +1,7 @@
 // This tests demonstrates the effect of 'Disabling' mutable references on reads, rather than
 // removing them from the stack -- the latter would 'merge' neighboring SRW groups which we would
 // like to avoid.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut mem = 0;

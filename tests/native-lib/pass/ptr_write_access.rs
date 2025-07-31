@@ -8,6 +8,7 @@
 use std::mem::MaybeUninit;
 use std::ptr;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_increment_int();
     test_init_int();

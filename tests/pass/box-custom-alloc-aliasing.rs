@@ -111,6 +111,7 @@ fn v2<T, A: Allocator>(t: T, a: A) -> Vec<T, A> {
     v.into_boxed_slice().into_vec()
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert!(mem::size_of::<MyBin>() <= 128); // if it grows bigger, the trick to access the "header" no longer works
     let my_alloc = MyAllocator::new();

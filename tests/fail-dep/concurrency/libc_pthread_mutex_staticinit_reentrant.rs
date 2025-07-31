@@ -3,6 +3,7 @@
 // Check that if we use PTHREAD_MUTEX_INITIALIZER, then reentrant locking is UB.
 // glibc apparently actually exploits this so we better catch it!
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut mutex: libc::pthread_mutex_t = libc::PTHREAD_MUTEX_INITIALIZER;

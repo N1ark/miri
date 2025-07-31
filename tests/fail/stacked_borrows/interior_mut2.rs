@@ -7,6 +7,7 @@ unsafe fn unsafe_cell_get<T>(x: &UnsafeCell<T>) -> &'static mut T {
     mem::transmute(x)
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let c = &UnsafeCell::new(UnsafeCell::new(0));

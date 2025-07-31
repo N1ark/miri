@@ -13,6 +13,7 @@ use windows_sys::Win32::System::Threading::{INFINITE, WaitForSingleObject};
 struct UnsafeSendWrapper<T>(T);
 unsafe impl<T> Send for UnsafeSendWrapper<T> {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     static FLAG: AtomicBool = AtomicBool::new(false);
 

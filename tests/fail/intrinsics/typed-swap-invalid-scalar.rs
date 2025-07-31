@@ -16,6 +16,7 @@ fn invalid_scalar() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     invalid_scalar();
 }

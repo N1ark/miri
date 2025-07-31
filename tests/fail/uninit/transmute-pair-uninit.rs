@@ -5,6 +5,7 @@
 
 use std::mem::{self, MaybeUninit};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // This constructs a `(usize, bool)` pair: 9 bytes initialized, the rest not.
     // Ensure that these 9 bytes are indeed initialized, and the rest is indeed not.

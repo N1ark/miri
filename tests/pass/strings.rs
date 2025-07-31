@@ -51,6 +51,7 @@ fn unique_aliasing() {
     assert_eq!(x, "Hello, world!");
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(empty(), "");
     assert_eq!(hello(), "Hello, world!");

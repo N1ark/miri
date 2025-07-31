@@ -9,6 +9,7 @@ extern "Rust" {
     fn __rust_alloc(size: usize, align: usize) -> *mut u8;
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         __rust_alloc(1, 1 << 30);

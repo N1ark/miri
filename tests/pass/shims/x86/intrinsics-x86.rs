@@ -21,6 +21,7 @@ mod x86 {
         (b_out, sum)
     }
 
+#[cfg_attr(kani, kani::proof)]
     pub fn main() {
         assert_eq!(adc(0, 1, 1), (0, 2));
         assert_eq!(adc(1, 1, 1), (0, 3));
@@ -66,6 +67,7 @@ mod x86_64 {
         (b_out, sum)
     }
 
+#[cfg_attr(kani, kani::proof)]
     pub fn main() {
         assert_eq!(adc(0, 1, 1), (0, 2));
         assert_eq!(adc(1, 1, 1), (0, 3));
@@ -91,6 +93,7 @@ mod x86_64 {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
     x86::main();

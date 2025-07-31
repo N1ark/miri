@@ -18,6 +18,7 @@ pub unsafe fn deref_meta(p: *const *const [i32]) -> usize {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut p = std::mem::MaybeUninit::<*const [i32]>::uninit();
     unsafe {

@@ -5,6 +5,7 @@ unsafe fn make_ref<'a>(x: *mut i32) -> &'a mut i32 {
     &mut *x
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let x = make_ref(&mut 0); // The temporary storing "0" is deallocated at the ";"!

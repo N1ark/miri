@@ -1,5 +1,6 @@
 //! This demonstrates a provenance problem that requires tracking of raw pointers to be detected.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut l = 13;
     let raw1 = &mut l as *mut _;

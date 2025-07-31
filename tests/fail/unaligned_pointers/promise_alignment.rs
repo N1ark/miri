@@ -8,6 +8,7 @@ mod utils;
 #[derive(Copy, Clone)]
 struct Align8(#[allow(dead_code)] u64);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let buffer = [0u32; 128]; // get some 4-aligned memory
     let buffer = buffer.as_ptr();

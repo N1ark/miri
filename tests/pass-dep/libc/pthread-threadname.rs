@@ -19,6 +19,7 @@ const MAX_THREAD_NAME_LEN: usize = {
     }
 };
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // The short name should be shorter than 16 bytes which POSIX promises
     // for thread names. The length includes a null terminator.

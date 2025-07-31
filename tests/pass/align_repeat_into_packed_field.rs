@@ -18,6 +18,7 @@ fn test() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Run this a bunch of time to make sure it doesn't pass by chance.
     for _ in 0..20 {

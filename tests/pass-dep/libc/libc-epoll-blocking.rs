@@ -11,6 +11,7 @@ mod libc_utils;
 
 // This is a set of testcases for blocking epoll.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_epoll_block_without_notification();
     test_epoll_block_then_unblock();

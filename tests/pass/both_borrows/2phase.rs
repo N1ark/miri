@@ -59,6 +59,7 @@ fn two_phase_overlapping2() {
     x.add_assign(x + *l);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     two_phase1();
     two_phase2();

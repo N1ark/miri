@@ -18,6 +18,7 @@ union FooBar {
     bar: Bar,
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     // Initialize as u8 to ensure padding bytes are zeroed.
     let mut foobar = FooBar { bar: Bar { bytes: [0u8; 8] } };

@@ -3,6 +3,7 @@
 
 /// Test that moving a pthread_cond between uses fails.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     check()
 }

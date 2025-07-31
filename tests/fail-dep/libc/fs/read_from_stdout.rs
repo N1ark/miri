@@ -1,6 +1,7 @@
 //@compile-flags: -Zmiri-disable-isolation
 //@ignore-target: windows # No libc IO on Windows
 
+#[cfg_attr(kani, kani::proof)]
 fn main() -> std::io::Result<()> {
     let mut bytes = [0u8; 512];
     unsafe {

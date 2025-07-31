@@ -14,6 +14,7 @@ enum C<'a> {
     NoValue,
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = 5;
     let a = A { x: 99, y: &x };

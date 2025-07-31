@@ -315,6 +315,7 @@ fn uninit_fields() {
     run::<!>(false, false);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     basic();
     smoke_resume_arg();

@@ -10,6 +10,7 @@ fn f<T: FnOnce()>(t: T) {
     t()
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut ran_drop = false;
     {

@@ -1,5 +1,6 @@
 //@compile-flags: -Zmiri-force-page-size=8
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let page_size = page_size::get();
 

@@ -21,6 +21,7 @@ fn f() -> NonZero<u32> {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let f: fn() -> u32 = unsafe { std::mem::transmute(f as fn() -> NonZero<u32>) };
     // There's a `NonZero<u32>` to `u32` transmute happening here.

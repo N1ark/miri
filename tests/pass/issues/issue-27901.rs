@@ -8,6 +8,7 @@ fn f<'s>(s: &'s str) -> (&'s str, <&'s str as Stream>::Item) {
     (s, 42)
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let fx = f as for<'t> fn(&'t str) -> (&'t str, <&'t str as Stream>::Item);
     assert_eq!(fx("hi"), ("hi", 42));

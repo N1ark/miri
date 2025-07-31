@@ -6,6 +6,7 @@
 mod utils;
 
 /// Test that the [`tempfile`] crate is compatible with miri for UNIX hosts and targets
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_tempfile();
     test_tempfile_in();

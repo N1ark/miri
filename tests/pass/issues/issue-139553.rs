@@ -5,6 +5,7 @@ use std::thread;
 /// This test aims to trigger a race condition that causes a double free in the unbounded channel
 /// implementation. The test relies on a particular thread scheduling to happen as annotated by the
 /// comments below.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let (s1, r) = channel::<u64>();
     let s2 = s1.clone();

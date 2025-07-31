@@ -70,6 +70,7 @@ fn test_class() {
     assert!(q != r);
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     test_nil();
     test_bool();

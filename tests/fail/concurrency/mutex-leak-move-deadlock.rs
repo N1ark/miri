@@ -6,6 +6,7 @@
 use std::mem;
 use std::sync::Mutex;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let m = Mutex::new(0);
     mem::forget(m.lock());

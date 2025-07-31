@@ -3,6 +3,7 @@
 
 use std::io::Error;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // test `fcntl(F_FULLFSYNC)`
     unsafe {

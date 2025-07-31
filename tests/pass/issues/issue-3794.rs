@@ -22,6 +22,7 @@ fn print_s(s: &S) {
     s.print();
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let s: Box<S> = Box::new(S { s: 5 });
     print_s(&*s);

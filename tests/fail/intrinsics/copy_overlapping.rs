@@ -1,5 +1,6 @@
 #![feature(core_intrinsics)]
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut data = [0u8; 16];
     unsafe {

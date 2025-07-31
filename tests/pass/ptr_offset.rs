@@ -1,6 +1,7 @@
 //@compile-flags: -Zmiri-permissive-provenance
 use std::{mem, ptr};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     smoke();
     test_offset_from();

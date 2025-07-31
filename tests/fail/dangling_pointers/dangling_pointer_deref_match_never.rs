@@ -4,6 +4,7 @@
 #![allow(unreachable_code)]
 #![feature(never_type)]
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let p = {
         let b = Box::new(42);

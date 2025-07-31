@@ -7,6 +7,7 @@ use std::arch::x86::*;
 #[cfg(target_arch = "x86_64")]
 use std::arch::x86_64::*;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // BMI1 and BMI2 are independent from each other, so both must be checked.
     assert!(is_x86_feature_detected!("bmi1"));

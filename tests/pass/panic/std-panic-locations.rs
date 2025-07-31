@@ -5,6 +5,7 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 
 static HOOK_COUNT: AtomicUsize = AtomicUsize::new(0);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // inspect the `PanicInfo` we receive to ensure the right file is the source
     std::panic::set_hook(Box::new(|info| {

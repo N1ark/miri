@@ -5,6 +5,7 @@ extern "Rust" {
     fn __rust_alloc(size: usize, align: usize) -> *mut u8;
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let bytes = isize::MAX as usize + 1;
     unsafe {

@@ -21,6 +21,7 @@ fn test_all_refs<'a, T: 'a>(dummy: &mut T, iter: impl Iterator<Item = &'a mut T>
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut m = list_from(&[0, 2, 4, 6, 8]);
     let len = m.len();

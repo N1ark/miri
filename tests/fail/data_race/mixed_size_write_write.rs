@@ -10,6 +10,7 @@ fn convert(a: &AtomicU16) -> &[AtomicU8; 2] {
 
 // We can't allow mixed-size accesses; they are not possible in C++ and even
 // Intel says you shouldn't do it.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let a = AtomicU16::new(0);
     let a16 = &a;

@@ -16,6 +16,7 @@ impl Foo for Bar {}
 
 use std::rc::Rc;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let b: Rc<dyn Foo> = Rc::new(Bar);
     assert!(unsafe { !DROP_CALLED });

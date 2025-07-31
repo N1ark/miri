@@ -47,6 +47,7 @@ fn test_deterministic() {
     println!("(It's fine for this number to change when you `--bless` this test.)")
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_time_passes();
     test_block_for_one_second();

@@ -4,6 +4,7 @@
 use std::ffi::CStr;
 use std::thread;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         thread::spawn(|| {

@@ -1,5 +1,6 @@
 use std::sync::mpsc::channel;
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let (tx, rx) = channel::<Box<_>>();
     tx.send(Box::new(100)).unwrap();

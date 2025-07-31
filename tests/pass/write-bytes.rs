@@ -8,6 +8,7 @@ struct Foo {
     c: u64,
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     const LENGTH: usize = 10;
     let mut v: [u64; LENGTH] = [0; LENGTH];

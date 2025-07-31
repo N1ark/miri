@@ -1,4 +1,5 @@
 //@normalize-stderr-test: "\d+ < \d+" -> "$$ADDR < $$ADDR"
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let arr = [0u8; 8];
     let ptr1 = arr.as_ptr();

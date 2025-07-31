@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(
         match [0u8; 16 * 1024] {

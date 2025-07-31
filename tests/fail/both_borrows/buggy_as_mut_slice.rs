@@ -8,6 +8,7 @@ mod safe {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let v = vec![0, 1, 2];
     let v1 = safe::as_mut_slice(&v);

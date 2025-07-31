@@ -2,6 +2,7 @@
 #![feature(core_intrinsics)]
 use std::intrinsics::{volatile_load, volatile_store};
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     unsafe {
         let i: &mut (isize, isize) = &mut (0, 0);

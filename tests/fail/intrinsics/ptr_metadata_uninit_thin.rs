@@ -18,6 +18,7 @@ pub unsafe fn deref_meta(p: *const *const i32) -> () {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Even though the meta is the trivially-valid `()`, this is still UB
 

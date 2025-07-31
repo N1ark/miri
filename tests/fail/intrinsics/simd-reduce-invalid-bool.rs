@@ -6,6 +6,7 @@ use std::intrinsics::simd::simd_reduce_any;
 #[allow(non_camel_case_types)]
 struct i32x2([i32; 2]);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let x = i32x2([0, 1]);

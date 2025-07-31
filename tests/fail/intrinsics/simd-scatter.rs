@@ -1,6 +1,7 @@
 #![feature(portable_simd)]
 use std::simd::*;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut vec: Vec<i8> = vec![10, 11, 12, 13, 14, 15, 16, 17, 18];

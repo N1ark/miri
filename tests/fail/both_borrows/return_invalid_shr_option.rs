@@ -11,6 +11,7 @@ fn foo(x: &mut (i32, i32)) -> Option<&i32> {
     //~[tree]| ERROR: /reborrow through .* is forbidden/
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     match foo(&mut (1, 2)) {
         Some(_x) => {}

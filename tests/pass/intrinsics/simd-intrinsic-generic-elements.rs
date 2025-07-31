@@ -13,6 +13,7 @@ struct i32x4([i32; 4]);
 #[allow(non_camel_case_types)]
 struct i32x8([i32; 8]);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let _x2 = i32x2([20, 21]);
     let _x4 = i32x4([40, 41, 42, 43]);

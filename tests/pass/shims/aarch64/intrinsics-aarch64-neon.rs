@@ -5,6 +5,7 @@
 use std::arch::aarch64::*;
 use std::arch::is_aarch64_feature_detected;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert!(is_aarch64_feature_detected!("neon"));
 
