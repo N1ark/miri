@@ -24,6 +24,7 @@ struct HasDrop<T: ?Sized> {
     data: T,
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Test that zero-offset works properly
     let b: Baz<usize> = Baz { a: 7 };

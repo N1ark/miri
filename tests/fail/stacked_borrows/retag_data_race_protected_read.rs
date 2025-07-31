@@ -5,6 +5,7 @@ use std::thread;
 struct SendPtr(*mut i32);
 unsafe impl Send for SendPtr {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut mem = 0;
     let ptr = SendPtr(&mut mem as *mut _);

@@ -16,6 +16,7 @@ extern "Rust" {
     fn __rust_dealloc(ptr: *mut u8, size: usize, align: usize);
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     // Shared atomic pointer
     let pointer: *mut usize = Box::into_raw(Box::new(0usize));

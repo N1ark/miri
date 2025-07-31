@@ -2,6 +2,7 @@
 use std::mem;
 use std::sync::Mutex;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Test for https://github.com/rust-lang/rust/issues/85434
     let m = Mutex::new(5i32);

@@ -8,6 +8,7 @@ struct S2(i32);
 
 fn callee(_s: S2) {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let fnptr: fn(S2) = callee;
     let fnptr: fn(S1) = unsafe { std::mem::transmute(fnptr) };

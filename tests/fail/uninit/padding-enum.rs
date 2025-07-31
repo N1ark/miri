@@ -7,6 +7,7 @@ enum E {
     Some(&'static (), &'static (), usize),
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut p: mem::MaybeUninit<E> = mem::MaybeUninit::zeroed();

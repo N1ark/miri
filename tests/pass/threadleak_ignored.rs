@@ -17,6 +17,7 @@ thread_local! {
     static X: RefCell<Option<LoudDrop>> = RefCell::new(None);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     X.with(|x| *x.borrow_mut() = Some(LoudDrop(0)));
 

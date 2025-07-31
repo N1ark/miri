@@ -5,6 +5,7 @@ use std::cell::Cell;
 use std::ptr;
 
 // Test various aliasing-model-related things.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     read_does_not_invalidate1();
     read_does_not_invalidate2();

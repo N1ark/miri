@@ -72,6 +72,7 @@ fn from_mut_split() {
     assert_eq!(x_lo_atomic.load(Relaxed), u16::from_be(0xfafa));
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     get_mut_write();
     from_mut_split();

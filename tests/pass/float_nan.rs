@@ -596,6 +596,7 @@ fn test_simd() {
     );
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Check our constants against std, just to be sure.
     // We add 1 since our numbers are the number of bits stored

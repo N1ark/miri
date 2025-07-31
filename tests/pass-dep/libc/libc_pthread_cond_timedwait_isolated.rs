@@ -77,6 +77,7 @@ fn test_timed_wait_timeout(clock_id: i32) {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_timed_wait_timeout(libc::CLOCK_MONOTONIC);
 }

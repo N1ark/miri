@@ -16,6 +16,7 @@ fn test2() {
     let mut _res: Vec<u16> = OsString::from_wide(&base).encode_wide().collect();
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test1();
     test2();

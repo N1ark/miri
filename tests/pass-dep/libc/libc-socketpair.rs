@@ -6,6 +6,7 @@
 #![allow(static_mut_refs)]
 
 use std::thread;
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_socketpair();
     test_socketpair_threaded();

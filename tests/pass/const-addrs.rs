@@ -11,6 +11,7 @@
 const EVALS: usize = 256;
 
 use std::collections::HashSet;
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut addrs = HashSet::new();
     for _ in 0..EVALS {

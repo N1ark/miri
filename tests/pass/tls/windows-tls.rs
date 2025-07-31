@@ -10,6 +10,7 @@ extern "system" {
     fn TlsFree(key: u32) -> bool;
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let key = unsafe { TlsAlloc() };
     assert!(unsafe { TlsSetValue(key, ptr::without_provenance_mut(1)) });

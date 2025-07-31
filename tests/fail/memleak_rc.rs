@@ -7,6 +7,7 @@ use std::rc::Rc;
 
 struct Dummy(Rc<RefCell<Option<Dummy>>>);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = Dummy(Rc::new(RefCell::new(None)));
     let y = Dummy(x.0.clone());

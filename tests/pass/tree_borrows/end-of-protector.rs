@@ -7,6 +7,7 @@
 #[macro_use]
 mod utils;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let data = &mut 0u8;

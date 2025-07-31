@@ -5,6 +5,7 @@
 
 use std::alloc::*;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     handle_alloc_error(Layout::for_value(&0));
 }

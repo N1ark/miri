@@ -33,6 +33,7 @@ fn unknown_code_2() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     demo_mut_advanced_unique(&mut 0);
 }

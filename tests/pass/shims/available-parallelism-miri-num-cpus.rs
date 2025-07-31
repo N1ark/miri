@@ -3,6 +3,7 @@
 use std::num::NonZero;
 use std::thread::available_parallelism;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(available_parallelism().unwrap(), NonZero::new(1024).unwrap());
 }

@@ -2,6 +2,7 @@
 
 // Check that TB properly rejects alternating Reads and Writes, but tolerates
 // alternating only Reads to Reserved mutable references.
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let x = &mut 0u8;
     let y = unsafe { &mut *(x as *mut u8) };

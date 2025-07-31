@@ -8,6 +8,7 @@ struct P<T: ?Sized>(#[allow(dead_code)] [u8; SZ], T);
 
 type Ack<T> = P<P<T>>;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let size_of_sized;
     let size_of_unsized;

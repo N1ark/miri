@@ -3,6 +3,7 @@
 //@ignore-target: windows # No `libc: #signal` on Windows
 //@normalize-stderr-test: "OS `.*`" -> "$$OS"
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         libc::signal(libc::SIGPIPE, libc::SIG_IGN);

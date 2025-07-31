@@ -4,6 +4,7 @@ use std::intrinsics::mir::*;
 pub struct S(i32);
 
 #[custom_mir(dialect = "runtime", phase = "optimized")]
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     mir! {
         let _unit: ();

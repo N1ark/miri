@@ -8,6 +8,7 @@ pub fn safe(x: &mut i32, y: &i32) {
     let _v = *y;
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 0;
     let xref = &mut x;

@@ -6,6 +6,7 @@ use std::thread;
 
 use libc::{getpid, gettid};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     thread::spawn(|| {
         // Test that in isolation mode a deterministic value will be returned.

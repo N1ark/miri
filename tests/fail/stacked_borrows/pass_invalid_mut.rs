@@ -1,6 +1,7 @@
 // Make sure that we cannot pass by argument a `&mut` that got already invalidated.
 fn foo(_: &mut i32) {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = &mut 42;
     let xraw = x as *mut _;

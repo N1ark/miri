@@ -6,6 +6,7 @@ fn initialize() {
 
 fn initialize_inner(_init: &mut dyn FnMut() -> bool) {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let j1 = spawn(initialize);
     let j2 = spawn(initialize);

@@ -1,6 +1,7 @@
 #![feature(explicit_tail_calls)]
 #![allow(incomplete_features)]
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // FIXME(explicit_tail_calls):
     //   the error should point to `become g(x)`,

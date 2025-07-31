@@ -11,6 +11,7 @@ extern "C" fn thread_start(_null: *mut libc::c_void) -> *mut libc::c_void {
     ptr::null_mut()
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut native: libc::pthread_t = mem::zeroed();

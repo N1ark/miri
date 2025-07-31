@@ -34,6 +34,7 @@ fn iter_any() {
     [1, 2, 3u8].iter().any(|elt| 10 == *elt);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_iterator_step_by_nth();
     iter_any();

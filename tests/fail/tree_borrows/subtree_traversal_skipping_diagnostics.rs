@@ -19,6 +19,7 @@ fn write_to_mut(m: &mut u8, other_ptr: *const u8) {
     *m = 42; //~ERROR: /write access through .* is forbidden/
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let root = 42u8;
     unsafe {

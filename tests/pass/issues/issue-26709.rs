@@ -6,6 +6,7 @@ impl<'a, T: ?Sized> Drop for Wrapper<'a, T> {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 0;
     {

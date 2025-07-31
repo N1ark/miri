@@ -2,6 +2,7 @@
 // test_race depends on a deterministic schedule.
 //@compile-flags: -Zmiri-deterministic-concurrency
 use std::thread;
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_pipe();
     test_pipe_threaded();

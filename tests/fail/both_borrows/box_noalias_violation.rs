@@ -10,6 +10,7 @@ unsafe fn test(mut x: Box<i32>, y: *const i32) -> i32 {
     //~[tree]| ERROR: /read access through .* is forbidden/
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut v = 42;

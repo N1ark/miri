@@ -10,6 +10,7 @@ static mut TLS: u8 = 0;
 struct SendRaw(*const u8);
 unsafe impl Send for SendRaw {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let dangling_ptr = std::thread::spawn(|| SendRaw(addr_of!(TLS))).join().unwrap();

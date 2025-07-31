@@ -2,6 +2,7 @@
 
 use std::ptr;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut v = 1u8;
     let ptr = &mut v as *mut u8;

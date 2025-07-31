@@ -4,6 +4,7 @@ extern "Rust" {
     fn miri_resolve_frame(ptr: *mut (), flags: u64);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let size = unsafe { miri_backtrace_size(0) };
     let mut frames = vec![std::ptr::null_mut(); size];

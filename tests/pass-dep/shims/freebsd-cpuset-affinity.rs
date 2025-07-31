@@ -45,6 +45,7 @@ fn get_small_cpu_mask() {
     assert_eq!(std::io::Error::last_os_error().raw_os_error().unwrap(), libc::ERANGE);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     getaffinity();
     get_small_cpu_mask();

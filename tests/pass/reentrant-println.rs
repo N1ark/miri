@@ -12,6 +12,7 @@ impl Display for InterruptingCow {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     println!("\"Knock knock\" \"Who's {} there?\"", InterruptingCow);
 }

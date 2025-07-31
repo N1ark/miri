@@ -10,6 +10,7 @@ fn evil(x: &mut Bool) {
 }
 
 #[rustfmt::skip] // rustfmt bug: https://github.com/rust-lang/rustfmt/issues/5391
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = Bool::True;
     evil(&mut x);

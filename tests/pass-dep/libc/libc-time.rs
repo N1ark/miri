@@ -3,6 +3,7 @@
 use std::time::{Duration, Instant};
 use std::{env, mem, ptr};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_clocks();
     test_posix_gettimeofday();

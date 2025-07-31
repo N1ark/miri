@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x: &[_] = &[1, 2, 3, 4];
 

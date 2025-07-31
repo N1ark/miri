@@ -4,6 +4,7 @@ use std::ptr::addr_of_mut;
 
 // Check that the diagnostics correctly report the exact range at fault
 // and trim irrelevant events.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let data = &mut [0u8; 16];

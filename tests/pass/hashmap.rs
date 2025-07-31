@@ -36,6 +36,7 @@ fn smoketest_map<S: BuildHasher>(mut map: HashMap<i32, i32, S>) {
     test_all_refs(&mut 13, map.values_mut());
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // hashbrown uses Miri on its own CI; we just do a smoketest here.
     smoketest_map(HashMap::new());

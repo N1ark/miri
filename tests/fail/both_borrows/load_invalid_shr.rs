@@ -4,6 +4,7 @@
 //@compile-flags: -Zmiri-disable-validation
 
 // Make sure that we cannot load from memory a `&` that got already invalidated.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = &mut 42;
     let xraw = x as *mut _;

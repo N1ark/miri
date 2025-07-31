@@ -2,6 +2,7 @@
 //@compile-flags: -Zmiri-disable-stacked-borrows
 use std::mem;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let _x: &i32 = unsafe { mem::transmute(16usize) }; //~ ERROR: encountered a dangling reference
 }

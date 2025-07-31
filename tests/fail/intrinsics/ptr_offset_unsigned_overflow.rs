@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = &[0i32; 2];
     let x = x.as_ptr().wrapping_add(1);

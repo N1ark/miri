@@ -6,6 +6,7 @@ extern "C" {
 
 static X: &'static [u8; 0] = unsafe { &E };
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let _val = X; //~ ERROR: is not supported by Miri
 }

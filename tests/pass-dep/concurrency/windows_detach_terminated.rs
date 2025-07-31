@@ -7,6 +7,7 @@ use std::thread;
 
 use windows_sys::Win32::Foundation::{CloseHandle, HANDLE};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let thread = thread::spawn(|| {}).into_raw_handle() as HANDLE;
 

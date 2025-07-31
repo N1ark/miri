@@ -16,6 +16,7 @@ unsafe fn deref(left: *const u8, right: *const u8) {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let ptr1 = &0u8 as *const u8;
     let ptr2 = &1u8 as *const u8;

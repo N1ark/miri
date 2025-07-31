@@ -163,6 +163,7 @@ fn no_data_race_after_complete() {
     assert_eq!(reader.join().unwrap(), 1);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     single_thread();
     block_until_complete();

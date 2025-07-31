@@ -1,5 +1,6 @@
 //@ignore-target: windows # Windows does not support the standard C11 aligned_alloc.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // libc doesn't have this function (https://github.com/rust-lang/libc/issues/3689),
     // so we declare it ourselves.

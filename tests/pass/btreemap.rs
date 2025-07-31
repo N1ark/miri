@@ -26,6 +26,7 @@ fn test_all_refs<'a, T: 'a>(dummy: &mut T, iter: impl Iterator<Item = &'a mut T>
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let mut b = BTreeSet::new();
     b.insert(Foo::A("\'"));

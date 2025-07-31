@@ -41,6 +41,7 @@ fn unsized_field_projection() {
     f(*x);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsized_params();
     unsized_field_projection();

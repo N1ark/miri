@@ -9,6 +9,7 @@ use core::future::Future;
 use core::pin::{Pin, pin};
 use core::task::{Context, Poll, Waker};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut f = pin!(async move {
         let x = &mut 0u8;

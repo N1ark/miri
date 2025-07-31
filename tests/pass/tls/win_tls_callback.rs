@@ -13,4 +13,5 @@ unsafe extern "system" fn tls_callback(_h: *const (), _dw_reason: u32, _pv: *con
     eprintln!("in tls_callback");
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {}

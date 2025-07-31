@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     fn f() -> u32 {
         42

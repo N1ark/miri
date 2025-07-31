@@ -4,6 +4,7 @@ const UNALIGNED_READ: () = unsafe {
     ptr.read(); //~ERROR: accessing memory based on pointer with alignment 1, but alignment 4 is required
 };
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let _x = UNALIGNED_READ;
 }

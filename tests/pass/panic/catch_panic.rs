@@ -39,6 +39,7 @@ fn do_panic_counter(do_panic: impl FnOnce(usize) -> !) {
     do_panic(old_val);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let prev = std::panic::take_hook();
     std::panic::set_hook(Box::new(move |panic_info| {

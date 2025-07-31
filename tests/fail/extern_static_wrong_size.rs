@@ -5,6 +5,7 @@ extern "C" {
     static mut environ: i8;
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let _val = unsafe { environ }; //~ ERROR: /with a size of 1 bytes and alignment of 1 bytes, but Miri emulates it via an extern static shim with a size of [48] bytes and alignment of [48] bytes/
 }

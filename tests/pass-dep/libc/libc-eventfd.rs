@@ -7,6 +7,7 @@
 
 use std::thread;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_read_write();
     test_race();

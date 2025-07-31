@@ -7,6 +7,7 @@ use std::io::{ErrorKind, Seek};
 #[path = "../../utils/mod.rs"]
 mod utils;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let path = utils::prepare("miri_test_fs_seek_i64_max_plus_1.txt");
 

@@ -17,6 +17,7 @@ impl Node {
 
 /// This used to cause Stacked Borrows errors because of trouble around conversion
 /// from Box to raw pointer.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let a = Box::into_raw(Box::new(Node::default()));

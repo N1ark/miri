@@ -7,6 +7,7 @@ extern "C" fn panic_abort() {
     panic!()
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     panic_abort();
 }

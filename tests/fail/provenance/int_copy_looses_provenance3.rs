@@ -9,6 +9,7 @@ enum E {
 
 // Doing a copy at integer type should lose provenance.
 // This tests the case where provenacne is hiding in the discriminant of an enum.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(mem::size_of::<E>(), 2 * mem::size_of::<usize>());
 

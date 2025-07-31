@@ -23,6 +23,7 @@ impl Drop for BlockOnDrop {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let t1_started_pair = Arc::new((Mutex::new(false), Condvar::new()));
     let t2_started_pair = Arc::new((Mutex::new(false), Condvar::new()));

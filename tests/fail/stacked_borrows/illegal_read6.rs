@@ -1,4 +1,5 @@
 // Creating a shared reference does not leak the data to raw pointers.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let x = &mut 0;

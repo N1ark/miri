@@ -36,6 +36,7 @@ where
     unsafe { Emplacer::<T>::from_fn(emplacer_closure) };
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     box_new_with::<[Box<i32>]>();
 }

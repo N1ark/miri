@@ -1,6 +1,7 @@
 // Make sure that creating a raw ptr next to a shared ref works
 // but the shared ref still gets invalidated when the raw ptr is used for writing.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         use std::mem;

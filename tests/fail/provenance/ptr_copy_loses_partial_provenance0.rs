@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let half_ptr = std::mem::size_of::<*const ()>() / 2;
     let mut bytes = [1u8; 16];

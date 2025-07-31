@@ -100,6 +100,7 @@ fn thread_2(y: SendPtr, barrier: IdxBarrier) {
     synchronized!(barrier, "exit");
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut data = 0u8;
     let p = SendPtr(addr_of_mut!(data));

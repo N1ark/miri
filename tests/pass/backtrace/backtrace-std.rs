@@ -27,6 +27,7 @@ fn func_d() -> Backtrace {
     Backtrace::capture()
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     eprint!("{}", func_a());
 }

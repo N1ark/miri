@@ -3,6 +3,7 @@ use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::Duration;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let finished = Arc::new(Mutex::new(false));
     let t_finished = finished.clone();

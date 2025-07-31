@@ -1,6 +1,7 @@
 //@compile-flags: -Zmiri-disable-isolation
 use std::env;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Remove the env vars to hit the underlying shim -- except
     // on android where the env var is all we have.

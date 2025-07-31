@@ -52,6 +52,7 @@ const CONST_BAZ: &Baz = &(baz as Baz);
 
 static BYTES: &[u8] = &[1, 2, 3];
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // make sure that the lifetime is actually elided (and not defaulted)
     let x = &[1u8, 2, 3];

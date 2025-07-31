@@ -34,6 +34,7 @@ fn relaxed() {
     j2.join().unwrap();
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     // If we try often enough, we should hit UB.
     for _ in 0..100 {

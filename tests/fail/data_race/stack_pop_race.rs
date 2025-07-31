@@ -7,6 +7,7 @@ use std::thread;
 struct MakeSend(*const i32);
 unsafe impl Send for MakeSend {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     race(0); //~ERROR: Data race detected between (1) non-atomic read on thread `unnamed-1` and (2) deallocation on thread `main`
 }

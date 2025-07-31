@@ -9,6 +9,7 @@ fn foo(x: &Cell<i32>) {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let arr = [Cell::new(1), Cell::new(1)];
     foo(&arr[0]);

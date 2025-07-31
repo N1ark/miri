@@ -172,6 +172,7 @@ fn should_be_ub() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     cast();
     cast_dangling();

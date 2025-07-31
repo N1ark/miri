@@ -8,6 +8,7 @@ fn never_returns() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let value = 'outer: loop {
         if 1 == 1 {

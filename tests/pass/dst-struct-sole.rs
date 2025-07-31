@@ -33,6 +33,7 @@ impl ToBar for Bar {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     // With a vec of ints.
     let f1 = Fat { ptr: [1, 2, 3] };

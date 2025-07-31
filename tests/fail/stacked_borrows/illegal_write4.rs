@@ -1,5 +1,6 @@
 use std::mem;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut target = 42;
     // Make sure we cannot use a raw-tagged `&mut` pointing to a frozen location.

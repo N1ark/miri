@@ -35,6 +35,7 @@ fn fat_ptr_constant() -> &'static str {
     "HELLO"
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let a = Wrapper(4, [7, 6, 5]);
 

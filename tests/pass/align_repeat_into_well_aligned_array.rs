@@ -2,6 +2,7 @@
 
 use std::mem::size_of;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut a = Params::new();
     // The array itself here happens to be quite well-aligned, but not all its elements have that

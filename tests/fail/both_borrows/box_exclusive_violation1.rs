@@ -33,6 +33,7 @@ fn unknown_code_2() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     demo_box_advanced_unique(Box::new(0));
 }

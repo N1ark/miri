@@ -45,6 +45,7 @@ fn callee() -> S {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = S(0, [0; 128]);
     panic::catch_unwind(panic::AssertUnwindSafe(|| docall(&mut x))).unwrap_err();

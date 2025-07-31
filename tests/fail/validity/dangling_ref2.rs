@@ -2,6 +2,7 @@
 //@compile-flags: -Zmiri-disable-stacked-borrows
 use std::mem;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let val = 14;
     let ptr = (&val as *const i32).wrapping_offset(1);

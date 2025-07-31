@@ -1,6 +1,7 @@
 #![allow(incomplete_features)]
 #![feature(explicit_tail_calls)]
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(factorial(10), 3_628_800);
     assert_eq!(mutually_recursive_identity(1000), 1000);

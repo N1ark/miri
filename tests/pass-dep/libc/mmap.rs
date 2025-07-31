@@ -141,6 +141,7 @@ fn test_mremap() {
     assert_eq!(Error::last_os_error().raw_os_error().unwrap(), libc::EINVAL);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_mmap(libc::mmap);
     #[cfg(target_os = "linux")]

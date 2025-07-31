@@ -6,6 +6,7 @@ extern "C" {
 }
 
 // Test the error caused by invoking non-vararg shim with a vararg import.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut fds = [-1, -1];
     let res = unsafe { pipe(fds.as_mut_ptr()) };

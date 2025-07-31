@@ -32,6 +32,7 @@ fn test2(r: &mut RefCell<i32>) {
     let _x_inner_shr2 = &*x_inner; // 2nd suspension for inner write lock
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test1();
     test2(&mut RefCell::new(0));

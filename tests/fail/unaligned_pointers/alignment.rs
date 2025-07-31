@@ -1,6 +1,7 @@
 //@normalize-stderr-test: "\| +\^+" -> "| ^"
 //@compile-flags: -Cdebug-assertions=no
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // No retry needed, this fails reliably.
 

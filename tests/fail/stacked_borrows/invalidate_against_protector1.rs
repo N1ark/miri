@@ -5,6 +5,7 @@ fn inner(x: *mut i32, _y: &mut i32) {
     let _val = unsafe { *x }; //~ ERROR: protect
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 0;
     let xraw = &mut x as *mut _;

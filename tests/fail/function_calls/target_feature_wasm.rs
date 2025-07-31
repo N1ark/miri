@@ -1,6 +1,7 @@
 //@only-target: wasm # tests WASM-specific behavior
 //@compile-flags: -C target-feature=-simd128
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Calling functions with `#[target_feature]` is not unsound on WASM, see #84988.
     // But if the compiler actually uses the target feature, it will lead to an error when the module is loaded.

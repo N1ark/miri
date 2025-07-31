@@ -141,6 +141,7 @@ fn test_derive() {
     let _ = format!("{:?}", x);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_basic();
     test_unsizing();

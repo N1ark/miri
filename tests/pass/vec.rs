@@ -169,6 +169,7 @@ fn miri_issue_2759() {
     input.replace_range(0..0, "0");
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(vec_reallocate().len(), 5);
 

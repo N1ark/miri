@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mem = [0u8; 1];
     let ptr = mem.as_ptr();
