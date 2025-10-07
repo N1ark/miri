@@ -5,6 +5,7 @@ use std::convert::TryInto;
 #[path = "../../utils/libc.rs"]
 mod libc_utils;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_epoll_socketpair();
     test_epoll_socketpair_both_sides();

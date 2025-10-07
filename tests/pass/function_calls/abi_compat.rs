@@ -72,6 +72,7 @@ fn test_abi_newtype<T: Copy + Default>() {
     test_abi_compat(t, mem::MaybeUninit::new(t)); // MaybeUninit is `repr(transparent)`
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Here we check some of the guaranteed ABI compatibilities:
     // - Different integer types of the same size and sign.

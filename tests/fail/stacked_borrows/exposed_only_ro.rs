@@ -2,6 +2,7 @@
 
 // If we have only exposed read-only pointers, doing a write through a wildcard ptr should fail.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 0;
     let _fool = &mut x as *mut i32; // this would have fooled the old untagged pointer logic

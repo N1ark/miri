@@ -17,6 +17,7 @@ impl Drop for HasDrop {
 
 static mut P: *mut u8 = core::ptr::null_mut();
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut x = (HasDrop, 0u8);

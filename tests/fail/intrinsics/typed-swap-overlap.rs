@@ -4,6 +4,7 @@
 use std::intrinsics::typed_swap_nonoverlapping;
 use std::ptr::addr_of_mut;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut a = 0_u8;
     unsafe {

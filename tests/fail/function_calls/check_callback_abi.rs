@@ -4,6 +4,7 @@ extern "C" fn try_fn(_: *mut u8) {
     unreachable!();
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         // Make sure we check the ABI when Miri itself invokes a function

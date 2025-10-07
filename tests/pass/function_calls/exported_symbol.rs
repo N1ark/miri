@@ -24,6 +24,7 @@ impl AssocFn {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Repeat calls to make sure the `Instance` cache is not broken.
     for _ in 0..3 {

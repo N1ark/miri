@@ -61,6 +61,7 @@ fn ptr_roundtrip_offset_from() {
     unsafe { end_roundtrip.offset_from(begin) };
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     ptr_roundtrip_out_of_bounds();
     ptr_roundtrip_confusion();

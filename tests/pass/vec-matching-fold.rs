@@ -29,6 +29,7 @@ where
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let x = &[1, 2, 3, 4, 5];
 

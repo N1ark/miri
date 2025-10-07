@@ -4,6 +4,7 @@
 //@[no_isolation]compile-flags: -Zmiri-disable-isolation
 
 /// Test direct calls of getrandom 0.1, 0.2 and 0.3.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut data = vec![0; 16];
 

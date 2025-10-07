@@ -6,6 +6,7 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 static mut X: usize = 5;
 static Y: AtomicUsize = AtomicUsize::new(5);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         X = 6;

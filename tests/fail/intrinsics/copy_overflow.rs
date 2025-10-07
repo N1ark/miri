@@ -1,5 +1,6 @@
 use std::mem;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = 0;
     let mut y = 0;

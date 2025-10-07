@@ -7,6 +7,7 @@
 use std::intrinsics::mir::*;
 
 #[custom_mir(dialect = "runtime", phase = "optimized")]
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     mir! {
         {

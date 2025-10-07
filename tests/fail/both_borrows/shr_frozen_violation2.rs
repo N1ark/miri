@@ -1,5 +1,6 @@
 //@revisions: stack tree
 //@[tree]compile-flags: -Zmiri-tree-borrows
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut x = 0;

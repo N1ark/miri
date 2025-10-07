@@ -2,6 +2,7 @@ fn bar(a: &'static str, b: &'static str) -> [&'static str; 4] {
     [a, b, b, a]
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let out = bar("baz", "foo");
     let [a, xs @ .., d] = out;

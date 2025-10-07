@@ -2,6 +2,7 @@ use std::mem;
 
 // Doing a copy at integer type should lose provenance.
 // This tests the unoptimized base case.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let ptrs = [(&42, true)];
     let ints: [(usize, bool); 1] = unsafe { mem::transmute(ptrs) };

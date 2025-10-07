@@ -7,6 +7,7 @@ mod utils;
 
 // Check how a Reserved without interior mutability responds to a Foreign
 // Write when under a protector
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let n = &mut 0u8;

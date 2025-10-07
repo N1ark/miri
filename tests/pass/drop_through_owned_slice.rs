@@ -12,6 +12,7 @@ impl Drop for Bar {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let b: Box<[Bar]> = vec![Bar, Bar, Bar, Bar].into_boxed_slice();
     assert_eq!(unsafe { DROP_COUNT }, 0);

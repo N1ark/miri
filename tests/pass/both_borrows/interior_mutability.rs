@@ -5,6 +5,7 @@
 use std::cell::{Cell, Ref, RefCell, RefMut, UnsafeCell};
 use std::mem::{self, MaybeUninit};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     aliasing_mut_and_shr();
     aliasing_frz_and_shr();

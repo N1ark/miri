@@ -23,6 +23,7 @@ fn foo<T: Tr>() -> usize {
     mem::size_of::<S<T>>()
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     println!("{}", foo::<S<()>>());
 }

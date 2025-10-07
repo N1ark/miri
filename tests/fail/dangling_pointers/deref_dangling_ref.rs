@@ -6,6 +6,7 @@ use std::ptr::{self, addr_of_mut};
 // We do this behind a pointer indirection to potentially fool validity checking.
 // (This test relies on the `deref_copy` pass that lowers `**ptr` to materialize the intermediate pointer.)
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut inner = ptr::without_provenance::<i32>(24);
     let outer = addr_of_mut!(inner).cast::<&'static mut i32>();

@@ -8,6 +8,7 @@ fn test() -> (Demo, Demo) {
     (x, y)
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     drop(test());
 }

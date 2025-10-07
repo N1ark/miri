@@ -11,6 +11,7 @@ fn f(_x: *const i32) {
     become g(ptr)
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     f(std::ptr::null());
 }

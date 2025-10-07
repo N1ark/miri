@@ -82,6 +82,7 @@ fn test_geteuid() {
     let _val = unsafe { libc::geteuid() };
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_thread_local_errno();
     test_environ();

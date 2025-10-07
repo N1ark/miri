@@ -6,6 +6,7 @@ use std::sync::atomic::{AtomicUsize, Ordering, fence};
 use std::thread;
 use std::time::Duration;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     static mut V: u32 = 0;
     let a = Arc::new(AtomicUsize::default());

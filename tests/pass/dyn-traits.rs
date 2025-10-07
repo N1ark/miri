@@ -150,6 +150,7 @@ fn vtable_ptr_eq() {
     assert!((0..256).any(|_| !ptr::eq(x as &dyn fmt::Display, x_wide)));
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     ref_box_dyn();
     box_box_trait();

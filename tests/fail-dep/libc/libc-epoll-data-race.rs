@@ -37,6 +37,7 @@ fn check_epoll_wait<const N: usize>(epfd: i32, expected_notifications: &[(u32, u
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Create an epoll instance.
     let epfd = unsafe { libc::epoll_create1(0) };

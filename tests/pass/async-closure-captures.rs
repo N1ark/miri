@@ -18,6 +18,7 @@ pub fn block_on<T>(fut: impl Future<Output = T>) -> T {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     block_on(async_main());
 }

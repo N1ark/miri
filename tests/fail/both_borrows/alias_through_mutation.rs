@@ -8,6 +8,7 @@ fn retarget(x: &mut &u32, target: &mut u32) {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let target = &mut 42;
     let mut target_alias = &42; // initial dummy value

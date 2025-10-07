@@ -1,5 +1,6 @@
 //@only-target: apple # This directly tests apple-only functions
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut bytes = [0u8; 24];
     let ret = unsafe { libc::CCRandomGenerateBytes(bytes.as_mut_ptr().cast(), bytes.len()) };

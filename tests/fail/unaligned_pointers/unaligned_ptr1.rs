@@ -1,6 +1,7 @@
 // This should fail even without validation or Stacked Borrows.
 //@compile-flags: -Zmiri-disable-validation -Zmiri-disable-stacked-borrows -Cdebug-assertions=no
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Try many times as this might work by chance.
     for _ in 0..20 {

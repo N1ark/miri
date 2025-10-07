@@ -5,6 +5,7 @@ extern "C" {
     fn do_one_deref(ptr: *const *const *const i32) -> usize;
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unexposed_reachable_alloc();
 }

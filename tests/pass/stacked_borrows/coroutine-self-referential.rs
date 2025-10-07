@@ -22,6 +22,7 @@ fn firstn() -> impl Coroutine<Yield = u64, Return = ()> {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut coroutine_iterator = firstn();
     let mut pin = unsafe { Pin::new_unchecked(&mut coroutine_iterator) };

@@ -17,6 +17,7 @@ mod utils;
 #[path = "../../utils/libc.rs"]
 mod libc_utils;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_dup();
     test_dup_stdout_stderr();

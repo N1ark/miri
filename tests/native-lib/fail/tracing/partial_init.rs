@@ -5,6 +5,7 @@ extern "C" {
     fn init_n(n: i32, ptr: *mut u8);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     partial_init();
 }

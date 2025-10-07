@@ -6,6 +6,7 @@ use std::cell::RefCell;
 use std::{mem, ptr};
 
 #[rustfmt::skip] // rustfmt bug: https://github.com/rust-lang/rustfmt/issues/5391
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let rc = RefCell::new(0);
     let mut refmut = rc.borrow_mut();

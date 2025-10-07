@@ -722,6 +722,7 @@ fn simd_ops_non_pow2() {
     assert_eq!(unsafe { *(&raw const z).cast::<[u32; 3]>() }, [3u32; 3]);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     simd_mask();
     simd_ops_f32();

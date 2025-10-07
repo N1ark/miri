@@ -264,6 +264,7 @@ fn param_mismatch() {
     });
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     wake_nobody();
     wake_dangling();

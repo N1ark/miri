@@ -3,6 +3,7 @@
 
 use windows_sys::Win32::System::Threading::GetThreadId;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let _tid = unsafe { GetThreadId(std::ptr::dangling_mut()) };
     //~^ ERROR: invalid handle

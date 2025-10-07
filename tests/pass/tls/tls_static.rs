@@ -32,6 +32,7 @@ struct Sender(*mut u8);
 
 unsafe impl Send for Sender {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let _val = READ_ONLY;
 

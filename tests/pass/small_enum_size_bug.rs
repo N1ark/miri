@@ -5,6 +5,7 @@ enum E {
     C = 3,
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let enone = None::<E>;
     if let Some(..) = enone {

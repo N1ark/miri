@@ -4,6 +4,7 @@ use std::{mem, ptr};
 
 const PTR_SIZE: usize = mem::size_of::<&i32>();
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     basic();
     partial_overwrite_then_restore();

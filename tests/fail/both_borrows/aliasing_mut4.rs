@@ -11,6 +11,7 @@ pub fn safe(x: &i32, y: &mut Cell<i32>) {
     let _load = *x;
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 0;
     let xref = &mut x;

@@ -13,6 +13,7 @@ fn evil() {
     let _ref = unsafe { &mut *(LEAK as *mut i32) }; //~ ERROR: is a dangling pointer
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let _y;
     {

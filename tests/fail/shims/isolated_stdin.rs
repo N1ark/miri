@@ -6,6 +6,7 @@
 //@normalize-stderr-test: "\n *= note:.*" -> ""
 use std::io::{self, Read};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut bytes = [0u8; 512];
     io::stdin().read(&mut bytes).unwrap();

@@ -4,6 +4,7 @@ use std::mem::{self, MaybeUninit};
 #[derive(Copy, Clone, Debug, PartialEq)]
 struct Demo(bool, u16);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         // Transmute-round-trip through a type with Scalar layout is lossless.

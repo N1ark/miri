@@ -2,6 +2,7 @@
 
 // Make sure we cannot use raw ptrs to access a local that
 // we took the direct address of.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 42;
     let raw = &mut x as *mut i32 as usize as *mut i32;

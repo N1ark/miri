@@ -2,6 +2,7 @@
 #![feature(core_intrinsics)]
 use std::intrinsics;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Do a 4-aligned u64 atomic access. That should be UB on all platforms,
     // even if u64 only has alignment 4.

@@ -4,6 +4,7 @@ extern "C" fn malloc(_: usize) -> *mut std::ffi::c_void {
     unreachable!()
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     extern "C" {
         fn malloc(_: usize) -> *mut std::ffi::c_void;

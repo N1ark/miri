@@ -1,5 +1,6 @@
 #![feature(core_intrinsics)]
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     unsafe {
         use std::intrinsics::*;

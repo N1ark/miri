@@ -22,6 +22,7 @@ impl HigherRanked for for<'a> fn(&'a ()) {}
 trait Unsatisfied {}
 impl<T: Unsatisfied> HigherRanked for T {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x: &dyn Trait<fn(&'static ())> = &();
     let y: &dyn Trait<for<'a> fn(&'a ())> = unsafe { std::mem::transmute(x) };

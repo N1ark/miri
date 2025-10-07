@@ -21,6 +21,7 @@ fn the_other_function(ref_to_fst_elem: &mut i32, ptr_to_vec: *mut i32) -> *mut i
     return funky_ptr_lazy_on_fst_elem;
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut v = vec![0, 1];
     // get a pointer to the root of the allocation

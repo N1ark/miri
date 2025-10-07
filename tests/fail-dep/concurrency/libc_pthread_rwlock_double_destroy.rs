@@ -4,6 +4,7 @@
 
 /// Test that destroying a pthread_rwlock twice fails, even without a check for number validity
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut lock = libc::PTHREAD_RWLOCK_INITIALIZER;

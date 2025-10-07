@@ -11,6 +11,7 @@ struct DeviceInfo {
     device_kind: DeviceKind,
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // The layout of `Option<(DeviceInfo, u64)>` is funny: it uses the
     // `DeviceKind` enum as niche, so that is offset 1, but the niche type is u16!

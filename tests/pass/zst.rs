@@ -11,6 +11,7 @@ fn use_zst() -> A {
     a
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Not using the () type here, as writes of that type do not even have MIR generated.
     // Also not assigning directly as that's array initialization, not assignment.

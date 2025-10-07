@@ -6,6 +6,7 @@ mod utils;
 
 type GetEntropyFn = unsafe extern "C" fn(*mut u8, libc::size_t) -> libc::c_int;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let name = "getentropy\0";
     let addr = unsafe { libc::dlsym(libc::RTLD_DEFAULT, name.as_ptr() as *const _) as usize };

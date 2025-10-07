@@ -1,4 +1,5 @@
 // Using a raw invalidates derived `&mut` even for reading.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 2;
     let xref1 = &mut x;

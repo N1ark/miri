@@ -9,6 +9,7 @@ extern "C" {
     fn close(fd: u32) -> c_int;
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let c_path = CString::new(OsStr::new("./text").as_bytes()).expect("CString::new failed");
     let fd = unsafe {

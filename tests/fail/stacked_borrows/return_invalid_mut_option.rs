@@ -7,6 +7,7 @@ fn foo(x: &mut (i32, i32)) -> Option<&mut i32> {
     ret //~ ERROR: /retag .* tag does not exist in the borrow stack/
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     match foo(&mut (1, 2)) {
         Some(_x) => {}

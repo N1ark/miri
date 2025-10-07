@@ -28,6 +28,7 @@ LL | ABORT()
 note: inside `main`
   --> tests/fail/panic/double_panic.rs:LL:CC
    |
+#[cfg_attr(kani, kani::proof)]
 LL | / fn main() {
 LL | |     let _foo = Foo;
 LL | |     panic!("first");
@@ -37,4 +38,3 @@ LL | | }
 note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
 
 error: aborting due to 1 previous error
-

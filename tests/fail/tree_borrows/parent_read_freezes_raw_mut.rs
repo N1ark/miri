@@ -2,6 +2,7 @@
 
 // Read from local variable kills reborrows *and* raw pointers derived from them.
 // This test would be accepted under Stacked Borrows.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut root = 6u8;

@@ -3,6 +3,7 @@
 
 // A callee may not write to the destination of our `&mut` without us noticing.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x = 15;
     let xraw = &mut x as *mut _;

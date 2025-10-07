@@ -1,6 +1,7 @@
 //@compile-flags: -Zmiri-permissive-provenance
 //@normalize-stderr-test: "\d+ bytes" -> "$$BYTES bytes"
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let ptr = Box::into_raw(Box::new(0u32));
     // Can't start with an integer pointer and get to something usable

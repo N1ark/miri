@@ -2,6 +2,7 @@
 
 use std::iter::iter;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let i = iter! { || {
         yield 0;

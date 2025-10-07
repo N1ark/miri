@@ -7,6 +7,7 @@ use std::intrinsics::simd::simd_select;
 #[derive(Copy, Clone)]
 struct i32x2([i32; 2]);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let x = i32x2([0, 1]);

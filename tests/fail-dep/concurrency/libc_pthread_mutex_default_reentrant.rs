@@ -7,6 +7,7 @@
 // pthread_mutexattr_settype(PTHREAD_MUTEX_NORMAL) makes a difference even if
 // PTHREAD_MUTEX_NORMAL == PTHREAD_MUTEX_DEFAULT!
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut mutexattr: libc::pthread_mutexattr_t = std::mem::zeroed();

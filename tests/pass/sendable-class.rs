@@ -12,6 +12,7 @@ fn foo(i: isize, j: char) -> Foo {
     Foo { i: i, j: j }
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let (tx, rx) = channel();
     tx.send(foo(42, 'c')).unwrap();

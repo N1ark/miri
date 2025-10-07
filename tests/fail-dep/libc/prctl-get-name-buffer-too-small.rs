@@ -2,6 +2,7 @@
 //! name would fit in the smaller buffer).
 //@only-target: android  # Miri supports prctl for Android only
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut buf = vec![0u8; 15];
     unsafe {

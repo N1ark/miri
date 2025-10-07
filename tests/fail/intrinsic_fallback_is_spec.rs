@@ -8,6 +8,7 @@ pub const fn ptr_guaranteed_cmp<T>(ptr: *const T, other: *const T) -> u8 {
     (ptr == other) as u8
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     ptr_guaranteed_cmp::<()>(std::ptr::null(), std::ptr::null());
     //~^ ERROR: can only use intrinsic fallback bodies that exactly reflect the specification

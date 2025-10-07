@@ -4,6 +4,7 @@ use std::sync::atomic::*;
 
 static P: AtomicPtr<u8> = AtomicPtr::new(core::ptr::null_mut());
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let t1 = std::thread::spawn(|| {
         while P.load(Relaxed).is_null() {

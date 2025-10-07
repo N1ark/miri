@@ -1,6 +1,7 @@
 use std::hint;
 use std::sync::{Mutex, TryLockError, atomic};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_mutex_stdlib();
     test_rwlock_stdlib();

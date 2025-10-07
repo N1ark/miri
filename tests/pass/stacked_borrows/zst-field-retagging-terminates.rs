@@ -2,6 +2,7 @@
 
 #![allow(dropping_copy_types)]
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let array = [(); usize::MAX];
     drop(array); // Pass the array to a function, retagging its fields

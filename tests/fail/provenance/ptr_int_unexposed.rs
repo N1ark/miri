@@ -1,5 +1,6 @@
 //@compile-flags: -Zmiri-permissive-provenance
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x: i32 = 3;
     let x_ptr = &x as *const i32;

@@ -29,6 +29,7 @@ fn func_d() -> Box<[*mut ()]> {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut seen_main = false;
     let frames = func_a();

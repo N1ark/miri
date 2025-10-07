@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     extern "C" {
         // Use the wrong type (ie. not `i32`) for the `c` argument.

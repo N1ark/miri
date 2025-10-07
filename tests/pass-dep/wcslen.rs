@@ -13,6 +13,7 @@ fn to_c_wchar_t_str(s: &str) -> Vec<libc::wchar_t> {
     r
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let s = to_c_wchar_t_str("Rust");
     let len = unsafe { libc::wcslen(s.as_ptr()) };

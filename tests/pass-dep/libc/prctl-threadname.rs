@@ -5,6 +5,7 @@ use std::thread;
 // The Linux kernel all names 16 bytes long including the null terminator.
 const MAX_THREAD_NAME_LEN: usize = 16;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // The short name should be shorter than 16 bytes which POSIX promises
     // for thread names. The length includes a null terminator.

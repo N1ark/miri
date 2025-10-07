@@ -56,6 +56,7 @@ fn test2() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     ensure_allocs_can_be_adjacent();
     test1();

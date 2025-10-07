@@ -55,6 +55,7 @@ impl Baz for i32 {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let baz: &dyn Baz = &1;

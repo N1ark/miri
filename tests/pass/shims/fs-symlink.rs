@@ -20,6 +20,7 @@ fn check_metadata(bytes: &[u8], path: &Path) -> Result<()> {
     Ok(())
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let bytes = b"Hello, World!\n";
     let path = utils::prepare_with_content("miri_test_fs_link_target.txt", bytes);

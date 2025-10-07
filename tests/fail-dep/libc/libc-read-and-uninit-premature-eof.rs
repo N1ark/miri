@@ -13,6 +13,7 @@ mod utils;
 #[path = "../../utils/libc.rs"]
 mod libc_utils;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let path =
         utils::prepare_with_content("fail-libc-read-and-uninit-premature-eof.txt", &[1u8, 2, 3]);

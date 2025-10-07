@@ -20,6 +20,7 @@ fn print_borrow_stacks(alloc_id: u64) {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let ptr = unsafe { alloc::alloc(Layout::new::<u8>()) };
     let alloc_id = get_alloc_id(ptr);

@@ -15,6 +15,7 @@ struct Wrapper {
 
 static G: i32 = 0;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut w = Wrapper { align: 0, data: Data { pad: 0, ptr: &G } };
 

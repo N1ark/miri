@@ -13,6 +13,7 @@ unsafe impl<T> Sync for EvilSend<T> {}
 
 static SYNC: AtomicUsize = AtomicUsize::new(0);
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     let mut a = 0u32;
     let b = &mut a as *mut u32;

@@ -2,6 +2,7 @@
 //@revisions: isolation no_isolation
 //@[no_isolation]compile-flags: -Zmiri-disable-isolation
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_getentropy();
     #[cfg(not(target_os = "macos"))]

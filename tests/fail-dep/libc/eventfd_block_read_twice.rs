@@ -16,6 +16,7 @@ use std::thread;
 // 4. Thread 1 reads.
 // 5. Thread 2's `read` can never complete -> deadlocked.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // eventfd write will block when EFD_NONBLOCK flag is clear
     // and the addition caused counter to exceed u64::MAX - 1.

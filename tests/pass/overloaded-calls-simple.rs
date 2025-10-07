@@ -12,6 +12,7 @@ impl FnOnce<(i32, i32)> for S3 {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let s = S3 { x: 3, y: 3 };
     let ans = s(3, 1);

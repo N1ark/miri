@@ -1,5 +1,6 @@
 use std::any::{Any, TypeId};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let t1 = TypeId::of::<u64>();
     let t2 = TypeId::of::<u64>();

@@ -15,6 +15,7 @@ unsafe fn raw_to_ref<'a, T>(x: *const T) -> &'a T {
     mem::transmute(x) //~ERROR: required 4 byte alignment
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Try many times as this might work by chance.
     for _ in 0..20 {

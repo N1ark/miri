@@ -2,6 +2,7 @@
 // This test checks that we correctly use the span associated with the local itself, not the span
 // where we take the address of the local and force it to be allocated.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let ptr = {
         let x = 0usize; // This line should appear in the helps

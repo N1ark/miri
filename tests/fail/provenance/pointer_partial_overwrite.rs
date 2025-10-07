@@ -3,6 +3,7 @@
 
 // Test what happens when we overwrite parts of a pointer.
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut p = &42;
     unsafe {

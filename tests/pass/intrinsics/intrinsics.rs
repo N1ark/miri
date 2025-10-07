@@ -13,6 +13,7 @@ impl Drop for Bomb {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(size_of::<Option<i32>>(), 8);
     assert_eq!(size_of_val(&()), 0);

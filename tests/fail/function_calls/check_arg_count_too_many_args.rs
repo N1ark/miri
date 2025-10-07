@@ -1,3 +1,4 @@
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     extern "C" {
         fn malloc(_: i32, _: i32) -> *mut std::ffi::c_void;

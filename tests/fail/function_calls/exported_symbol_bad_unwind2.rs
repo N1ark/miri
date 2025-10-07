@@ -12,6 +12,7 @@ extern "C-unwind" fn nounwind() {
     panic!();
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     extern "C-unwind" {
         #[cfg_attr(any(extern_block, both), rustc_nounwind)]

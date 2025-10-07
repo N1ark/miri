@@ -108,6 +108,7 @@ fn fn_ptr_as_closure_trait_object() {
     f(42, 3.141);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(simple(), 12);
     assert_eq!(crazy_closure(), (84, 10, 10));

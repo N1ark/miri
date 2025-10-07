@@ -66,6 +66,7 @@ fn ptr_int_ops() {
     assert_eq!(x % 1, 0);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     ptr_int_casts();
     ptr_int_ops();

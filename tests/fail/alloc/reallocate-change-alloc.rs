@@ -1,5 +1,6 @@
 use std::alloc::{Layout, alloc, realloc};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let x = alloc(Layout::from_size_align_unchecked(1, 1));

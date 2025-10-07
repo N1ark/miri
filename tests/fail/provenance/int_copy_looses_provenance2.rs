@@ -2,6 +2,7 @@ use std::mem;
 
 // Doing a copy at integer type should lose provenance.
 // This tests the case where provenacne is hiding in the metadata of a pointer.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let ptrs = [(&42, &42)];
     // Typed copy at wide pointer type (with integer-typed metadata).

@@ -15,6 +15,7 @@ impl Function {
 #[inline(never)]
 fn dummy(_: &str) {}
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let func1 = Function::new(dummy);
     let func2 = Function::new(dummy);

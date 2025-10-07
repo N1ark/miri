@@ -11,6 +11,7 @@ fn with_thread_local2() {
     Y.with(|_y| {})
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Here we have two threads racing on initializing the thread-local and adding it to the global
     // dtor list (on targets that have such a list, i.e., targets without target_thread_local).

@@ -7,6 +7,7 @@ extern "C" {
     fn foo();
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         foo(); //~ ERROR: unsupported operation: can't call foreign function `foo`

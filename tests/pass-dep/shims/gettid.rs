@@ -154,6 +154,7 @@ mod queried {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let tid = gettid();
 

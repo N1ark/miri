@@ -5,6 +5,7 @@ use std::mem::{align_of, size_of};
 #[repr(C)]
 struct Foo(usize, u8);
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let buf1: [usize; 2] = [1000, 2000];
     let buf2: [usize; 2] = [3000, 4000];

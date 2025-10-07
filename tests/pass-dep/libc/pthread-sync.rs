@@ -7,6 +7,7 @@ use std::cell::SyncUnsafeCell;
 use std::mem::MaybeUninit;
 use std::{mem, ptr, thread};
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_mutex_libc_init_recursive();
     test_mutex_libc_init_normal();

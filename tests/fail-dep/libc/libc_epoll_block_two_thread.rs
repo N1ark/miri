@@ -44,6 +44,7 @@ fn check_epoll_wait<const N: usize>(
 // 2. Thread 2 blocks.
 // 3. Thread 3 unblocks thread 2.
 // 4. Thread 1 deadlocks.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Create an epoll instance.
     let epfd = unsafe { libc::epoll_create1(0) };

@@ -10,6 +10,7 @@ use std::thread;
 #[path = "../../utils/libc.rs"]
 mod libc_utils;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_socketpair();
     test_socketpair_threaded();

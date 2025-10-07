@@ -14,6 +14,7 @@ enum Bar {
     B(Foo),
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert!(unsafe { !FOO });
     drop(Bar::A(Box::new(42)));

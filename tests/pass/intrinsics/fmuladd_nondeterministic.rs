@@ -20,6 +20,7 @@ fn ensure_both_happen(f: impl Fn() -> bool) -> bool {
     false
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert!(
         ensure_both_happen(|| {

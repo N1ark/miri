@@ -1,5 +1,6 @@
 #![allow(invalid_value)]
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     trait T {}
     #[derive(Debug)]

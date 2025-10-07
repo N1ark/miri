@@ -1,5 +1,6 @@
 //@compile-flags: -Zmiri-permissive-provenance
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Can't offset an integer pointer by non-zero offset.
     unsafe {

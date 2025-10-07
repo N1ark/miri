@@ -12,6 +12,7 @@ pub enum Foo {
     D,
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let f = unsafe { std::mem::transmute::<i32, Foo>(42) };
     let _val = mem::discriminant(&f); //~ERROR: enum value has invalid tag

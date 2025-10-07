@@ -20,6 +20,7 @@ fn sum(x: &[i32]) {
     assert_eq!(*sum_lengths.lock().unwrap(), (x.len() - 3) * 4);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut elements = [0; 20];
 

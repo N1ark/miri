@@ -40,6 +40,7 @@ fn foo_to_bar<T: ?Sized>(u: *const FooS<T>) -> *const BarS<T> {
     u as *const BarS<T>
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = 4u32;
     let y: &dyn Foo<u32> = &x;

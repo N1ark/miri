@@ -5,6 +5,7 @@ use std::ptr::addr_of;
 // packed(2) needs to be applied at runtime: the actual alignment of the field is `min(2,
 // usual_alignment)`. Here we check that we do this right by comparing size, alignment, and field
 // offset before and after unsizing.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     #[repr(C, packed(2))]
     struct Packed<T: ?Sized>(u8, core::mem::ManuallyDrop<T>);

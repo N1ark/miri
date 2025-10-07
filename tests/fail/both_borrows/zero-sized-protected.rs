@@ -9,6 +9,7 @@ fn test(_x: &mut (), ptr: *mut u8, l: Layout) {
     unsafe { dealloc(ptr, l) }; //~[tree] ERROR: /deallocation .* is forbidden/
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let l = Layout::from_size_align(1, 1).unwrap();
     let ptr = unsafe { alloc(l) };

@@ -1,6 +1,7 @@
 //@ignore-target: windows # No mkstemp on Windows
 //@compile-flags: -Zmiri-disable-isolation
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_mkstemp_immutable_arg();
 }

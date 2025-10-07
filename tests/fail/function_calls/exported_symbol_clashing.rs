@@ -6,6 +6,7 @@ fn foo() {}
 fn bar() {}
 //~^ HELP: then it's defined here again, in crate `exported_symbol_clashing`
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     extern "Rust" {
         fn foo();

@@ -9,6 +9,7 @@ union HiddenRef {
     r: &'static i32,
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut x: i32 = 15;
     let xref1 = &mut x;

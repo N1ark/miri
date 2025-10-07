@@ -9,6 +9,7 @@ extern "C" fn thread_start(_null: *mut libc::c_void, _x: i32) -> *mut libc::c_vo
     panic!()
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mut native: libc::pthread_t = mem::zeroed();

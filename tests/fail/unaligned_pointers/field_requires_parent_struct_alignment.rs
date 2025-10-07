@@ -11,6 +11,7 @@ unsafe fn foo(x: *const S) -> u8 {
     unsafe { (*x).x } //~ERROR: based on pointer with alignment 1, but alignment 4 is required
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let mem = [0u64; 16];

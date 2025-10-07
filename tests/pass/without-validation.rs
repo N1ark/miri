@@ -19,6 +19,7 @@ fn refcell_unsize() {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     refcell_unsize();
 }

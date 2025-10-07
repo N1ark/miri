@@ -12,6 +12,7 @@ fn foo() -> Box<dyn FnMut() -> isize + 'static> {
     Box::new(result)
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     assert_eq!(foo()(), 22);
 }

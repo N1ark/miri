@@ -4,6 +4,7 @@
 use std::cell::Cell;
 use std::ptr;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let x = &mut Cell::new(0);

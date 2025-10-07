@@ -1,5 +1,6 @@
 #![feature(core_intrinsics)]
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let mut data = [0u16; 8];
     let ptr = (&mut data[0] as *mut u16 as *mut u8).wrapping_add(1) as *mut u16;

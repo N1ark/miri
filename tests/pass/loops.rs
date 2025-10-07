@@ -28,6 +28,7 @@ fn for_loop() -> usize {
     sum
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(factorial_loop(), 3628800);
     assert_eq!(index_for_loop(), 60);

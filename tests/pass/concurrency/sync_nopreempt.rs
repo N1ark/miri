@@ -80,6 +80,7 @@ fn check_rwlock_unlock_bug2() {
     h.join().unwrap();
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     check_conditional_variables_notify_all();
     check_rwlock_unlock_bug1();

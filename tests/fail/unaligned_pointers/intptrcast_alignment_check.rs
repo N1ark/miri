@@ -6,6 +6,7 @@
 // indeed the case.
 //
 // See https://github.com/rust-lang/miri/issues/1074.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let x = &mut [0u8; 3];
     let base_addr = x as *mut _ as usize;

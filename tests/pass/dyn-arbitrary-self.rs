@@ -149,6 +149,7 @@ fn raw_ptr_receiver() {
     assert_eq!("I'm a u32!", null_u32.foo());
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     pin_box_dyn();
     stdlib_pointers();

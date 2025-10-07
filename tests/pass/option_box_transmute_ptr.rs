@@ -12,6 +12,7 @@ fn option_box_deref() -> i32 {
     }
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(option_box_deref(), 42);
 }

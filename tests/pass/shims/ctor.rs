@@ -40,6 +40,7 @@ macro_rules! ctor {
 ctor! { CTOR1: unsafe extern "C" fn() = ctor::<1> }
 ctor! { CTOR2: [unsafe extern "C" fn(); 2] = [ctor::<2>, ctor::<3>] }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     assert_eq!(COUNT.load(Ordering::Relaxed), 6, "ctors did not run");
 }

@@ -2,6 +2,7 @@
 //@[tree]compile-flags: -Zmiri-tree-borrows
 use std::ptr::NonNull;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     unsafe {
         let x = &mut 0;

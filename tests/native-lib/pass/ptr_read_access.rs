@@ -2,6 +2,7 @@
 //@[trace] only-target: x86_64-unknown-linux-gnu i686-unknown-linux-gnu
 //@[trace] compile-flags: -Zmiri-native-lib-enable-tracing
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     test_access_pointer();
     test_access_simple();

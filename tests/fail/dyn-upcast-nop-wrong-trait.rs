@@ -5,6 +5,7 @@
 
 use std::fmt;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // vtable_mismatch_nop_cast
     let ptr: &dyn fmt::Display = &0;

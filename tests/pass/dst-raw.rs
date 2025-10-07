@@ -19,6 +19,7 @@ struct Foo<T: ?Sized> {
     f: T,
 }
 
+#[cfg_attr(kani, kani::proof)]
 pub fn main() {
     // raw trait object
     let x = A { f: 42 };

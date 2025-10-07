@@ -20,6 +20,7 @@ fn align_to() {
     assert!(l.len() + r.len() <= 4);
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     // Do this a couple times in a loop because it may work "by chance".
     for _ in 0..20 {

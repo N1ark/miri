@@ -5,6 +5,7 @@ use std::ptr;
 use std::rc::{Rc, Weak};
 
 /// Taken from the `Weak::as_ptr` doctest.
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let strong = Rc::new(Box::new(42));
     let weak = Rc::downgrade(&strong);

@@ -1,6 +1,7 @@
 #![feature(portable_simd, core_intrinsics)]
 use std::simd::*;
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let v = i32x4::splat(0);
     let _x: i32 = unsafe { std::intrinsics::simd::simd_extract(v, 4) };

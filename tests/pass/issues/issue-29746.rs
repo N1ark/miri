@@ -24,6 +24,7 @@ macro_rules! zip {
     };
 }
 
+#[cfg_attr(kani, kani::proof)]
 fn main() {
     let p1 = vec![1i32, 2].into_iter();
     let p2 = vec!["10", "20"].into_iter();
