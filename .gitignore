@@ -14,3 +14,6 @@ tests/native-lib/libtestlib.so
 .auto-*
 
 /genmc/
+
+*.json.crate
+*.json
